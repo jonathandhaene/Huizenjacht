@@ -349,7 +349,7 @@ async function removeAvailableTag(tag) {
 }
 
 // ── Dismiss logic ────────────────────────────────────────────────────────────
-function isDissmissedByMe(propertyId) {
+function isDismissedByMe(propertyId) {
   return !!(state.user && state.annotations[propertyId]?.dismissed?.[state.user.name]);
 }
 
@@ -458,10 +458,10 @@ function filteredProperties() {
     switch (state.activeFilter) {
       case 'all':
         // Inbox: everything that is NOT dismissed by me
-        props = props.filter(p => !isDissmissedByMe(p.id));
+        props = props.filter(p => !isDismissedByMe(p.id));
         break;
       case 'dismissed':
-        props = props.filter(p => isDissmissedByMe(p.id));
+        props = props.filter(p => isDismissedByMe(p.id));
         break;
       case 'liked':   props = props.filter(p => isLikedByMe(p.id));  break;
       case 'matched': props = props.filter(p => isMatched(p.id));     break;
@@ -507,7 +507,7 @@ function renderProperties() {
 function propertyCard(prop) {
   const liked      = isLikedByMe(prop.id);
   const matched    = isMatched(prop.id);
-  const dismissed  = isDissmissedByMe(prop.id);
+  const dismissed  = isDismissedByMe(prop.id);
   const score      = prop.ai_analysis?.score;
   const isNew      = isNewToday(prop.first_seen);
   const ann        = getAnnotations(prop.id);
@@ -648,7 +648,7 @@ function renderSettings() {
       ${state.properties.length} panden geladen &nbsp;·&nbsp;
       ${Object.keys(state.likes).length} geliked &nbsp;·&nbsp;
       ${getMatchedPropertyIds().length} matches &nbsp;·&nbsp;
-      ${state.properties.filter(p => isDissmissedByMe(p.id)).length} niet interessant<br>
+      ${state.properties.filter(p => isDismissedByMe(p.id)).length} niet interessant<br>
       Data bijgewerkt door GitHub Actions elke ochtend om 07:00.
     </p>`;
 }
@@ -804,9 +804,9 @@ function showDetail(propertyId) {
       <a class="btn-visit" href="${esc(prop.source_url)}" target="_blank" rel="noopener">
         🔗 Bekijk advertentie
       </a>
-      <button class="btn-dismiss-large ${isDissmissedByMe(propertyId) ? 'dismissed' : ''}" id="modal-dismiss-btn"
-        onclick="handleDismiss(event,'${esc(prop.id)}',true)" aria-label="${isDissmissedByMe(propertyId) ? 'Terug naar Inbox' : 'Niet interessant'}">
-        ${isDissmissedByMe(propertyId) ? '↩️' : '👎'}
+      <button class="btn-dismiss-large ${isDismissedByMe(propertyId) ? 'dismissed' : ''}" id="modal-dismiss-btn"
+        onclick="handleDismiss(event,'${esc(prop.id)}',true)" aria-label="${isDismissedByMe(propertyId) ? 'Terug naar Inbox' : 'Niet interessant'}">
+        ${isDismissedByMe(propertyId) ? '↩️' : '👎'}
       </button>
       <button class="btn-like-large ${liked ? 'liked' : ''}" id="modal-like-btn"
         onclick="handleLike(event,'${esc(prop.id)}',true)" aria-label="Like">
@@ -1018,7 +1018,7 @@ async function handleDismiss(event, propertyId, fromModal = false) {
   // Update modal button if open
   const modalBtn = $('#modal-dismiss-btn');
   if (modalBtn) {
-    const dismissed = isDissmissedByMe(propertyId);
+    const dismissed = isDismissedByMe(propertyId);
     modalBtn.textContent = dismissed ? '↩️' : '👎';
     modalBtn.classList.toggle('dismissed', dismissed);
   }
