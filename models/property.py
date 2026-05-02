@@ -3,7 +3,7 @@ Pydantic data models for the Huizenjacht property pipeline.
 """
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import datetime, timezone
 from enum import Enum
 from typing import Optional
 
@@ -70,12 +70,11 @@ class Property(BaseModel):
     bathrooms: Optional[int] = None
     images: list[str] = Field(default_factory=list, description="Image URLs")
     features: list[str] = Field(default_factory=list, description="Extra features / tags")
-    first_seen: datetime = Field(default_factory=datetime.utcnow)
-    last_seen: datetime = Field(default_factory=datetime.utcnow)
+    first_seen: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    last_seen: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
     # Enrichment results — populated later in the pipeline
     government_data: Optional[GovernmentData] = None
     ai_analysis: Optional[AIAnalysis] = None
 
-    class Config:
-        use_enum_values = True
+    model_config = {"use_enum_values": True}

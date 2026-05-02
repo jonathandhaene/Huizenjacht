@@ -46,6 +46,7 @@ class EmailNotificationAgent:
         subject = self._build_subject(properties)
         html_body = self._build_html(properties)
         self._send_email(subject, html_body)
+        logger.info("[email] Digest sent to %s (%d properties)", settings.notification_email, len(properties))
 
     # ------------------------------------------------------------------
 
@@ -190,11 +191,7 @@ class EmailNotificationAgent:
                     settings.notification_email,
                     msg.as_string(),
                 )
-            logger.info(
-                "[email] Digest sent to %s (%d properties)",
-                settings.notification_email,
-                len(html_body),
-            )
+            logger.info("[email] Digest sent to %s", settings.notification_email)
         except Exception as exc:
             logger.error("[email] Failed to send email: %s", exc)
             raise

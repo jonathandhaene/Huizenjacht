@@ -32,8 +32,6 @@ def test_fallback_scores_good_property():
 
     agent = AIAnalyzerAgent()
     prop = _make_property()
-    prop = agent._fallback_analyze.__func__(agent, prop)  # call method directly
-    # Wait — _fallback_analyze returns AIAnalysis, not Property
     analysis = agent._fallback_analyze(prop)
     assert analysis.score >= 6.0
     assert len(analysis.pros) > 0

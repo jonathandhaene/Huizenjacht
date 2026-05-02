@@ -54,6 +54,13 @@ class Settings(BaseSettings):
     facebook_email: Optional[str] = Field(None)
     facebook_password: Optional[str] = Field(None)
 
+    # ── Collaborative web app ─────────────────────────────────────────────────
+    user1_name: str = Field("Jonathan", description="First partner's display name")
+    user2_name: str = Field("", description="Second partner's display name")
+    github_owner: str = Field("jonathandhaene", description="GitHub repo owner")
+    github_repo: str = Field("Huizenjacht", description="GitHub repo name")
+    github_branch: str = Field("main", description="Branch where docs/ data lives")
+
     # ── Logging ───────────────────────────────────────────────────────────────
     log_level: str = Field("INFO")
 

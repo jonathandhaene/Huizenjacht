@@ -46,6 +46,14 @@ def main() -> None:
         action="store_true",
         help="Start the daily scheduler (blocks until killed)",
     )
+    group.add_argument(
+        "--github-pages",
+        action="store_true",
+        help=(
+            "GitHub Pages / Actions mode: scrape → save to docs/data/properties.json "
+            "→ check likes.json for matches → send notifications"
+        ),
+    )
     parser.add_argument(
         "--dry-run",
         action="store_true",
@@ -53,7 +61,13 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    if args.schedule:
+    if args.github_pages:
+        import logging as _logging
+        _logging.getLogger().setLevel(getattr(_logging, settings.log_level, _logging.INFO))
+        from scripts.github_pages_pipeline import run as _gp_run
+        _gp_run()
+        sys.exit(0)
+    elif args.schedule:
         from scheduler.daily_runner import start
         start()
     elif args.run_now:

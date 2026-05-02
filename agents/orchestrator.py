@@ -18,7 +18,7 @@ import json
 import logging
 import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import List, Set
 
@@ -68,7 +68,7 @@ class Orchestrator:
 
     def run(self) -> List[Property]:
         """Execute the full pipeline and return the list of properties notified."""
-        start = datetime.utcnow()
+        start = datetime.now(timezone.utc)
         logger.info("=== Huizenjacht pipeline started at %s ===", start.isoformat())
 
         # 1. Scrape
@@ -100,7 +100,7 @@ class Orchestrator:
         # 6. Persist seen IDs (all new properties, regardless of score)
         self._mark_seen([p.id for p in enriched])
 
-        elapsed = (datetime.utcnow() - start).total_seconds()
+        elapsed = (datetime.now(timezone.utc) - start).total_seconds()
         logger.info("=== Pipeline finished in %.1f seconds ===", elapsed)
         return qualified
 
