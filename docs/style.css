@@ -596,6 +596,33 @@ img { display: block; max-width: 100%; }
   padding: 4px 0; text-decoration: underline; text-underline-offset: 3px;
 }
 
+/* Dismissed card */
+.property-card.dismissed { opacity: .65; }
+.property-card.dismissed .card-image img { filter: grayscale(55%); }
+.badge-dismissed { background: rgba(100,90,80,.65); color: var(--white); }
+
+/* Dismiss button (card footer) */
+.btn-dismiss {
+  width: 46px; height: 46px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.25rem; flex-shrink: 0;
+  background: var(--stone-100);
+  transition: transform .15s, background .15s;
+}
+.btn-dismiss:active { transform: scale(.85); }
+.btn-dismiss.dismissed { background: #fdf4e7; }
+
+/* Dismiss button (modal footer — same size as btn-like-large) */
+.btn-dismiss-large {
+  width: 52px; height: 52px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; flex-shrink: 0;
+  background: var(--stone-100);
+  transition: background .15s, transform .15s;
+}
+.btn-dismiss-large.dismissed { background: #fdf4e7; }
+.btn-dismiss-large:active { transform: scale(.87); }
+
 /* ── Modal footer ───────────────────────────────────────────────────────────── */
 .modal-footer {
   padding: 14px 18px;

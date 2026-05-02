@@ -348,6 +348,40 @@ async function removeAvailableTag(tag) {
   await persistAnnotations(`🗑️ ${state.user.name} removed tag "${tag}"`);
 }
 
+// ── Dismiss logic ────────────────────────────────────────────────────────────
+function isDissmissedByMe(propertyId) {
+  return !!(state.user && state.annotations[propertyId]?.dismissed?.[state.user.name]);
+}
+
+async function toggleDismiss(propertyId) {
+  if (!state.user) return;
+  const name = state.user.name;
+  if (!state.annotations[propertyId]) state.annotations[propertyId] = { notes: [], tags: [] };
+  if (!state.annotations[propertyId].dismissed) state.annotations[propertyId].dismissed = {};
+
+  const alreadyDismissed = !!state.annotations[propertyId].dismissed[name];
+  if (alreadyDismissed) {
+    delete state.annotations[propertyId].dismissed[name];
+    showToast('📥 Terug naar Inbox');
+  } else {
+    state.annotations[propertyId].dismissed[name] = new Date().toISOString();
+    showToast('📦 Verplaatst naar Overige');
+  }
+
+  renderCurrentTab();
+
+  if (!state.user.token) {
+    showToast('⚠️ Geen token — wijziging lokaal bewaard');
+    return;
+  }
+  try {
+    await persistAnnotations(`📦 ${name} ${alreadyDismissed ? 'restored' : 'dismissed'} a property`);
+  } catch (err) {
+    console.error('Dismiss persist failed:', err);
+    showToast('⚠️ Kon niet opslaan');
+  }
+}
+
 // ── Match helpers ─────────────────────────────────────────────────────────────
 function getMatchedPropertyIds() {
   return Object.entries(state.likes)
@@ -422,8 +456,15 @@ function filteredProperties() {
     props = props.filter(p => (getAnnotations(p.id).tags || []).includes(state.activeTagFilter));
   } else {
     switch (state.activeFilter) {
-      case 'liked':   props = props.filter(p => isLikedByMe(p.id)); break;
-      case 'matched': props = props.filter(p => isMatched(p.id)); break;
+      case 'all':
+        // Inbox: everything that is NOT dismissed by me
+        props = props.filter(p => !isDissmissedByMe(p.id));
+        break;
+      case 'dismissed':
+        props = props.filter(p => isDissmissedByMe(p.id));
+        break;
+      case 'liked':   props = props.filter(p => isLikedByMe(p.id));  break;
+      case 'matched': props = props.filter(p => isMatched(p.id));     break;
       case 'noted':   props = props.filter(p => getAnnotations(p.id).notes.length > 0); break;
       case 'new': {
         const today = new Date(); today.setHours(0,0,0,0);
@@ -444,13 +485,16 @@ function renderProperties() {
   if (props.length === 0) {
     container.innerHTML = '';
     container.appendChild(emptyState(
-      state.activeFilter === 'liked'   ? '💔' :
-      state.activeFilter === 'matched' ? '🤝' :
-      state.activeFilter === 'noted'   ? '📝' :
-      state.activeFilter === 'new'     ? '🔍' :
-      state.activeTagFilter            ? '🏷️' : '🏡',
+      state.activeFilter === 'liked'     ? '💔' :
+      state.activeFilter === 'matched'   ? '🤝' :
+      state.activeFilter === 'noted'     ? '📝' :
+      state.activeFilter === 'new'       ? '🔍' :
+      state.activeFilter === 'dismissed' ? '📦' :
+      state.activeTagFilter              ? '🏷️' : '🏡',
       state.activeFilter === 'all' && !state.activeTagFilter
         ? 'Nog geen panden gevonden.<br>De dagelijkse scan loopt elke ochtend om 07:00.'
+        : state.activeFilter === 'dismissed'
+        ? 'Geen panden gemarkeerd als niet interessant.'
         : 'Geen panden in deze categorie.'
     ));
     return;
@@ -461,12 +505,13 @@ function renderProperties() {
 }
 
 function propertyCard(prop) {
-  const liked   = isLikedByMe(prop.id);
-  const matched = isMatched(prop.id);
-  const score   = prop.ai_analysis?.score;
-  const isNew   = isNewToday(prop.first_seen);
-  const ann     = getAnnotations(prop.id);
-  const hasNote = ann.notes.length > 0;
+  const liked      = isLikedByMe(prop.id);
+  const matched    = isMatched(prop.id);
+  const dismissed  = isDissmissedByMe(prop.id);
+  const score      = prop.ai_analysis?.score;
+  const isNew      = isNewToday(prop.first_seen);
+  const ann        = getAnnotations(prop.id);
+  const hasNote    = ann.notes.length > 0;
   const others  = matched
     ? Object.keys(state.likes[prop.id] || {}).filter(n => n !== state.user?.name)
     : [];
@@ -481,7 +526,12 @@ function propertyCard(prop) {
     ? `<span class="risk-chip risk-${riskLevel}">${riskLevel === 'high' ? '🔴 Risico' : '🟡 Risico'}</span>`
     : '';
 
-  const card = el('div', `property-card${matched ? ' matched' : liked ? ' liked' : ''}`);
+  let cardCls = 'property-card';
+  if (dismissed) cardCls += ' dismissed';
+  else if (matched) cardCls += ' matched';
+  else if (liked)   cardCls += ' liked';
+
+  const card = el('div', cardCls);
   card.innerHTML = `
     <div class="card-image">
       ${prop.images?.length
@@ -489,9 +539,10 @@ function propertyCard(prop) {
         : `<div class="card-image-placeholder"><span class="placeholder-icon">🏡</span><span>Geen foto</span></div>`}
       <div class="card-badges">
         <span class="card-badge badge-source">${esc(prop.source)}</span>
-        ${isNew   ? '<span class="card-badge badge-new">Nieuw</span>' : ''}
-        ${matched ? '<span class="card-badge badge-match">🎉 Match!</span>' : ''}
-        ${hasNote ? '<span class="card-badge badge-noted">📝</span>' : ''}
+        ${isNew      ? '<span class="card-badge badge-new">Nieuw</span>' : ''}
+        ${matched    ? '<span class="card-badge badge-match">🎉 Match!</span>' : ''}
+        ${hasNote    ? '<span class="card-badge badge-noted">📝</span>' : ''}
+        ${dismissed  ? '<span class="card-badge badge-dismissed">📦 Overige</span>' : ''}
       </div>
       ${riskChipHtml}
       ${score != null ? `<span class="score-badge ${scoreCls(score)}">⭐ ${score}/10</span>` : ''}
@@ -510,6 +561,9 @@ function propertyCard(prop) {
     </div>
     <div class="card-footer">
       <button class="btn-detail" onclick="showDetail('${esc(prop.id)}')">Meer info ▶</button>
+      <button class="btn-dismiss ${dismissed ? 'dismissed' : ''}" onclick="handleDismiss(event,'${esc(prop.id)}')" aria-label="${dismissed ? 'Terug naar Inbox' : 'Niet interessant'}">
+        ${dismissed ? '↩️' : '👎'}
+      </button>
       <button class="btn-like ${liked ? 'liked' : ''}" onclick="handleLike(event,'${esc(prop.id)}')" aria-label="Like">
         <span class="heart">${liked ? '❤️' : '🤍'}</span>
       </button>
@@ -593,7 +647,8 @@ function renderSettings() {
     <p class="settings-note">
       ${state.properties.length} panden geladen &nbsp;·&nbsp;
       ${Object.keys(state.likes).length} geliked &nbsp;·&nbsp;
-      ${getMatchedPropertyIds().length} matches<br>
+      ${getMatchedPropertyIds().length} matches &nbsp;·&nbsp;
+      ${state.properties.filter(p => isDissmissedByMe(p.id)).length} niet interessant<br>
       Data bijgewerkt door GitHub Actions elke ochtend om 07:00.
     </p>`;
 }
@@ -749,6 +804,10 @@ function showDetail(propertyId) {
       <a class="btn-visit" href="${esc(prop.source_url)}" target="_blank" rel="noopener">
         🔗 Bekijk advertentie
       </a>
+      <button class="btn-dismiss-large ${isDissmissedByMe(propertyId) ? 'dismissed' : ''}" id="modal-dismiss-btn"
+        onclick="handleDismiss(event,'${esc(prop.id)}',true)" aria-label="${isDissmissedByMe(propertyId) ? 'Terug naar Inbox' : 'Niet interessant'}">
+        ${isDissmissedByMe(propertyId) ? '↩️' : '👎'}
+      </button>
       <button class="btn-like-large ${liked ? 'liked' : ''}" id="modal-like-btn"
         onclick="handleLike(event,'${esc(prop.id)}',true)" aria-label="Like">
         ${liked ? '❤️' : '🤍'}
@@ -952,6 +1011,19 @@ function closeModal() {
   $$('.modal-overlay').forEach(m => m.remove());
 }
 
+// ── Dismiss handler ───────────────────────────────────────────────────────────
+async function handleDismiss(event, propertyId, fromModal = false) {
+  event.stopPropagation();
+  await toggleDismiss(propertyId);
+  // Update modal button if open
+  const modalBtn = $('#modal-dismiss-btn');
+  if (modalBtn) {
+    const dismissed = isDissmissedByMe(propertyId);
+    modalBtn.textContent = dismissed ? '↩️' : '👎';
+    modalBtn.classList.toggle('dismissed', dismissed);
+  }
+}
+
 // ── Like handler ──────────────────────────────────────────────────────────────
 async function handleLike(event, propertyId, fromModal = false) {
   event.stopPropagation();
@@ -1018,6 +1090,7 @@ window.setFilter              = setFilter;
 window.setTagFilter           = setTagFilter;
 window.showDetail             = showDetail;
 window.closeModal             = closeModal;
+window.handleDismiss            = handleDismiss;
 window.handleLike             = handleLike;
 window.submitSetup            = submitSetup;
 window.refreshData            = refreshData;
