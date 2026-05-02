@@ -1,0 +1,66 @@
+name: 🏡 Dagelijkse Huizenjacht
+
+on:
+  schedule:
+    # 07:00 Brussels time (CET = UTC+1 / CEST = UTC+2)
+    # Using 05:00 UTC to cover both winter (06:00 CET) and summer (07:00 CEST)
+    - cron: '0 5 * * *'
+  workflow_dispatch:   # Allow manual trigger from the Actions tab
+
+permissions:
+  contents: write      # Needed to commit docs/data/properties.json back to the repo
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          # Use a PAT so the commit triggers other workflows if needed
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Huizenjacht pipeline
+        env:
+          # Email notifications
+          SMTP_HOST:      ${{ vars.SMTP_HOST }}
+          SMTP_PORT:      ${{ vars.SMTP_PORT }}
+          SMTP_USERNAME:  ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD:  ${{ secrets.SMTP_PASSWORD }}
+          SMTP_FROM:      ${{ vars.SMTP_FROM }}
+          NOTIFICATION_EMAIL: ${{ vars.NOTIFICATION_EMAIL }}
+          # AI enrichment (optional — falls back to rule-based if not set)
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL:   ${{ vars.OPENAI_MODEL }}
+          # Search criteria (can be overridden per-repo via Variables)
+          MAX_PRICE:          ${{ vars.MAX_PRICE }}
+          MIN_BEDROOMS:       ${{ vars.MIN_BEDROOMS }}
+          MIN_LAND_AREA:      ${{ vars.MIN_LAND_AREA }}
+          SEARCH_POSTAL_CODES: ${{ vars.SEARCH_POSTAL_CODES }}
+          # Collaborative app — user names shown in the web app
+          USER1_NAME: ${{ vars.USER1_NAME }}
+          USER2_NAME: ${{ vars.USER2_NAME }}
+          # GitHub coordinates (auto-set by Actions runner)
+          GITHUB_OWNER: ${{ github.repository_owner }}
+          GITHUB_REPO:  ${{ github.event.repository.name }}
+          GITHUB_BRANCH: ${{ github.ref_name }}
+        run: python main.py --github-pages
+
+      - name: Commit updated property data
+        run: |
+          git config user.name  "Huizenjacht Bot 🏡"
+          git config user.email "huizenjacht-bot@users.noreply.github.com"
+          git add docs/data/
+          git diff --staged --quiet \
+            && echo "ℹ️  Geen nieuwe panden gevonden — niets te committen." \
+            || git commit -m "🏡 Panden bijgewerkt op $(date +'%Y-%m-%d %H:%M UTC')"
+          git push

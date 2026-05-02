@@ -1,0 +1,95 @@
+[
+  {
+    "id": "immoweb-99999",
+    "source": "immoweb",
+    "source_url": "https://www.immoweb.be/nl/zoekertje/99999",
+    "title": "Prachtige hoeve met weiland en stallen",
+    "description": "Unieke kans: authentieke hoeve op 1,2 ha met weiland, koeienstal, schuur en gastenverblijf. Ideaal voor gezin met dieren en B&B.",
+    "property_type": "farm",
+    "price": 485000,
+    "address": "Kapelstraat 12",
+    "postal_code": "9660",
+    "municipality": "Brakel",
+    "land_area": 12400,
+    "living_area": 290,
+    "bedrooms": 5,
+    "bathrooms": 2,
+    "images": [
+      "https://picsum.photos/seed/hoeve/800/500"
+    ],
+    "features": [
+      "stal",
+      "schuur",
+      "weiland",
+      "gastenverblijf"
+    ],
+    "first_seen": "2024-05-02T07:00:00Z",
+    "last_seen": "2024-05-02T07:00:00Z",
+    "government_data": {
+      "zoning": "Agrarisch gebied",
+      "agricultural_zone": true,
+      "animal_keeping_allowed": true,
+      "bnb_possible": true,
+      "flood_risk": null,
+      "heritage_protected": false,
+      "source_url": "https://www.geopunt.be/kaart"
+    },
+    "ai_analysis": {
+      "score": 8.5,
+      "summary": "Uitstekend perceel in agrarische zone. Groot genoeg voor koeien en B&B. Past perfect in jullie criteria.",
+      "pros": [
+        "Groot perceel (1,2 ha)",
+        "Agrarische zone — dieren toegelaten",
+        "Gastenverblijf aanwezig (B&B)",
+        "5 slaapkamers",
+        "Binnen budget"
+      ],
+      "cons": [
+        "Ligging aan doorgaande weg controleren"
+      ],
+      "recommendations": [
+        "RUP-attest opvragen bij gemeente Brakel",
+        "Vergunning B&B checken via omgevingsloket.be"
+      ]
+    }
+  },
+  {
+    "id": "zimmo-Z12345",
+    "source": "zimmo",
+    "source_url": "https://www.zimmo.be/nl/Z12345",
+    "title": "Landelijke woning met tuin en schuur",
+    "property_type": "house",
+    "price": 395000,
+    "municipality": "Ronse",
+    "postal_code": "9600",
+    "land_area": 6800,
+    "living_area": 180,
+    "bedrooms": 3,
+    "bathrooms": 1,
+    "images": [
+      "https://picsum.photos/seed/woning/800/500"
+    ],
+    "features": [
+      "schuur",
+      "tuin"
+    ],
+    "first_seen": "2024-05-02T07:00:00Z",
+    "last_seen": "2024-05-02T07:00:00Z",
+    "government_data": null,
+    "ai_analysis": {
+      "score": 6.0,
+      "summary": "Goede optie maar perceel net boven minimum. Geen overheidsdata beschikbaar.",
+      "pros": [
+        "Binnen budget",
+        "6.800 m² perceel"
+      ],
+      "cons": [
+        "Geen overheidsdata beschikbaar",
+        "Slechts 3 slaapkamers"
+      ],
+      "recommendations": [
+        "Controleer bestemmingszone via geopunt.be"
+      ]
+    }
+  }
+]
