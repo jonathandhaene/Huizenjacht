@@ -459,6 +459,45 @@ img { display: block; max-width: 100%; }
 .gov-item.negative .gov-value { color: var(--rose); }
 .gov-item.warning  .gov-value { color: var(--amber); }
 
+/* ── Risk section ───────────────────────────────────────────────────────────── */
+.risk-list { display: flex; flex-direction: column; gap: 8px; }
+.risk-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 10px 12px; border-radius: var(--r-sm);
+  border: 1px solid transparent;
+}
+.risk-item.risk-high   { background: #fff5f5; border-color: #f5c6cb; }
+.risk-item.risk-medium { background: #fffbf0; border-color: #fde8b4; }
+.risk-item.risk-low    { background: var(--sage-light); border-color: #c4deca; }
+.risk-item.risk-unknown { background: var(--stone-50); border-color: var(--stone-200); }
+
+.risk-icon { font-size: 1.15rem; line-height: 1; flex-shrink: 0; margin-top: 1px; }
+.risk-body { flex: 1; min-width: 0; }
+.risk-name {
+  font-size: .82rem; font-weight: 700; margin-bottom: 3px;
+  color: var(--stone-800);
+}
+.risk-item.risk-high   .risk-name { color: #b91c1c; }
+.risk-item.risk-medium .risk-name { color: #92400e; }
+.risk-item.risk-low    .risk-name { color: var(--sage-dark); }
+.risk-detail { font-size: .78rem; color: var(--stone-600); line-height: 1.45; }
+.risk-source {
+  display: inline-block; margin-top: 4px;
+  font-size: .72rem; color: var(--sage); text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Risk summary chip on property card image */
+.risk-chip {
+  position: absolute; bottom: 10px; left: 10px;
+  display: flex; align-items: center; gap: 4px;
+  padding: 4px 10px; border-radius: var(--r-full); font-size: .72rem; font-weight: 700;
+  backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+}
+.risk-chip.risk-high   { background: rgba(185,28,28,.85);  color: #fff; }
+.risk-chip.risk-medium { background: rgba(146,64,14,.80);  color: #fff; }
+.risk-chip.risk-low    { background: rgba(47,80,64,.75);   color: #fff; }
+
 /* ── Notes section ──────────────────────────────────────────────────────────── */
 .notes-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px; }
 .note-item {

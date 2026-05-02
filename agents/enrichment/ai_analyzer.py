@@ -94,13 +94,24 @@ class AIAnalyzerAgent:
         gov = prop.government_data
         gov_info = ""
         if gov:
+            risk_lines = ""
+            if gov.risks:
+                risk_lines = "\nRisico-overzicht:\n" + "\n".join(
+                    f"  [{r.level.upper()}] {r.name}: {r.detail}" for r in gov.risks
+                )
             gov_info = (
                 f"\nBestemmingszone: {gov.zoning or 'onbekend'}"
                 f"\nAgrarisch: {gov.agricultural_zone}"
                 f"\nDieren houden: {gov.animal_keeping_allowed}"
                 f"\nB&B mogelijk: {gov.bnb_possible}"
-                f"\nOverstromingsrisico: {gov.flood_risk or 'onbekend'}"
+                f"\nOverstromingsrisico: {gov.flood_risk or 'geen'}"
+                f"\nBodemverontreiniging: {gov.soil_contamination or 'geen'}"
+                f"\nErosierisico: {gov.erosion_risk or 'onbekend'}"
+                f"\nNatura 2000 (SBZ): {gov.natura_2000}"
+                f"\nVEN zone: {gov.ven_zone}"
+                f"\nWatergevoelig open ruimtegebied: {gov.signa_watersensitive}"
                 f"\nErfgoedbescherming: {gov.heritage_protected}"
+                f"{risk_lines}"
             )
 
         return (
@@ -188,6 +199,26 @@ class AIAnalyzerAgent:
             if gov.flood_risk:
                 cons.append(f"Overstromingsrisico: {gov.flood_risk}")
                 score -= 0.5
+            if gov.soil_contamination:
+                cons.append(f"Bodemverontreiniging geregistreerd: {gov.soil_contamination}")
+                score -= 1
+                recommendations.append("Vraag een bodemattest op bij OVAM vóór aankoop")
+            if gov.ven_zone:
+                cons.append("Perceel in VEN — strengste natuurbescherming, nauwelijks bouwmogelijkheden")
+                score -= 1.5
+                recommendations.append("Raadpleeg Agentschap Natuur & Bos over bouw- en gebruiksmogelijkheden")
+            if gov.natura_2000:
+                cons.append("Natura 2000 SBZ — bouwaanvragen vereisen passende beoordeling")
+                score -= 0.5
+                recommendations.append("Controleer impact op SBZ via www.natura2000.be")
+            if gov.signa_watersensitive:
+                cons.append("Watergevoelig open ruimtegebied (VMM) — verharding en constructies sterk beperkt")
+                score -= 0.5
+            if gov.erosion_risk:
+                lower = gov.erosion_risk.lower()
+                if "zeer hoog" in lower or "hoog" in lower:
+                    cons.append(f"Erosierisico {gov.erosion_risk} — bodembeschermende maatregelen vereist")
+                    score -= 0.5
             if gov.heritage_protected:
                 cons.append("Erfgoedbescherming — mogelijke bouwbeperkingen")
                 score -= 0.5

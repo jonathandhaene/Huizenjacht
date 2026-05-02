@@ -18,9 +18,26 @@ class PropertyType(str, Enum):
     OTHER = "other"
 
 
-class GovernmentData(BaseModel):
-    """Planning & permit information fetched from government sources."""
+class RiskLevel(str, Enum):
+    """Traffic-light severity for a single risk item."""
+    LOW = "low"
+    MEDIUM = "medium"
+    HIGH = "high"
+    UNKNOWN = "unknown"
 
+
+class RiskItem(BaseModel):
+    """One structured risk associated with a property."""
+    name: str = Field(..., description="Short name of the risk (Dutch)")
+    level: RiskLevel = Field(..., description="Severity of the risk")
+    detail: str = Field(..., description="One-line Dutch explanation")
+    source_url: Optional[str] = Field(None, description="Link to the authoritative source")
+
+
+class GovernmentData(BaseModel):
+    """Planning, permit and risk information fetched from government sources."""
+
+    # ── Zoning & permits ──────────────────────────────────────────────────────
     zoning: Optional[str] = Field(None, description="Bestemmingszone (e.g. agrarisch gebied)")
     agricultural_zone: Optional[bool] = Field(None, description="Is the plot in an agricultural zone?")
     nature_zone: Optional[bool] = Field(None, description="Is the plot in a nature protection zone?")
@@ -33,8 +50,39 @@ class GovernmentData(BaseModel):
     bnb_possible: Optional[bool] = Field(
         None, description="Is operating a B&B likely feasible on this parcel?"
     )
-    flood_risk: Optional[str] = Field(None, description="Flood risk classification")
+
+    # ── Standard risks (already in original model) ────────────────────────────
+    flood_risk: Optional[str] = Field(None, description="Flood risk classification (VMM)")
     heritage_protected: Optional[bool] = Field(None, description="Monument / heritage protection")
+
+    # ── Additional risk fields ─────────────────────────────────────────────────
+    soil_contamination: Optional[str] = Field(
+        None,
+        description=(
+            "OVAM soil-contamination status: None = clean / investigatiegebied / "
+            "saneringsgebied / historisch"
+        ),
+    )
+    erosion_risk: Optional[str] = Field(
+        None, description="AGIV erosion risk class (e.g. 'Zeer hoog', 'Hoog', 'Matig')"
+    )
+    natura_2000: Optional[bool] = Field(
+        None, description="Within a Natura 2000 Special Protection Zone (SBZ)"
+    )
+    ven_zone: Optional[bool] = Field(
+        None, description="Within the Flemish Ecological Network (VEN) — very strict land-use rules"
+    )
+    signa_watersensitive: Optional[bool] = Field(
+        None, description="Watertoets: water-sensitive open space (VMM Signa)"
+    )
+
+    # ── Compiled risk summary (filled in by GovernmentEnrichmentAgent) ─────────
+    risks: list[RiskItem] = Field(
+        default_factory=list,
+        description="Structured risk items derived from all government data",
+    )
+
+    # ── Meta ──────────────────────────────────────────────────────────────────
     source_url: Optional[str] = Field(None, description="URL where government data was retrieved")
     raw_notes: Optional[str] = Field(None, description="Free-text notes from government sources")
 

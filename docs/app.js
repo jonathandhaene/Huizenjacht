@@ -475,6 +475,12 @@ function propertyCard(prop) {
     ? `<div class="card-tags">${ann.tags.map(t => `<span class="tag-chip">${esc(t)}</span>`).join('')}</div>`
     : '';
 
+  // Risk chip — only show if there's at least one medium/high risk
+  const riskLevel = worstRiskLevel(prop.government_data);
+  const riskChipHtml = (riskLevel === 'high' || riskLevel === 'medium')
+    ? `<span class="risk-chip risk-${riskLevel}">${riskLevel === 'high' ? '🔴 Risico' : '🟡 Risico'}</span>`
+    : '';
+
   const card = el('div', `property-card${matched ? ' matched' : liked ? ' liked' : ''}`);
   card.innerHTML = `
     <div class="card-image">
@@ -487,6 +493,7 @@ function propertyCard(prop) {
         ${matched ? '<span class="card-badge badge-match">🎉 Match!</span>' : ''}
         ${hasNote ? '<span class="card-badge badge-noted">📝</span>' : ''}
       </div>
+      ${riskChipHtml}
       ${score != null ? `<span class="score-badge ${scoreCls(score)}">⭐ ${score}/10</span>` : ''}
     </div>
     <div class="card-body">
@@ -674,6 +681,26 @@ function showDetail(propertyId) {
         ${renderTagsSection(propertyId)}
       </div>
 
+      <!-- Risks -->
+      ${gov ? `
+      <div class="detail-section">
+        <h3>⚠️ Risico's</h3>
+        ${renderRisksHtml(gov)}
+        ${gov.source_url ? `<div style="margin-top:12px"><a href="${esc(gov.source_url)}" target="_blank" rel="noopener" class="risk-source">📍 Bekijk op Geopunt</a></div>` : ''}
+      </div>` : ''}
+
+      <!-- Planning & vergunningen -->
+      ${gov ? `
+      <div class="detail-section">
+        <h3>Planning & vergunningen</h3>
+        <div class="gov-grid">
+          ${gov.zoning               != null ? govItem('Bestemmingszone', gov.zoning, null) : ''}
+          ${gov.agricultural_zone    != null ? govItem('Agrarisch', gov.agricultural_zone ? '✅ Ja' : '❌ Nee', gov.agricultural_zone ? 'positive' : null) : ''}
+          ${gov.animal_keeping_allowed != null ? govItem('Dieren houden', gov.animal_keeping_allowed ? '✅ Toegelaten' : '❌ Niet toegelaten', gov.animal_keeping_allowed ? 'positive' : 'negative') : ''}
+          ${gov.bnb_possible         != null ? govItem('B&B mogelijk', gov.bnb_possible ? '✅ Waarschijnlijk' : '⚠️ Onduidelijk', gov.bnb_possible ? 'positive' : 'warning') : ''}
+        </div>
+      </div>` : ''}
+
       <!-- AI Analysis -->
       ${score != null ? `
       <div class="detail-section">
@@ -697,21 +724,6 @@ function showDetail(propertyId) {
         <div class="recommendations">
           <ul>${prop.ai_analysis.recommendations.map(r => `<li>${esc(r)}</li>`).join('')}</ul>
         </div>` : ''}
-      </div>` : ''}
-
-      <!-- Government data -->
-      ${gov ? `
-      <div class="detail-section">
-        <h3>Overheidsgegevens</h3>
-        <div class="gov-grid">
-          ${gov.zoning               != null ? govItem('Bestemmingszone', gov.zoning, null) : ''}
-          ${gov.agricultural_zone    != null ? govItem('Agrarisch', gov.agricultural_zone ? '✅ Ja' : '❌ Nee', gov.agricultural_zone ? 'positive' : null) : ''}
-          ${gov.animal_keeping_allowed != null ? govItem('Dieren houden', gov.animal_keeping_allowed ? '✅ Toegelaten' : '❌ Niet toegelaten', gov.animal_keeping_allowed ? 'positive' : 'negative') : ''}
-          ${gov.bnb_possible         != null ? govItem('B&B mogelijk', gov.bnb_possible ? '✅ Waarschijnlijk' : '⚠️ Onduidelijk', gov.bnb_possible ? 'positive' : 'warning') : ''}
-          ${gov.flood_risk           != null ? govItem('Overstromingsrisico', gov.flood_risk || 'Laag', gov.flood_risk ? 'warning' : 'positive') : ''}
-          ${gov.heritage_protected   != null ? govItem('Erfgoed', gov.heritage_protected ? '⚠️ Beschermd' : '✅ Vrij', gov.heritage_protected ? 'warning' : 'positive') : ''}
-        </div>
-        ${gov.source_url ? `<div style="margin-top:10px"><a href="${esc(gov.source_url)}" target="_blank" rel="noopener" style="color:var(--sage);font-size:.82rem;text-decoration:underline">📍 Bekijk op Geopunt</a></div>` : ''}
       </div>` : ''}
 
       <!-- Description -->
@@ -748,6 +760,74 @@ function showDetail(propertyId) {
 
   // Store current propertyId on the modal for re-render
   sheet.dataset.propertyId = propertyId;
+}
+
+// ── Risks section HTML ────────────────────────────────────────────────────────
+/**
+ * Render a risk list from government_data.risks (array of RiskItem).
+ * Falls back to a simple summary from the legacy flat fields when the risks
+ * array is absent (older data in properties.json).
+ */
+function renderRisksHtml(gov) {
+  const risks = gov.risks || [];
+
+  // If the backend has already compiled a structured list, use it.
+  if (risks.length > 0) {
+    const items = risks.map(r => {
+      const icon = r.level === 'high' ? '🔴' : r.level === 'medium' ? '🟡' : '🟢';
+      const sourceLink = r.source_url
+        ? `<a href="${esc(r.source_url)}" target="_blank" rel="noopener" class="risk-source">Meer info →</a>`
+        : '';
+      return `
+        <div class="risk-item risk-${esc(r.level)}">
+          <span class="risk-icon">${icon}</span>
+          <div class="risk-body">
+            <div class="risk-name">${esc(r.name)}</div>
+            <div class="risk-detail">${esc(r.detail)}</div>
+            ${sourceLink}
+          </div>
+        </div>`;
+    }).join('');
+    return `<div class="risk-list">${items}</div>`;
+  }
+
+  // Legacy fallback: build a minimal list from the flat fields.
+  const legacyItems = [];
+  if (gov.flood_risk) {
+    legacyItems.push({ icon: '🔴', cls: 'risk-medium', name: 'Overstromingsrisico', detail: gov.flood_risk,
+      url: 'https://www.waterinfo.be' });
+  } else {
+    legacyItems.push({ icon: '🟢', cls: 'risk-low', name: 'Overstromingsrisico', detail: 'Geen risico vastgesteld',
+      url: 'https://www.waterinfo.be' });
+  }
+  if (gov.heritage_protected) {
+    legacyItems.push({ icon: '🟡', cls: 'risk-medium', name: 'Erfgoedbescherming',
+      detail: 'Verbouwingen vereisen toestemming Onroerend Erfgoed',
+      url: 'https://inventaris.onroerenderfgoed.be' });
+  }
+  if (gov.nature_zone) {
+    legacyItems.push({ icon: '🟡', cls: 'risk-medium', name: 'Natuur- of bosgebied',
+      detail: 'Constructies en functiewijzigingen sterk beperkt', url: 'https://omgevingsloket.be' });
+  }
+  if (legacyItems.length === 0) return '<p style="font-size:.84rem;color:var(--stone-400)">Geen risico-informatie beschikbaar voor dit pand.</p>';
+  return `<div class="risk-list">${legacyItems.map(r => `
+    <div class="risk-item ${esc(r.cls)}">
+      <span class="risk-icon">${r.icon}</span>
+      <div class="risk-body">
+        <div class="risk-name">${esc(r.name)}</div>
+        <div class="risk-detail">${esc(r.detail)}</div>
+        <a href="${esc(r.url)}" target="_blank" rel="noopener" class="risk-source">Meer info →</a>
+      </div>
+    </div>`).join('')}</div>`;
+}
+
+/** Return the worst risk level present in the risks array. */
+function worstRiskLevel(gov) {
+  const risks = gov?.risks || [];
+  if (risks.some(r => r.level === 'high'))   return 'high';
+  if (risks.some(r => r.level === 'medium')) return 'medium';
+  if (gov?.flood_risk || gov?.heritage_protected) return 'medium';
+  return 'low';
 }
 
 // ── Tags section HTML ─────────────────────────────────────────────────────────
