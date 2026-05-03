@@ -4,9 +4,9 @@ Application configuration loaded from environment variables / .env file.
 from __future__ import annotations
 
 from pathlib import Path
-from typing import List, Optional
+from typing import Any, List, Optional
 
-from pydantic import Field, field_validator
+from pydantic import Field, field_validator, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -79,6 +79,17 @@ class Settings(BaseSettings):
         p = Path(self.cache_dir)
         p.mkdir(parents=True, exist_ok=True)
         return p
+
+    @model_validator(mode="before")
+    @classmethod
+    def _coerce_empty_int_fields(cls, values: Any) -> Any:
+        """Drop empty-string env-var values for integer fields so pydantic uses field defaults."""
+        int_fields = {"max_price", "min_bedrooms", "min_land_area", "smtp_port"}
+        if isinstance(values, dict):
+            for field in int_fields:
+                if values.get(field) == "":
+                    del values[field]
+        return values
 
     @field_validator("log_level")
     @classmethod
