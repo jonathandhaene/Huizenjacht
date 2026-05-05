@@ -18,9 +18,7 @@ warning and returns an empty list — it never crashes the pipeline.
 from __future__ import annotations
 
 import logging
-import re
 from typing import List
-from urllib.parse import quote
 
 from bs4 import BeautifulSoup
 
@@ -163,11 +161,3 @@ class SocialMediaScraper(BaseScraper):
         """Return True if the text mentions at least one relevant keyword."""
         lower = text.lower()
         return any(kw.lower() in lower for kw in _KEYWORDS)
-
-    @staticmethod
-    def _extract_price(text: str) -> float | None:
-        """Try to parse a price like '€ 450.000' or '450000 €' from text.
-
-        Delegates to the shared NLP normalizer for consistent behaviour.
-        """
-        return extract_price(text)

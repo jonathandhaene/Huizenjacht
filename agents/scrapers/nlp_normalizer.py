@@ -249,8 +249,8 @@ def _significant_title_words(title: str) -> frozenset[str]:
     """Extract meaningful words from a title (strips stop-words and single chars)."""
     stop = {
         "te", "koop", "à", "vendre", "for", "sale", "woning", "huis",
-        "maison", "house", "met", "avec", "with", "in", "à", "de", "het",
-        "een", "de", "–", "-", "&",
+        "maison", "house", "met", "avec", "with", "in", "de", "het",
+        "een", "–", "-", "&",
     }
     words = _normalize_for_comparison(title).split()
     return frozenset(w for w in words if len(w) > 2 and w not in stop)

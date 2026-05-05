@@ -179,11 +179,17 @@ def test_deduplicate_accepts_1pct_price_difference():
 
 
 def test_deduplicate_preserves_order():
-    """The first occurrence is kept, not the last."""
+    """The first occurrence is kept, not the last.
+
+    All properties share the same postal code, price and address, but have
+    different sources — only the first (p0/source0) should survive since each
+    subsequent property is a cross-source duplicate of it.
+    """
     props = [
         _make_prop(f"p{i}", f"source{i}") for i in range(5)
     ]
-    # All have the same postal + price + address — only the first should survive.
+    # All have the same postal + price + address, different sources —
+    # only the first should survive.
     result = deduplicate_properties(props)
     assert result[0].id == "p0"
 

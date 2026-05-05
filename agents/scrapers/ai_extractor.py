@@ -257,10 +257,10 @@ class AIPropertyExtractor:
 def _strip_html_noise(html: str) -> str:
     """Remove ``<script>``, ``<style>`` blocks and all remaining HTML tags."""
     html = re.sub(
-        r"<script[^>]*>.*?</script>", " ", html, flags=re.DOTALL | re.IGNORECASE
+        r"<script[^>]*>.*?</\s*script\s*>", " ", html, flags=re.DOTALL | re.IGNORECASE
     )
     html = re.sub(
-        r"<style[^>]*>.*?</style>", " ", html, flags=re.DOTALL | re.IGNORECASE
+        r"<style[^>]*>.*?</\s*style\s*>", " ", html, flags=re.DOTALL | re.IGNORECASE
     )
     html = re.sub(r"<[^>]+>", " ", html)
     return re.sub(r"\s+", " ", html).strip()
