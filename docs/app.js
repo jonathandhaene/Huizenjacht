@@ -997,8 +997,8 @@ function showDetail(propertyId) {
         <div class="detail-meta">📍 ${esc([prop.address, prop.postal_code, prop.municipality].filter(Boolean).join(', ') || 'Onbekende locatie')}</div>
         <div class="detail-stats">
           ${statBox(prop.bedrooms    ? `${prop.bedrooms}` : '—', 'Slaapkamers')}
-          ${statBox(prop.living_area ? fmtArea(prop.living_area) : '—', 'Bewoonbaar')}
           ${statBox(prop.land_area   ? fmtArea(prop.land_area)   : '—', 'Perceel')}
+          ${statBox(prop.living_area ? fmtArea(prop.living_area) : '—', 'Bewoonbaar')}
         </div>
         ${prop.features?.length ? `<div style="margin-top:10px;font-size:.82rem;color:var(--stone-600)">${prop.features.slice(0,8).map(f => `<span style="display:inline-block;background:var(--stone-100);border-radius:4px;padding:2px 8px;margin:2px">${esc(f)}</span>`).join('')}</div>` : ''}
       </div>
