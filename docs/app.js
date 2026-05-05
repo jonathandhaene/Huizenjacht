@@ -21,6 +21,7 @@ const CONFIG = {
   propertiesPath:  'docs/data/properties.json',
   likesPath:       'docs/data/likes.json',
   annotationsPath: 'docs/data/annotations.json',
+  trashPath:       'docs/data/trash.json',
   basePath: '/Huizenjacht',
 };
 
@@ -38,10 +39,17 @@ const state = {
   likesSha:          null,
   annotations:       {},     // includes _meta.tags + per-property { notes, tags }
   annotationsSha:    null,
+  trash:             [],     // array of { property_id, image_paths, deleted_at, purge_after }
+  trashSha:          null,
   activeTab:         'properties',
   activeFilter:      'all',
   activeTagFilter:   null,   // tag string or null
   loading:           false,
+  // Lightbox
+  _lbImages:         [],
+  _lbIndex:          0,
+  // Swipe state
+  _swipeStart:       null,
 };
 
 // ── GitHub API helpers ────────────────────────────────────────────────────────
@@ -192,6 +200,16 @@ async function loadData() {
     state.annotationsSha = null;
   }
 
+  // Load trash.json (read-only fetch — no auth required for public repo)
+  try {
+    const file = await GitHub.getFile(CONFIG.trashPath, state.user.token);
+    state.trash    = GitHub.decode(file);
+    state.trashSha = file.sha;
+  } catch {
+    state.trash    = [];
+    state.trashSha = null;
+  }
+
   // Ensure _meta exists
   if (!state.annotations._meta) state.annotations._meta = { tags: [...DEFAULT_TAGS] };
   if (!state.annotations._meta.tags) state.annotations._meta.tags = [...DEFAULT_TAGS];
@@ -287,6 +305,153 @@ async function persistAnnotations(commitMsg) {
   } catch (err) {
     console.error('Annotations persist failed:', err);
     showToast('⚠️ Kon annotatie niet opslaan');
+  }
+}
+
+// ── Trash helpers ─────────────────────────────────────────────────────────────
+async function persistTrash(commitMsg) {
+  if (!state.user?.token) return;
+  try {
+    state.trashSha = await GitHub.updateFile(
+      CONFIG.trashPath,
+      state.trash,
+      state.trashSha,
+      commitMsg || `🗑️ ${state.user.name} updated trash`,
+      state.user.token,
+    );
+  } catch (err) {
+    console.error('Trash persist failed:', err);
+    showToast('⚠️ Kon prullenbak niet opslaan');
+  }
+}
+
+/** Return all image paths currently in trash for a given property. */
+function getTrashedPaths(propertyId) {
+  const paths = new Set();
+  state.trash
+    .filter(e => e.property_id === propertyId)
+    .forEach(e => (e.image_paths || []).forEach(p => paths.add(p)));
+  return paths;
+}
+
+/** Return true if the given property has any trashed images. */
+function hasTrash(propertyId) {
+  return state.trash.some(e => e.property_id === propertyId && (e.image_paths || []).length > 0);
+}
+
+/**
+ * Resolve the display images for a property.
+ * Uses locally cached paths (images_local) when available, falling back to
+ * remote URLs (images).  Filters out any paths currently in the trash.
+ */
+function getDisplayImages(prop) {
+  const trashedPaths = getTrashedPaths(prop.id);
+
+  // Build list: prefer local (served from GitHub Pages), fall back to remote
+  let candidates = [];
+  if (prop.images_local && prop.images_local.length) {
+    candidates = prop.images_local.map(p => `${CONFIG.basePath}/${p}`);
+  } else {
+    candidates = prop.images || [];
+  }
+
+  // Filter out trashed images.  For local images the "key" is the relative
+  // path portion (everything after basePath + '/').
+  return candidates.filter(url => {
+    const key = url.startsWith(CONFIG.basePath + '/') ? url.slice(CONFIG.basePath.length + 1) : url;
+    return !trashedPaths.has(key);
+  });
+}
+
+/** Add images for a property to the trash (soft-delete). */
+async function trashPropertyImages(propertyId) {
+  const prop = state.properties.find(p => p.id === propertyId);
+  if (!prop) return;
+
+  const allPaths = prop.images_local && prop.images_local.length
+    ? prop.images_local
+    : prop.images || [];
+
+  if (!allPaths.length) { showToast('Geen afbeeldingen om te verplaatsen'); return; }
+
+  const alreadyTrashed = getTrashedPaths(propertyId);
+  const newPaths = allPaths.filter(p => !alreadyTrashed.has(p));
+  if (!newPaths.length) { showToast('Afbeeldingen staan al in de prullenbak'); return; }
+
+  state.trash.push({
+    property_id: propertyId,
+    image_paths: newPaths,
+    deleted_at:  new Date().toISOString(),
+    purge_after: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toISOString(),
+  });
+
+  renderCurrentTab();
+  showToast('🗑️ Afbeeldingen naar prullenbak');
+
+  if (state.user?.token) {
+    await persistTrash(`🗑️ ${state.user.name} trashed images for ${propertyId}`);
+  }
+}
+
+/** Remove a property's images from the trash (restore). */
+async function restorePropertyImages(propertyId) {
+  const before = state.trash.length;
+  state.trash = state.trash.filter(e => e.property_id !== propertyId);
+  if (state.trash.length === before) { showToast('Niets te herstellen'); return; }
+
+  renderCurrentTab();
+  showToast('♻️ Afbeeldingen hersteld');
+
+  if (state.user?.token) {
+    await persistTrash(`♻️ ${state.user.name} restored images for ${propertyId}`);
+  }
+}
+
+/** Mark a property's trashed images for immediate purge (empty trash). */
+async function emptyPropertyTrash(propertyId) {
+  const now = new Date().toISOString();
+  let changed = false;
+  state.trash = state.trash.map(e => {
+    if (e.property_id === propertyId) {
+      changed = true;
+      return { ...e, purge_after: now };
+    }
+    return e;
+  });
+  state.trash = state.trash.filter(e => e.property_id !== propertyId);
+
+  renderCurrentTab();
+  showToast('🗑️ Prullenbak geleegd');
+
+  if (changed && state.user?.token) {
+    await persistTrash(`🗑️ ${state.user.name} emptied trash for ${propertyId}`);
+  }
+}
+
+/** Empty trash for a list of property IDs. */
+async function emptyTrashForSelected(propertyIds) {
+  const ids = new Set(propertyIds);
+  const before = state.trash.length;
+  state.trash = state.trash.filter(e => !ids.has(e.property_id));
+  if (state.trash.length === before) { showToast('Niets te verwijderen'); return; }
+
+  renderCurrentTab();
+  showToast('🗑️ Prullenbak geleegd voor selectie');
+
+  if (state.user?.token) {
+    await persistTrash(`🗑️ ${state.user.name} emptied trash for ${propertyIds.length} properties`);
+  }
+}
+
+/** Empty all trash entries. */
+async function emptyAllTrash() {
+  if (!state.trash.length) { showToast('Prullenbak is al leeg'); return; }
+  if (!confirm('Alle afbeeldingen in de prullenbak permanent verwijderen?')) return;
+  state.trash = [];
+  renderCurrentTab();
+  showToast('🗑️ Volledige prullenbak geleegd');
+  if (state.user?.token) {
+    await persistTrash(`🗑️ ${state.user.name} emptied all trash`);
   }
 }
 
@@ -466,6 +631,7 @@ function filteredProperties() {
       case 'liked':   props = props.filter(p => isLikedByMe(p.id));  break;
       case 'matched': props = props.filter(p => isMatched(p.id));     break;
       case 'noted':   props = props.filter(p => getAnnotations(p.id).notes.length > 0); break;
+      case 'trashed': props = props.filter(p => hasTrash(p.id)); break;
       case 'new': {
         const today = new Date(); today.setHours(0,0,0,0);
         props = props.filter(p => p.first_seen && new Date(p.first_seen) >= today);
@@ -490,11 +656,14 @@ function renderProperties() {
       state.activeFilter === 'noted'     ? '📝' :
       state.activeFilter === 'new'       ? '🔍' :
       state.activeFilter === 'dismissed' ? '📦' :
+      state.activeFilter === 'trashed'   ? '🗑️' :
       state.activeTagFilter              ? '🏷️' : '🏡',
       state.activeFilter === 'all' && !state.activeTagFilter
         ? 'Nog geen panden gevonden.<br>De dagelijkse scan loopt elke ochtend om 07:00.'
         : state.activeFilter === 'dismissed'
         ? 'Geen panden gemarkeerd als niet interessant.'
+        : state.activeFilter === 'trashed'
+        ? 'Prullenbak is leeg — geen afbeeldingen gepland voor verwijdering.'
         : 'Geen panden in deze categorie.'
     ));
     return;
@@ -512,6 +681,7 @@ function propertyCard(prop) {
   const isNew      = isNewToday(prop.first_seen);
   const ann        = getAnnotations(prop.id);
   const hasNote    = ann.notes.length > 0;
+  const inTrash    = hasTrash(prop.id);
   const others  = matched
     ? Object.keys(state.likes[prop.id] || {}).filter(n => n !== state.user?.name)
     : [];
@@ -530,19 +700,31 @@ function propertyCard(prop) {
   if (dismissed) cardCls += ' dismissed';
   else if (matched) cardCls += ' matched';
   else if (liked)   cardCls += ' liked';
+  if (inTrash) cardCls += ' has-trash';
+
+  const displayImages = getDisplayImages(prop);
+  const firstImage = displayImages[0];
+  const imageCount = displayImages.length;
 
   const card = el('div', cardCls);
+  card.dataset.id = prop.id;
   card.innerHTML = `
+    <div class="swipe-hint swipe-hint-left" aria-hidden="true"><span>👎</span></div>
+    <div class="swipe-hint swipe-hint-right" aria-hidden="true"><span>❤️</span></div>
     <div class="card-image">
-      ${prop.images?.length
-        ? `<img src="${esc(prop.images[0])}" alt="${esc(prop.title)}" loading="lazy">`
+      ${firstImage
+        ? `<img src="${esc(firstImage)}" alt="${esc(prop.title)}" loading="lazy"
+             onclick="openLightbox(${esc(JSON.stringify(displayImages))},0)"
+             style="cursor:zoom-in">`
         : `<div class="card-image-placeholder"><span class="placeholder-icon">🏡</span><span>Geen foto</span></div>`}
+      ${imageCount > 1 ? `<span class="img-count-badge" aria-label="${imageCount} foto's">${imageCount} 📷</span>` : ''}
       <div class="card-badges">
         <span class="card-badge badge-source">${esc(prop.source)}</span>
         ${isNew      ? '<span class="card-badge badge-new">Nieuw</span>' : ''}
         ${matched    ? '<span class="card-badge badge-match">🎉 Match!</span>' : ''}
         ${hasNote    ? '<span class="card-badge badge-noted">📝</span>' : ''}
         ${dismissed  ? '<span class="card-badge badge-dismissed">📦 Overige</span>' : ''}
+        ${inTrash    ? '<span class="card-badge badge-trashed">🗑️</span>' : ''}
       </div>
       ${riskChipHtml}
       ${score != null ? `<span class="score-badge ${scoreCls(score)}">⭐ ${score}/10</span>` : ''}
@@ -561,6 +743,10 @@ function propertyCard(prop) {
     </div>
     <div class="card-footer">
       <button class="btn-detail" onclick="showDetail('${esc(prop.id)}')">Meer info ▶</button>
+      <button class="btn-trash ${inTrash ? 'trashed' : ''}" onclick="handleTrash(event,'${esc(prop.id)}')"
+        aria-label="${inTrash ? 'Herstel afbeeldingen' : 'Afbeeldingen naar prullenbak'}">
+        ${inTrash ? '♻️' : '🗑️'}
+      </button>
       <button class="btn-dismiss ${dismissed ? 'dismissed' : ''}" onclick="handleDismiss(event,'${esc(prop.id)}')" aria-label="${dismissed ? 'Terug naar Inbox' : 'Niet interessant'}">
         ${dismissed ? '↩️' : '👎'}
       </button>
@@ -568,6 +754,10 @@ function propertyCard(prop) {
         <span class="heart">${liked ? '❤️' : '🤍'}</span>
       </button>
     </div>`;
+
+  // Attach swipe gesture handlers
+  _attachSwipe(card, prop.id);
+
   return card;
 }
 
@@ -651,6 +841,84 @@ function renderSettings() {
       ${state.properties.filter(p => isDismissedByMe(p.id)).length} niet interessant<br>
       Data bijgewerkt door GitHub Actions elke ochtend om 07:00.
     </p>`;
+
+  // ── Trash management section ──────────────────────────────────────────────
+  container.innerHTML += `
+    <p class="settings-section-title" style="margin-top:24px">🗑️ Prullenbak beheer</p>
+    <p class="settings-note">
+      Afbeeldingen in de prullenbak worden na 14 dagen automatisch verwijderd.
+      Je kunt ze eerder verwijderen of herstellen hieronder.
+    </p>
+    ${renderTrashManagementSection()}
+  `;
+}
+
+function renderTrashManagementSection() {
+  const propsWithTrash = state.properties.filter(p => hasTrash(p.id));
+
+  if (!propsWithTrash.length) {
+    return `<p style="font-size:.84rem;color:var(--stone-400);font-style:italic;padding:8px 4px">
+      Prullenbak is leeg.
+    </p>`;
+  }
+
+  const listItems = propsWithTrash.map(p => {
+    const count = getTrashedPaths(p.id).size;
+    return `
+      <div class="trash-manage-item" data-prop-id="${esc(p.id)}">
+        <label class="trash-select-label">
+          <input type="checkbox" class="trash-select-cb" value="${esc(p.id)}"
+            onchange="updateTrashSelection()" aria-label="Selecteer ${esc(p.title)}">
+          <span class="trash-item-title">${esc(p.title)}</span>
+          <span class="trash-item-count">${count} 📷</span>
+        </label>
+        <div class="trash-item-actions">
+          <button class="btn-trash-inline btn-restore-inline"
+            onclick="handleRestoreFromSettings('${esc(p.id)}')">♻️ Herstel</button>
+          <button class="btn-trash-inline btn-empty-inline"
+            onclick="handleEmptyFromSettings('${esc(p.id)}')">🗑️ Leeg</button>
+        </div>
+      </div>`;
+  }).join('');
+
+  return `
+    <div class="trash-manage-list">${listItems}</div>
+    <div class="trash-bulk-actions" id="trash-bulk-actions" style="display:none">
+      <button class="btn-trash-action btn-empty-selected" onclick="handleEmptySelected()">
+        🗑️ Leeg geselecteerde
+      </button>
+    </div>
+    <button class="btn-trash-action btn-empty-all" onclick="handleEmptyAll()" style="margin-top:10px">
+      🗑️ Alles verwijderen
+    </button>`;
+}
+
+function updateTrashSelection() {
+  const anyChecked = $$('.trash-select-cb:checked').length > 0;
+  const bulk = $('#trash-bulk-actions');
+  if (bulk) bulk.style.display = anyChecked ? 'block' : 'none';
+}
+
+async function handleRestoreFromSettings(propertyId) {
+  await restorePropertyImages(propertyId);
+  renderSettings();
+}
+
+async function handleEmptyFromSettings(propertyId) {
+  await emptyPropertyTrash(propertyId);
+  renderSettings();
+}
+
+async function handleEmptySelected() {
+  const ids = $$('.trash-select-cb:checked').map(cb => cb.value);
+  if (!ids.length) return;
+  await emptyTrashForSelected(ids);
+  renderSettings();
+}
+
+async function handleEmptyAll() {
+  await emptyAllTrash();
+  renderSettings();
 }
 
 function saveSettings() {
@@ -702,6 +970,8 @@ function showDetail(propertyId) {
   const score = prop.ai_analysis?.score;
   const gov   = prop.government_data;
   const ann   = getAnnotations(propertyId);
+  const displayImages = getDisplayImages(prop);
+  const inTrash = hasTrash(propertyId);
 
   const overlay = el('div', 'modal-overlay');
   overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
@@ -714,8 +984,11 @@ function showDetail(propertyId) {
       <button class="btn-close" onclick="closeModal()">✕</button>
     </div>
     <div class="modal-body">
-      ${prop.images?.length
-        ? `<div class="gallery">${prop.images.map(u => `<img src="${esc(u)}" alt="" loading="lazy">`).join('')}</div>`
+      ${displayImages.length
+        ? `<div class="gallery">${displayImages.map((u,i) =>
+            `<img src="${esc(u)}" alt="" loading="lazy" style="cursor:zoom-in"
+               onclick="openLightbox(${esc(JSON.stringify(displayImages))},${i})">`
+          ).join('')}</div>`
         : ''}
 
       <!-- Price & location -->
@@ -787,6 +1060,12 @@ function showDetail(propertyId) {
         <h3>Beschrijving</h3>
         <p style="font-size:.88rem;color:var(--stone-600);line-height:1.6">${esc(prop.description.substring(0,600))}${prop.description.length > 600 ? '…' : ''}</p>
       </div>` : ''}
+
+      <!-- Image trash management -->
+      <div class="detail-section" id="modal-trash-section">
+        <h3>🗑️ Afbeeldingen prullenbak</h3>
+        ${renderTrashSection(propertyId)}
+      </div>
 
       <!-- Notes -->
       <div class="detail-section" id="modal-notes-section">
@@ -1011,6 +1290,193 @@ function closeModal() {
   $$('.modal-overlay').forEach(m => m.remove());
 }
 
+// ── Trash section HTML ────────────────────────────────────────────────────────
+function renderTrashSection(propertyId) {
+  const inTrash = hasTrash(propertyId);
+  const propId  = esc(propertyId);
+
+  if (inTrash) {
+    return `
+      <p style="font-size:.84rem;color:var(--stone-600);margin-bottom:10px">
+        Afbeeldingen van dit pand staan in de prullenbak. Ze worden na 14 dagen automatisch verwijderd.
+      </p>
+      <div class="trash-action-row">
+        <button class="btn-trash-action btn-restore" onclick="handleRestoreModal('${propId}')">
+          ♻️ Herstel afbeeldingen
+        </button>
+        <button class="btn-trash-action btn-empty-one" onclick="handleEmptyOneModal('${propId}')">
+          🗑️ Prullenbak leegmaken
+        </button>
+      </div>`;
+  }
+
+  return `
+    <p style="font-size:.84rem;color:var(--stone-400);font-style:italic;margin-bottom:10px">
+      Geen afbeeldingen in prullenbak voor dit pand.
+    </p>
+    <button class="btn-trash-action btn-trash-images" onclick="handleTrashModal('${propId}')">
+      🗑️ Afbeeldingen naar prullenbak
+    </button>`;
+}
+
+async function handleTrashModal(propertyId) {
+  await trashPropertyImages(propertyId);
+  const sec = $('#modal-trash-section');
+  if (sec) sec.innerHTML = '<h3>🗑️ Afbeeldingen prullenbak</h3>' + renderTrashSection(propertyId);
+}
+
+async function handleRestoreModal(propertyId) {
+  await restorePropertyImages(propertyId);
+  const sec = $('#modal-trash-section');
+  if (sec) sec.innerHTML = '<h3>🗑️ Afbeeldingen prullenbak</h3>' + renderTrashSection(propertyId);
+}
+
+async function handleEmptyOneModal(propertyId) {
+  await emptyPropertyTrash(propertyId);
+  const sec = $('#modal-trash-section');
+  if (sec) sec.innerHTML = '<h3>🗑️ Afbeeldingen prullenbak</h3>' + renderTrashSection(propertyId);
+}
+
+// ── Trash handler (from card) ─────────────────────────────────────────────────
+async function handleTrash(event, propertyId) {
+  event.stopPropagation();
+  if (hasTrash(propertyId)) {
+    await restorePropertyImages(propertyId);
+  } else {
+    await trashPropertyImages(propertyId);
+  }
+  renderCurrentTab();
+}
+
+// ── Lightbox ──────────────────────────────────────────────────────────────────
+function openLightbox(images, startIndex = 0) {
+  if (!images || !images.length) return;
+  state._lbImages = images;
+  state._lbIndex  = Math.max(0, Math.min(startIndex, images.length - 1));
+
+  const lb      = $('#lightbox');
+  const img     = $('#lightbox-img');
+  const counter = $('#lightbox-counter');
+  if (!lb || !img) return;
+
+  img.src = images[state._lbIndex];
+  img.alt = `Afbeelding ${state._lbIndex + 1}`;
+  if (counter) counter.textContent = `${state._lbIndex + 1} / ${images.length}`;
+
+  // Show/hide navigation arrows
+  const prev = lb.querySelector('.lightbox-prev');
+  const next = lb.querySelector('.lightbox-next');
+  if (prev) prev.classList.toggle('hidden', images.length <= 1);
+  if (next) next.classList.toggle('hidden', images.length <= 1);
+
+  lb.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+
+  // Keyboard navigation
+  lb._keyHandler = (e) => {
+    if (e.key === 'ArrowLeft')  lightboxNavigate(-1);
+    if (e.key === 'ArrowRight') lightboxNavigate(1);
+    if (e.key === 'Escape')     closeLightbox();
+  };
+  document.addEventListener('keydown', lb._keyHandler);
+
+  // Touch swipe in lightbox
+  let lbSwipeX = null;
+  lb._touchstart = (e) => { lbSwipeX = e.touches[0].clientX; };
+  lb._touchend   = (e) => {
+    if (lbSwipeX === null) return;
+    const dx = e.changedTouches[0].clientX - lbSwipeX;
+    if (Math.abs(dx) > 50) lightboxNavigate(dx < 0 ? 1 : -1);
+    lbSwipeX = null;
+  };
+  lb.addEventListener('touchstart', lb._touchstart, { passive: true });
+  lb.addEventListener('touchend',   lb._touchend,   { passive: true });
+}
+
+function closeLightbox() {
+  const lb = $('#lightbox');
+  if (!lb) return;
+  lb.classList.add('hidden');
+  document.body.style.overflow = '';
+
+  if (lb._keyHandler) {
+    document.removeEventListener('keydown', lb._keyHandler);
+    lb._keyHandler = null;
+  }
+  if (lb._touchstart) { lb.removeEventListener('touchstart', lb._touchstart); lb._touchstart = null; }
+  if (lb._touchend)   { lb.removeEventListener('touchend',   lb._touchend);   lb._touchend   = null; }
+}
+
+function lightboxNavigate(dir) {
+  const images = state._lbImages;
+  if (!images || images.length <= 1) return;
+  state._lbIndex = (state._lbIndex + dir + images.length) % images.length;
+
+  const img     = $('#lightbox-img');
+  const counter = $('#lightbox-counter');
+  if (img) {
+    img.style.opacity = '0.5';
+    img.src = images[state._lbIndex];
+    img.alt = `Afbeelding ${state._lbIndex + 1}`;
+    img.onload = () => { img.style.opacity = '1'; };
+  }
+  if (counter) counter.textContent = `${state._lbIndex + 1} / ${images.length}`;
+}
+
+// ── Swipe gesture affordances ────────────────────────────────────────────────
+const _SWIPE_THRESHOLD = 60;   // px
+const _SWIPE_ANGLE_MAX = 35;   // degrees tilt at full swipe
+
+function _attachSwipe(card, propertyId) {
+  let startX = 0, startY = 0, isDragging = false;
+
+  card.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    isDragging = false;
+  }, { passive: true });
+
+  card.addEventListener('touchmove', (e) => {
+    const dx = e.touches[0].clientX - startX;
+    const dy = e.touches[0].clientY - startY;
+    if (!isDragging && Math.abs(dx) < 8 && Math.abs(dy) < 8) return;
+    if (!isDragging && Math.abs(dy) > Math.abs(dx)) return;   // vertical scroll — skip
+
+    isDragging = true;
+    const angle = Math.min(Math.abs(dx) / _SWIPE_THRESHOLD, 1) * _SWIPE_ANGLE_MAX * Math.sign(dx);
+    card.style.transform    = `translateX(${dx * 0.4}px) rotate(${angle * 0.3}deg)`;
+    card.style.transition   = 'none';
+
+    const hintL = card.querySelector('.swipe-hint-left');
+    const hintR = card.querySelector('.swipe-hint-right');
+    const ratio = Math.min(Math.abs(dx) / _SWIPE_THRESHOLD, 1);
+    if (dx < 0 && hintL) hintL.style.opacity = ratio;
+    else if (dx > 0 && hintR) hintR.style.opacity = ratio;
+    if (dx >= 0 && hintL) hintL.style.opacity = 0;
+    if (dx <= 0 && hintR) hintR.style.opacity = 0;
+  }, { passive: true });
+
+  card.addEventListener('touchend', (e) => {
+    if (!isDragging) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    isDragging = false;
+
+    // Reset
+    card.style.transform  = '';
+    card.style.transition = '';
+    const hintL = card.querySelector('.swipe-hint-left');
+    const hintR = card.querySelector('.swipe-hint-right');
+    if (hintL) hintL.style.opacity = 0;
+    if (hintR) hintR.style.opacity = 0;
+
+    if (dx > _SWIPE_THRESHOLD) {
+      handleLike({ stopPropagation: () => {} }, propertyId);
+    } else if (dx < -_SWIPE_THRESHOLD) {
+      handleDismiss({ stopPropagation: () => {} }, propertyId);
+    }
+  }, { passive: true });
+}
+
 // ── Dismiss handler ───────────────────────────────────────────────────────────
 async function handleDismiss(event, propertyId, fromModal = false) {
   event.stopPropagation();
@@ -1090,8 +1556,9 @@ window.setFilter              = setFilter;
 window.setTagFilter           = setTagFilter;
 window.showDetail             = showDetail;
 window.closeModal             = closeModal;
-window.handleDismiss            = handleDismiss;
+window.handleDismiss          = handleDismiss;
 window.handleLike             = handleLike;
+window.handleTrash            = handleTrash;
 window.submitSetup            = submitSetup;
 window.refreshData            = refreshData;
 window.saveSettings           = saveSettings;
@@ -1103,3 +1570,14 @@ window.handleAddTagFromModal  = handleAddTagFromModal;
 window.toggleTagPicker        = toggleTagPicker;
 window.handleAddAvailableTag  = handleAddAvailableTag;
 window.handleDeleteAvailableTag = handleDeleteAvailableTag;
+window.openLightbox           = openLightbox;
+window.closeLightbox          = closeLightbox;
+window.lightboxNavigate       = lightboxNavigate;
+window.handleTrashModal       = handleTrashModal;
+window.handleRestoreModal     = handleRestoreModal;
+window.handleEmptyOneModal    = handleEmptyOneModal;
+window.handleRestoreFromSettings = handleRestoreFromSettings;
+window.handleEmptyFromSettings   = handleEmptyFromSettings;
+window.handleEmptySelected    = handleEmptySelected;
+window.handleEmptyAll         = handleEmptyAll;
+window.updateTrashSelection   = updateTrashSelection;

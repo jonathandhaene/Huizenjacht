@@ -145,8 +145,14 @@ Ga naar **Settings → Secrets and variables → Actions**:
 
 ### Panden bekijken
 - Open de app → tab **Panden**
-- Filter op: Alle panden / Nieuw vandaag / Mijn likes / Matches
+- Filter op: Alle panden / Nieuw vandaag / Mijn likes / Matches / **🗑️ Prullenbak**
 - Tik op een kaart voor alle details (foto's, overheidsdata, AI-analyse)
+- **Swipe rechts** (touch) om te liken, **swipe links** om te verbergen
+
+### Foto's bekijken (lightbox)
+- Tik op een foto voor de volledige weergave
+- Navigeer met pijltjes of swipe links/rechts
+- Sluit met ✕ of de Escape-toets
 
 ### Een pand liken
 - Tik het ❤️ op een kaart of in de detailweergave
@@ -156,11 +162,35 @@ Ga naar **Settings → Secrets and variables → Actions**:
 - De app toont een match-notificatie zodra de tweede persoon liket
 - Jullie ontvangen ook een **match-e-mail** de volgende ochtend
 
+### Afbeeldingen prullenbak
+- Tik 🗑️ op een kaart om de afbeeldingen naar de prullenbak te verplaatsen
+- Herstel via ♻️ op de kaart of via het detail-menu
+- Beheer alle prullenbakken via **Instellingen → 🗑️ Prullenbak beheer**:
+  - Per pand herstellen of leegmaken
+  - Selecteer meerdere panden en leeg ze samen
+  - "Alles verwijderen" voor een globale schoonmaak
+- **Na 14 dagen** worden prullenbakitems automatisch verwijderd door de dagelijkse pipeline
+
 ### Wat zie je per pand?
 Elk pand wordt automatisch verrijkt met:
+- **Lokaal gecachete foto's**: afbeeldingen opgeslagen in `docs/data/images/` voor betrouwbare weergave
 - **Overheidsgegevens** (Geopunt / AGIV): bestemmingszone, agrarisch gebied, overstromingsrisico, erfgoedbescherming
 - **AI-score** (0–10): hoe goed past dit pand bij jullie criteria?
 - **Pro's & con's** + aanbevolen vervolgstappen (bijv. RUP-attest opvragen, omgevingsloket checken)
+
+---
+
+## Afbeeldingen cachen
+
+De dagelijkse pipeline downloadt automatisch afbeeldingen van nieuwe panden en slaat ze op als:
+```
+docs/data/images/<property-id>/<url-hash>.<ext>
+```
+
+- Maximaal 5 afbeeldingen per pand worden gecached
+- Eenmaal gecached worden afbeeldingen niet opnieuw gedownload
+- Gedownloade afbeeldingen blijven beschikbaar ook als de originele bron niet meer bereikbaar is
+- De paden worden opgeslagen in `images_local` in `properties.json`
 
 ---
 
@@ -197,7 +227,11 @@ Huizenjacht/
 │   ├── manifest.json           # PWA manifest (voeg toe aan startscherm)
 │   └── data/
 │       ├── properties.json     # Panden (bijgewerkt door Actions)
-│       └── likes.json          # Likes (bijgewerkt door web app via GitHub API)
+│       ├── likes.json          # Likes (bijgewerkt door web app via GitHub API)
+│       ├── trash.json          # Prullenbak metadata (14-dagen retentie)
+│       └── images/             # Lokaal gecachete foto's (bijgewerkt door Actions)
+│           └── <property-id>/
+│               └── <hash>.jpg
 │
 ├── models/
 │   └── property.py             # Pydantic datamodellen
@@ -206,9 +240,11 @@ Huizenjacht/
 │   └── daily_runner.py         # Dagelijkse scheduler (klassieke modus)
 │
 ├── scripts/
-│   └── github_pages_pipeline.py  # Pipeline voor GitHub Actions modus
+│   ├── github_pages_pipeline.py  # Pipeline voor GitHub Actions modus
+│   ├── image_cache.py            # Afbeeldingen downloaden en lokaal cachen
+│   └── trash_manager.py          # Prullenbak beheer (trash/restore/purge)
 │
-├── tests/                      # Pytest-testsuit (43 tests)
+├── tests/                      # Pytest-testsuit (112 tests)
 │
 ├── main.py                     # Hoofdentry-point
 ├── requirements.txt
