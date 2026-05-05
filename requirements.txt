@@ -4,6 +4,10 @@ httpx>=0.27.0
 beautifulsoup4>=4.12.3
 lxml>=5.2.1
 playwright>=1.44.0
+# cloudscraper bypasses Cloudflare's basic bot-detection (TLS fingerprint / JS
+# challenge) without launching a full browser — used as a middle tier between
+# plain httpx and the Playwright fallback in agents.scrapers.base.HttpClient.
+cloudscraper>=1.2.71
 
 # Data models & validation
 pydantic>=2.7.1
