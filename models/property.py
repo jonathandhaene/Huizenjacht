@@ -117,6 +117,17 @@ class Property(BaseModel):
     bedrooms: Optional[int] = None
     bathrooms: Optional[int] = None
     images: list[str] = Field(default_factory=list, description="Image URLs")
+    images_remote: list[str] = Field(
+        default_factory=list,
+        description="Original scraped image URLs (preserved after local caching)",
+    )
+    images_local: list[str] = Field(
+        default_factory=list,
+        description="Locally cached image paths relative to docs/ (served via GitHub Pages)",
+    )
+    images_cached_at: Optional[datetime] = Field(
+        None, description="ISO timestamp when images were last cached locally"
+    )
     features: list[str] = Field(default_factory=list, description="Extra features / tags")
     first_seen: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
     last_seen: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))

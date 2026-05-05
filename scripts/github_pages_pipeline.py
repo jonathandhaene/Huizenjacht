@@ -9,10 +9,12 @@ Steps:
 3. Deduplicate against existing properties
 4. Enrich new properties (government data + AI analysis)
 5. Merge and save back to docs/data/properties.json  ← committed by Actions
-6. Load docs/data/likes.json and detect new matches
-7. Send match email for newly matched properties
-8. Update docs/data/matches_notified.json
-9. Send daily digest email for new properties
+6. Cache property images locally under docs/data/images/
+7. Auto-purge trashed images older than 14 days (docs/data/trash.json)
+8. Load docs/data/likes.json and detect new matches
+9. Send match email for newly matched properties
+10. Update docs/data/matches_notified.json
+11. Send daily digest email for new properties
 """
 from __future__ import annotations
 
@@ -37,6 +39,7 @@ logger = logging.getLogger(__name__)
 
 # Paths relative to repo root (where Actions runs)
 _DATA_DIR = Path("docs/data")
+_DOCS_DIR = _DATA_DIR.parent          # docs/
 _PROPERTIES_FILE = _DATA_DIR / "properties.json"
 _LIKES_FILE = _DATA_DIR / "likes.json"
 _MATCHES_NOTIFIED_FILE = _DATA_DIR / "matches_notified.json"
@@ -66,16 +69,24 @@ def run() -> None:
     if raw_new:
         enriched_new = _enrich(raw_new)
 
-    # 4. Merge and save
+    # 4. Merge
     new_dicts = [_property_to_dict(p) for p in enriched_new]
     all_properties = new_dicts + existing   # newest first
+
+    # 5. Cache images locally for any property that doesn't have local images yet
+    _cache_images(all_properties)
+
+    # 6. Save
     _save_properties(all_properties)
     logger.info("Saved %d total properties to %s", len(all_properties), _PROPERTIES_FILE)
 
-    # 5. Check for new matches and notify
+    # 7. Auto-purge trashed images older than the retention window
+    _auto_purge_trash()
+
+    # 8. Check for new matches and notify
     _check_and_notify_matches(all_properties)
 
-    # 6. Send digest email for new high-scoring properties
+    # 9. Send digest email for new high-scoring properties
     qualified = [p for p in enriched_new if _score(p) >= _MIN_SCORE]
     qualified.sort(key=_score, reverse=True)
     if qualified:
@@ -83,6 +94,43 @@ def run() -> None:
 
     elapsed = (datetime.now(timezone.utc) - start).total_seconds()
     logger.info("=== Pipeline finished in %.1f s ===", elapsed)
+
+
+# ---------------------------------------------------------------------------
+# Image caching
+# ---------------------------------------------------------------------------
+
+def _cache_images(properties: List[dict]) -> None:
+    """Download and cache images locally for properties that don't have them yet.
+
+    Operates in-place on the list of property dicts.  Failures per-property
+    are logged but do not abort the pipeline.
+    """
+    from scripts.image_cache import process_properties_images
+
+    try:
+        process_properties_images(properties, _DOCS_DIR)
+        cached = sum(1 for p in properties if p.get("images_local"))
+        logger.info("Image cache: %d/%d properties have local images", cached, len(properties))
+    except Exception as exc:
+        logger.error("Image caching step failed: %s", exc)
+
+
+# ---------------------------------------------------------------------------
+# Trash auto-purge
+# ---------------------------------------------------------------------------
+
+def _auto_purge_trash() -> None:
+    """Run the 14-day auto-purge pass against docs/data/trash.json."""
+    from scripts.trash_manager import TrashManager
+
+    try:
+        tm = TrashManager(_DATA_DIR)
+        purged = tm.auto_purge(_DOCS_DIR)
+        if purged:
+            logger.info("Trash auto-purge: removed %d expired entries", purged)
+    except Exception as exc:
+        logger.error("Trash auto-purge failed: %s", exc)
 
 
 # ---------------------------------------------------------------------------
