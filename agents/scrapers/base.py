@@ -30,9 +30,10 @@ PLAYWRIGHT_TIMEOUT_MS = 30_000
 
 class _PlaywrightResponse:
     """
-    Minimal response-like wrapper around content fetched via Playwright.
-    Provides the same `.text`, `.json()`, and `.raise_for_status()` interface
-    as an `httpx.Response` so scrapers can use it transparently.
+    Minimal response-like wrapper around content fetched via Playwright or
+    cloudscraper.  Provides the same `.text`, `.json()`, and
+    `.raise_for_status()` interface as an `httpx.Response` so scrapers can
+    use it transparently.
     """
 
     def __init__(self, text: str = "", json_data: Any = None) -> None:
@@ -45,12 +46,18 @@ class _PlaywrightResponse:
         return _json.loads(self.text)
 
     def raise_for_status(self) -> None:
-        pass  # Playwright already validated the response
+        pass  # Already validated upstream
 
 
 class HttpClient:
     """
-    Reusable HTTP client with automatic retries and a Playwright fallback.
+    Reusable HTTP client with automatic retries and two escalating fallbacks.
+
+    Fetch order:
+        1. plain httpx (fast, default)
+        2. cloudscraper — bypasses Cloudflare bot-detection without a browser
+        3. Playwright — full headless Chromium (slowest, last resort)
+
     Used directly by non-scraper agents (e.g. GovernmentEnrichmentAgent).
     """
 
@@ -62,6 +69,10 @@ class HttpClient:
             follow_redirects=True,
             timeout=30,
         )
+        # Lazily initialised — cloudscraper imports a JS interpreter the first
+        # time it is used, which is unnecessary for clients that never hit a
+        # Cloudflare-protected site.
+        self._cloudscraper = None
 
     @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=2, max=10))
     def _get_http(self, url: str, **kwargs) -> httpx.Response:
@@ -69,6 +80,38 @@ class HttpClient:
         response = self._client.get(url, **kwargs)
         response.raise_for_status()
         return response
+
+    def _get_cloudscraper(self, url: str, **kwargs) -> _PlaywrightResponse:
+        """
+        Fetch *url* via cloudscraper, which mimics Chrome's TLS handshake and
+        solves Cloudflare's basic JS challenges.  This is much cheaper than
+        spinning up a full Playwright browser session.
+        """
+        import cloudscraper  # lazy import — heavy dependency
+
+        if self._cloudscraper is None:
+            self._cloudscraper = cloudscraper.create_scraper(
+                browser={"browser": "chrome", "platform": "windows"}
+            )
+
+        headers = {**HEADERS, **(kwargs.get("headers") or {})}
+        logger.info("[%s] cloudscraper fallback: GET %s", self.name, url)
+        resp = self._cloudscraper.get(url, headers=headers, timeout=30, allow_redirects=True)
+        resp.raise_for_status()
+
+        accept = headers.get("Accept", "text/html").lower()
+        if "json" in accept:
+            try:
+                return _PlaywrightResponse(json_data=resp.json())
+            except ValueError as exc:
+                # Body wasn't JSON — keep the text so the caller can still
+                # inspect it (e.g. parse embedded JSON in an HTML page).
+                logger.debug(
+                    "[%s] cloudscraper response was not JSON, returning text: %s",
+                    self.name,
+                    exc,
+                )
+        return _PlaywrightResponse(text=resp.text)
 
     def _get_playwright(self, url: str, **kwargs) -> _PlaywrightResponse:
         """
@@ -81,7 +124,7 @@ class HttpClient:
         """
         from playwright.sync_api import sync_playwright  # lazy import – not always needed
 
-        headers_extra: dict = kwargs.get("headers", {})
+        headers_extra: dict = kwargs.get("headers") or {}
         want_json = "json" in headers_extra.get("Accept", "text/html").lower()
 
         logger.info("[%s] Playwright fallback: GET %s", self.name, url)
@@ -94,7 +137,11 @@ class HttpClient:
                     extra_http_headers={"Accept-Language": HEADERS["Accept-Language"]},
                 )
                 page = context.new_page()
-                page.goto(url, wait_until="networkidle", timeout=PLAYWRIGHT_TIMEOUT_MS)
+                # `domcontentloaded` is far more reliable than `networkidle`
+                # for modern SPAs that keep long-running websockets / trackers
+                # open — the latter routinely times out at 30 s on real
+                # estate sites (see Actions run #25398130280).
+                page.goto(url, wait_until="domcontentloaded", timeout=PLAYWRIGHT_TIMEOUT_MS)
 
                 if want_json:
                     body_text = page.inner_text("body")
@@ -112,22 +159,31 @@ class HttpClient:
 
     def _get(self, url: str, **kwargs) -> "httpx.Response | _PlaywrightResponse":
         """
-        Fetch *url* with automatic retries (via httpx) and a Playwright fallback.
+        Fetch *url* with automatic retries and two escalating fallbacks.
 
         On HTTP errors (e.g. 403 bot-detection) the request is retried up to
-        three times, then transparently retried once more via a real Chromium
-        browser session.
+        three times via `httpx`, then via `cloudscraper` (TLS-spoofing
+        requests session), then finally via a real Chromium browser session.
         """
         try:
             return self._get_http(url, **kwargs)
-        except Exception as exc:
+        except Exception as http_exc:
             logger.warning(
-                "[%s] HTTP fetch failed (%s); retrying with Playwright: %s",
+                "[%s] HTTP fetch failed (%s); trying cloudscraper: %s",
                 self.name,
-                type(exc).__name__,
+                type(http_exc).__name__,
                 url,
             )
-            return self._get_playwright(url, **kwargs)
+            try:
+                return self._get_cloudscraper(url, **kwargs)
+            except Exception as cs_exc:
+                logger.warning(
+                    "[%s] cloudscraper fetch failed (%s); falling back to Playwright: %s",
+                    self.name,
+                    type(cs_exc).__name__,
+                    url,
+                )
+                return self._get_playwright(url, **kwargs)
 
     def close(self) -> None:
         self._client.close()
