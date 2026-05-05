@@ -173,3 +173,74 @@ def test_social_media_scraper_returns_list_on_failure():
     with patch.object(scraper, "_get", side_effect=Exception("blocked")):
         props = scraper.scrape()
     assert isinstance(props, list)
+
+
+# ---------------------------------------------------------------------------
+# Playwright fallback (_PlaywrightResponse + _get fallback logic)
+# ---------------------------------------------------------------------------
+
+def test_playwright_response_json():
+    """_PlaywrightResponse.json() returns pre-parsed data when available."""
+    from agents.scrapers.base import _PlaywrightResponse
+
+    resp = _PlaywrightResponse(json_data={"results": [1, 2]})
+    assert resp.json() == {"results": [1, 2]}
+    resp.raise_for_status()  # should not raise
+
+
+def test_playwright_response_text_json():
+    """_PlaywrightResponse.json() parses .text when no pre-parsed data given."""
+    from agents.scrapers.base import _PlaywrightResponse
+
+    resp = _PlaywrightResponse(text='{"key": "value"}')
+    assert resp.json() == {"key": "value"}
+    assert resp.text == '{"key": "value"}'
+
+
+def test_get_uses_playwright_fallback_on_http_error():
+    """HttpClient._get() falls back to _get_playwright() when HTTP fails."""
+    from agents.scrapers.base import HttpClient, _PlaywrightResponse
+
+    client = HttpClient()
+    fake_pw_response = _PlaywrightResponse(json_data={"results": []})
+
+    with patch.object(client, "_get_http", side_effect=Exception("403 Forbidden")):
+        with patch.object(client, "_get_playwright", return_value=fake_pw_response) as mock_pw:
+            result = client._get("https://example.com", headers={"Accept": "application/json"})
+
+    mock_pw.assert_called_once_with(
+        "https://example.com", headers={"Accept": "application/json"}
+    )
+    assert result is fake_pw_response
+
+
+def test_get_returns_http_response_when_successful():
+    """HttpClient._get() returns the httpx response when HTTP succeeds."""
+    from agents.scrapers.base import HttpClient
+
+    client = HttpClient()
+    mock_resp = MagicMock()
+
+    with patch.object(client, "_get_http", return_value=mock_resp) as mock_http:
+        with patch.object(client, "_get_playwright") as mock_pw:
+            result = client._get("https://example.com")
+
+    mock_http.assert_called_once()
+    mock_pw.assert_not_called()
+    assert result is mock_resp
+
+
+def test_immoweb_scraper_uses_playwright_fallback():
+    """ImmowebScraper returns listings when HTTP fails but Playwright succeeds."""
+    from agents.scrapers.immoweb import ImmowebScraper
+    from agents.scrapers.base import _PlaywrightResponse
+
+    scraper = ImmowebScraper()
+    pw_resp = _PlaywrightResponse(json_data=IMMOWEB_RESPONSE)
+
+    with patch.object(scraper, "_get_http", side_effect=Exception("403")):
+        with patch.object(scraper, "_get_playwright", return_value=pw_resp):
+            props = scraper._scrape_type("farmhouse")
+
+    assert len(props) == 1
+    assert props[0].id == "immoweb-12345"
