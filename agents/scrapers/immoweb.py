@@ -169,8 +169,13 @@ class ImmowebScraper(BaseScraper):
         """
         candidates: List[dict] = []
 
+        # Cap recursion: Immoweb's __NEXT_DATA__ tree is at most ~6 levels
+        # deep around the results array, so 8 is a safe upper bound that
+        # also prevents pathological structures from causing a stack blow-up.
+        _MAX_DEPTH = 8
+
         def _walk(node: Any, depth: int = 0) -> None:
-            if depth > 8 or candidates:
+            if depth > _MAX_DEPTH or candidates:
                 return
             if isinstance(node, dict):
                 # Direct hit on the canonical key.
