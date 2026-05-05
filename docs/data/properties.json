@@ -51,7 +51,14 @@
         "RUP-attest opvragen bij gemeente Brakel",
         "Vergunning B&B checken via omgevingsloket.be"
       ]
-    }
+    },
+    "images_remote": [
+      "https://picsum.photos/seed/hoeve/800/500"
+    ],
+    "images_local": [
+      "data/images/immoweb-99999/f0214344bad05f3d.jpg"
+    ],
+    "images_cached_at": "2026-05-05T18:56:13.744031+00:00"
   },
   {
     "id": "zimmo-Z12345",
@@ -90,6 +97,13 @@
       "recommendations": [
         "Controleer bestemmingszone via geopunt.be"
       ]
-    }
+    },
+    "images_remote": [
+      "https://picsum.photos/seed/woning/800/500"
+    ],
+    "images_local": [
+      "data/images/zimmo-Z12345/4c97b39997846877.jpg"
+    ],
+    "images_cached_at": "2026-05-05T18:56:13.948856+00:00"
   }
 ]
