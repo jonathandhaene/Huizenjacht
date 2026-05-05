@@ -13,6 +13,13 @@ from urllib.parse import urlencode
 from bs4 import BeautifulSoup
 
 from agents.scrapers.base import BaseScraper
+from agents.scrapers.nlp_normalizer import (
+    classify_property_type,
+    extract_bedrooms,
+    extract_land_area,
+    extract_living_area,
+    extract_price,
+)
 from config.settings import settings
 from models.property import Property, PropertyType
 
@@ -35,6 +42,9 @@ class RealoScraper(BaseScraper):
             try:
                 resp = self._get(url)
                 props = self._parse_html(resp.text, url)
+                # AI fallback: if static parsing yields nothing, try GPT extraction
+                if not props:
+                    props = self._try_ai_extract(resp.text, url)
             except Exception as exc:
                 logger.warning("[realo] Failed page %d: %s", page, exc)
                 break
@@ -90,20 +100,31 @@ class RealoScraper(BaseScraper):
             title_tag = card.find(["h2", "h3", "span"], class_=lambda c: c and "title" in c.lower())
             title = title_tag.get_text(strip=True) if title_tag else "Woning"
 
-            price_tag = card.find(class_=lambda c: c and "price" in c.lower())
-            price = None
-            if price_tag:
-                raw = price_tag.get_text(strip=True).replace(".", "").replace("€", "").replace(" ", "")
-                try:
-                    price = float(raw)
-                except ValueError:
-                    pass
+            # Full card text for NLP extraction
+            card_text = card.get_text(" ", strip=True)
 
-            location_tag = card.find(class_=lambda c: c and ("location" in c.lower() or "address" in c.lower()))
+            price_tag = card.find(class_=lambda c: c and "price" in c.lower())
+            price: float | None = None
+            if price_tag:
+                raw = price_tag.get_text(strip=True)
+                # Try structured price tag first, fall back to NLP
+                price = extract_price(raw) or extract_price(card_text)
+            else:
+                price = extract_price(card_text)
+
+            location_tag = card.find(
+                class_=lambda c: c and ("location" in c.lower() or "address" in c.lower())
+            )
             address = location_tag.get_text(strip=True) if location_tag else None
 
             img_tag = card.find("img")
             images = [img_tag["src"]] if img_tag and img_tag.get("src") else []
+
+            # Use NLP to enrich fields missing from structured markup
+            bedrooms = extract_bedrooms(card_text)
+            land_area = extract_land_area(card_text)
+            living_area = extract_living_area(card_text)
+            prop_type = classify_property_type(title + " " + card_text)
 
             return Property(
                 id=prop_id,
@@ -113,7 +134,10 @@ class RealoScraper(BaseScraper):
                 price=price,
                 address=address,
                 images=images,
-                property_type=PropertyType.HOUSE,
+                property_type=prop_type,
+                bedrooms=bedrooms,
+                land_area=land_area,
+                living_area=living_area,
             )
         except Exception as exc:
             logger.warning("[realo] Could not parse card: %s", exc)

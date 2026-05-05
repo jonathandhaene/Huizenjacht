@@ -27,6 +27,7 @@ from agents.enrichment.government import GovernmentEnrichmentAgent
 from agents.notification.email_agent import EmailNotificationAgent
 from agents.scrapers.immoweb import ImmowebScraper
 from agents.scrapers.logic_immo import LogicImmoScraper
+from agents.scrapers.nlp_normalizer import deduplicate_properties
 from agents.scrapers.realo import RealoScraper
 from agents.scrapers.social_media import SocialMediaScraper
 from agents.scrapers.zimmo import ZimmoScraper
@@ -74,6 +75,13 @@ class Orchestrator:
         # 1. Scrape
         raw_properties = self._scrape_all()
         logger.info("Scrapers returned %d total listings", len(raw_properties))
+
+        # 1a. Cross-source deduplication — remove the same property listed on
+        #     multiple platforms (e.g. both Immoweb and Zimmo).
+        raw_properties = deduplicate_properties(raw_properties)
+        logger.info(
+            "%d listings after cross-source deduplication", len(raw_properties)
+        )
 
         # 2. Deduplicate
         new_properties = self._filter_new(raw_properties)

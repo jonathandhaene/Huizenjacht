@@ -200,6 +200,51 @@ class BaseScraper(HttpClient, ABC):
 
     name: str = "base"
 
+    def __init__(self) -> None:
+        super().__init__()
+        # Lazily initialised — only active when OPENAI_API_KEY is set.
+        self._ai_extractor = None
+
+    def _get_ai_extractor(self):
+        """Return a cached AIPropertyExtractor instance (lazy init)."""
+        if self._ai_extractor is None:
+            from agents.scrapers.ai_extractor import AIPropertyExtractor  # avoid circular import
+
+            self._ai_extractor = AIPropertyExtractor()
+        return self._ai_extractor
+
+    def _try_ai_extract(self, html: str, url: str) -> List[Property]:
+        """Try to extract properties from *html* using the AI extractor.
+
+        This is the last-resort fallback: it is only called when static
+        parsing produces zero results and an ``OPENAI_API_KEY`` is
+        configured.  Returns an empty list when the API is unavailable.
+        """
+        extractor = self._get_ai_extractor()
+        if not extractor.available:
+            return []
+        return extractor.extract_from_html(html, url, self.name)
+
+    def _log_http_error(self, url: str, status_code: int, response_text: str = "") -> None:
+        """Log a structured diagnosis of an HTTP scraping failure.
+
+        Uses ``AIPropertyExtractor.analyze_error`` when available, otherwise
+        falls back to a static rule-based analysis so that meaningful
+        information is always surfaced in the logs.
+        """
+        extractor = self._get_ai_extractor()
+        analysis = extractor.analyze_error(url, status_code, response_text)
+        logger.warning(
+            "[%s] HTTP %d on %s — %s: %s. Suggestions: %s. Retry: %s",
+            self.name,
+            status_code,
+            url,
+            analysis.get("error_type", "unknown"),
+            analysis.get("likely_cause", ""),
+            "; ".join(analysis.get("suggestions", [])),
+            analysis.get("retry_strategy", "none"),
+        )
+
     # ------------------------------------------------------------------
     # Public interface
     # ------------------------------------------------------------------
