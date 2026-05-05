@@ -8,7 +8,7 @@ from abc import ABC, abstractmethod
 from typing import List
 
 import httpx
-from tenacity import retry, stop_after_attempt, wait_exponential
+from tenacity import retry, retry_if_exception, stop_after_attempt, wait_exponential
 
 from models.property import Property
 
@@ -22,6 +22,16 @@ HEADERS = {
     ),
     "Accept-Language": "nl-BE,nl;q=0.9,fr;q=0.8,en;q=0.7",
 }
+
+
+def _is_retryable(exc: BaseException) -> bool:
+    """Retry on network/timeout errors, 429 Too Many Requests, or 5xx server errors.
+    Skip retries for other 4xx responses (e.g. 403 Forbidden, 404 Not Found)
+    which are not transient and will not resolve on retry.
+    """
+    if isinstance(exc, httpx.HTTPStatusError):
+        return exc.response.status_code == 429 or exc.response.status_code >= 500
+    return True
 
 
 class HttpClient:
@@ -39,7 +49,11 @@ class HttpClient:
             timeout=30,
         )
 
-    @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=2, max=10))
+    @retry(
+        stop=stop_after_attempt(3),
+        wait=wait_exponential(multiplier=1, min=2, max=10),
+        retry=retry_if_exception(_is_retryable),
+    )
     def _get(self, url: str, **kwargs) -> httpx.Response:
         logger.debug("[%s] GET %s", self.name, url)
         response = self._client.get(url, **kwargs)

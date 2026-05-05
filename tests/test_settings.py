@@ -51,3 +51,21 @@ def test_cache_path_created(tmp_path, monkeypatch):
     path = s.cache_path
     assert path.exists()
     assert path.is_dir()
+
+
+def test_empty_string_int_fields_use_defaults(monkeypatch):
+    """Empty-string env vars for integer fields fall back to field defaults."""
+    for var in ("MAX_PRICE", "MIN_BEDROOMS", "MIN_LAND_AREA", "SMTP_PORT"):
+        monkeypatch.setenv(var, "")
+
+    from importlib import reload
+
+    import config.settings as settings_module
+
+    reload(settings_module)
+
+    s = settings_module.Settings()
+    assert s.max_price == 600_000
+    assert s.min_bedrooms == 3
+    assert s.min_land_area == 5_000
+    assert s.smtp_port == 587

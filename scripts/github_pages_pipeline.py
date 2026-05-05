@@ -26,7 +26,6 @@ from agents.enrichment.ai_analyzer import AIAnalyzerAgent
 from agents.enrichment.government import GovernmentEnrichmentAgent
 from agents.notification.email_agent import EmailNotificationAgent
 from agents.scrapers.immoweb import ImmowebScraper
-from agents.scrapers.logic_immo import LogicImmoScraper
 from agents.scrapers.realo import RealoScraper
 from agents.scrapers.social_media import SocialMediaScraper
 from agents.scrapers.zimmo import ZimmoScraper
@@ -97,7 +96,8 @@ def _scrape_new(existing_ids: Set[str]) -> List[Property]:
         ImmowebScraper(),
         ZimmoScraper(),
         RealoScraper(),
-        LogicImmoScraper(),
+        # LogicImmoScraper removed: logic-immo.be was acquired by Zimmo and now
+        # redirects to zimmo.be, making it a duplicate that also returns 403.
         SocialMediaScraper(),
     ]
     all_found: List[Property] = []
