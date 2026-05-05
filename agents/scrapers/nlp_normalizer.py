@@ -197,9 +197,8 @@ def extract_land_area(text: str) -> Optional[float]:
 def extract_living_area(text: str) -> Optional[float]:
     """Return living/habitable area in m² extracted from multilingual text, or None."""
     keywords = [
-        "bewoonbaar", "bewoonbare opp", "leefruimte", "woonoppervlakt",
-        "habitable", "surface habitable", "living area", "woonoppervlakte",
-        "netto bewoonbaar",
+        "bewoonbaar", "bewoonbare opp", "leefruimte", "woonoppervlakte",
+        "habitable", "surface habitable", "living area", "netto bewoonbaar",
     ]
     return _extract_area_with_keywords(text, keywords)
 
@@ -284,8 +283,9 @@ def _are_duplicates(a: Property, b: Property) -> bool:
     # Title word overlap
     words_a = _significant_title_words(a.title)
     words_b = _significant_title_words(b.title)
-    if words_a and words_b:
-        overlap = len(words_a & words_b) / min(len(words_a), len(words_b))
+    min_words = min(len(words_a), len(words_b))
+    if words_a and words_b and min_words > 0:
+        overlap = len(words_a & words_b) / min_words
         if overlap >= 0.6:
             return True
 
