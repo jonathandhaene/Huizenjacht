@@ -24,6 +24,9 @@ HEADERS = {
     "Accept-Language": "nl-BE,nl;q=0.9,fr;q=0.8,en;q=0.7",
 }
 
+# Timeout (ms) for Playwright page navigations
+PLAYWRIGHT_TIMEOUT_MS = 30_000
+
 
 class _PlaywrightResponse:
     """
@@ -91,17 +94,23 @@ class HttpClient:
                     extra_http_headers={"Accept-Language": HEADERS["Accept-Language"]},
                 )
                 page = context.new_page()
-                page.goto(url, wait_until="networkidle", timeout=30_000)
+                page.goto(url, wait_until="networkidle", timeout=PLAYWRIGHT_TIMEOUT_MS)
 
                 if want_json:
                     body_text = page.inner_text("body")
-                    return _PlaywrightResponse(json_data=_json.loads(body_text))
+                    try:
+                        return _PlaywrightResponse(json_data=_json.loads(body_text))
+                    except _json.JSONDecodeError as exc:
+                        raise ValueError(
+                            f"[{self.name}] Playwright fetched {url} but the page body "
+                            f"did not contain valid JSON: {exc}"
+                        ) from exc
                 else:
                     return _PlaywrightResponse(text=page.content())
             finally:
                 browser.close()
 
-    def _get(self, url: str, **kwargs):
+    def _get(self, url: str, **kwargs) -> "httpx.Response | _PlaywrightResponse":
         """
         Fetch *url* with automatic retries (via httpx) and a Playwright fallback.
 
