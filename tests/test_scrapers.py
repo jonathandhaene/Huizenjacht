@@ -246,12 +246,12 @@ def test_social_media_is_relevant():
 
 
 def test_social_media_extract_price():
-    from agents.scrapers.social_media import SocialMediaScraper
+    from agents.scrapers.nlp_normalizer import extract_price
 
-    price = SocialMediaScraper._extract_price("Vraagprijs: € 450.000")
+    price = extract_price("Vraagprijs: € 450.000")
     assert price == 450_000.0
 
-    price2 = SocialMediaScraper._extract_price("geen prijs vermeld")
+    price2 = extract_price("geen prijs vermeld")
     assert price2 is None
 
 

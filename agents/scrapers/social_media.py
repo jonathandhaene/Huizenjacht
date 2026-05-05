@@ -18,13 +18,18 @@ warning and returns an empty list — it never crashes the pipeline.
 from __future__ import annotations
 
 import logging
-import re
 from typing import List
-from urllib.parse import quote
 
 from bs4 import BeautifulSoup
 
 from agents.scrapers.base import BaseScraper
+from agents.scrapers.nlp_normalizer import (
+    classify_property_type,
+    extract_bedrooms,
+    extract_land_area,
+    extract_living_area,
+    extract_price,
+)
 from config.settings import settings
 from models.property import Property, PropertyType
 
@@ -93,18 +98,11 @@ class SocialMediaScraper(BaseScraper):
             url = link["href"] if link else ""
             if url and not url.startswith("http"):
                 url = "https://www.facebook.com" + url
-            price = self._extract_price(text)
-            props.append(
-                Property(
-                    id=f"fb_marketplace_{idx}_{hash(text) & 0xFFFFFFFF}",
-                    source=self.name,
-                    source_url=url or _FB_MARKETPLACE_SEARCH,
-                    title=text[:120],
-                    description=text,
-                    property_type=PropertyType.HOUSE,
-                    price=price,
-                )
-            )
+            props.append(self._build_property(
+                text=text,
+                url=url or _FB_MARKETPLACE_SEARCH,
+                prop_id=f"fb_marketplace_{idx}_{hash(text) & 0xFFFFFFFF}",
+            ))
         return props
 
     def _scrape_public_group(self, group_url: str) -> List[Property]:
@@ -129,36 +127,37 @@ class SocialMediaScraper(BaseScraper):
             url = link["href"] if link else base_url
             if url and not url.startswith("http"):
                 url = "https://www.facebook.com" + url
-            price = self._extract_price(text)
-            props.append(
-                Property(
-                    id=f"fb_group_{idx}_{hash(text) & 0xFFFFFFFF}",
-                    source=self.name,
-                    source_url=url,
-                    title=text[:120],
-                    description=text,
-                    property_type=PropertyType.HOUSE,
-                    price=price,
-                )
-            )
+            props.append(self._build_property(
+                text=text,
+                url=url,
+                prop_id=f"fb_group_{idx}_{hash(text) & 0xFFFFFFFF}",
+            ))
         return props
 
     # ------------------------------------------------------------------
+
+    def _build_property(self, text: str, url: str, prop_id: str) -> Property:
+        """Construct a Property from post text using NLP normalization."""
+        price = extract_price(text)
+        bedrooms = extract_bedrooms(text)
+        land_area = extract_land_area(text)
+        living_area = extract_living_area(text)
+        prop_type = classify_property_type(text)
+        return Property(
+            id=prop_id,
+            source=self.name,
+            source_url=url,
+            title=text[:120],
+            description=text,
+            property_type=prop_type,
+            price=price,
+            bedrooms=bedrooms,
+            land_area=land_area,
+            living_area=living_area,
+        )
 
     @staticmethod
     def _is_relevant(text: str) -> bool:
         """Return True if the text mentions at least one relevant keyword."""
         lower = text.lower()
         return any(kw.lower() in lower for kw in _KEYWORDS)
-
-    @staticmethod
-    def _extract_price(text: str) -> float | None:
-        """Try to parse a price like '€ 450.000' or '450000 €' from text."""
-        match = re.search(r"€\s*([\d]{2,3}(?:[.,]\d{3})*)", text)
-        if match:
-            raw = match.group(1).replace(".", "").replace(",", "")
-            try:
-                return float(raw)
-            except ValueError:
-                pass
-        return None
