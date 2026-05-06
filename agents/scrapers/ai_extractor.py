@@ -86,19 +86,18 @@ class AIPropertyExtractor:
     _MAX_INPUT_CHARS = 15_000
 
     def __init__(self) -> None:
-        self._client = None
-        self._model: str = "gpt-4o-mini"  # inexpensive extraction model
+        from agents.llm_client import get_chat_client
+
         try:
-            from config.settings import settings  # avoid circular import at module load
-
-            if settings.openai_api_key:
-                import openai  # lazy import — not always installed
-
-                self._client = openai.OpenAI(api_key=settings.openai_api_key)
-                # Use the configured model, but pin to at least mini for cost control
-                self._model = settings.openai_model or "gpt-4o-mini"
+            self._client, self._model, backend = get_chat_client(prefer_cheap=True)
+            if backend == "github":
+                logger.info("[ai_extractor] using GitHub Models (%s)", self._model)
+            elif backend == "openai":
+                logger.info("[ai_extractor] using OpenAI (%s)", self._model)
         except Exception as exc:
-            logger.debug("[ai_extractor] Could not initialise OpenAI client: %s", exc)
+            self._client = None
+            self._model = ""
+            logger.debug("[ai_extractor] Could not initialise LLM client: %s", exc)
 
     @property
     def available(self) -> bool:

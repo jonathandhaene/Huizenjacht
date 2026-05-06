@@ -28,8 +28,8 @@ from models.property import Property, PropertyType
 _BEDROOM_PATTERNS = [
     # "3 slaapkamers" / "3 slaapk" / "3 bedrooms" / "3 chambres" / "3 ch."
     r"(\d+)\s*(?:slaapkamers?|slaapk\.?|bedrooms?|chambres?|ch\.\s|slpk\.?)",
-    # "3 bed" (abbreviated English)
-    r"(\d+)\s+bed\b",
+    # "3 bed" / "3 beds" (abbreviated English, e.g. Realo cards)
+    r"(\d+)\s+beds?\b",
     # Keyword-first: "slaapkamers: 3" / "bedrooms: 3"
     r"(?:slaapkamers?|bedrooms?|chambres?)\s*[:\-]\s*(\d+)",
     # "3 br" abbreviation
@@ -145,13 +145,16 @@ def _extract_area_with_keywords(text: str, keywords: List[str]) -> Optional[floa
     # Allow any non-digit characters between keyword and value to handle
     # cases like "bewoonbare oppervlakte: 250 m²" where the keyword stem
     # "bewoonbaar" is followed by extra suffix chars before the colon.
+    # Allow optional whitespace between "m" and "²/2" because some sites
+    # (e.g. Realo) render the superscript as a separate text node, which
+    # BeautifulSoup's `get_text(' ')` joins with a space → "215m 2".
     kw_first = re.search(
-        rf"(?:{kw_alt})[^\d\n]{{0,30}}?([\d][\d.,\s]*)\s*(?:m[²2]|ha)\b",
+        rf"(?:{kw_alt})[^\d\n]{{0,30}}?([\d][\d.,\s]*)\s*(?:m\s?[²2]|ha)\b",
         lower,
     )
     # Pattern 2: area value then keyword  →  "12.000 m² perceel"
     val_first = re.search(
-        rf"([\d][\d.,\s]*)\s*(?:m[²2]|ha)\b[^\n]{{0,20}}?(?:{kw_alt})",
+        rf"([\d][\d.,\s]*)\s*(?:m\s?[²2]|ha)\b[^\n]{{0,20}}?(?:{kw_alt})",
         lower,
     )
 
@@ -182,7 +185,7 @@ def extract_land_area(text: str) -> Optional[float]:
         return result
     # Generic fallback: find all "NNN m²" occurrences and return the largest
     # (land is almost always the biggest area figure on a card)
-    matches = re.findall(r"([\d][\d.,\s]*)\s*m[²2]", text.lower())
+    matches = re.findall(r"([\d][\d.,\s]*)\s*m\s?[²2]", text.lower())
     values: List[float] = []
     for raw in matches:
         try:
@@ -200,7 +203,22 @@ def extract_living_area(text: str) -> Optional[float]:
         "bewoonbaar", "bewoonbare opp", "leefruimte", "woonoppervlakte",
         "habitable", "surface habitable", "living area", "netto bewoonbaar",
     ]
-    return _extract_area_with_keywords(text, keywords)
+    result = _extract_area_with_keywords(text, keywords)
+    if result is not None:
+        return result
+    # Generic fallback: when a card has no explicit "habitable" keyword but
+    # only short m² figures (typical of search-result tiles like Realo's
+    # "4 beds 1 bath 215m²"), pick the smallest plausible value 50–500 m².
+    matches = re.findall(r"([\d][\d.,\s]*)\s*m\s?[²2]", text.lower())
+    values: List[float] = []
+    for raw in matches:
+        try:
+            v = float(_normalize_numeric(raw.strip()))
+            if 50 <= v <= 500:
+                values.append(v)
+        except ValueError:
+            pass
+    return min(values) if values else None
 
 
 # ── Property type classification ──────────────────────────────────────────────

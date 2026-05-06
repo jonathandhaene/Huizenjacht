@@ -50,14 +50,15 @@ class AIAnalyzerAgent:
     """
 
     def __init__(self) -> None:
-        self._client = None
-        if settings.openai_api_key:
-            try:
-                import openai
+        from agents.llm_client import get_chat_client
 
-                self._client = openai.OpenAI(api_key=settings.openai_api_key)
-            except ImportError:
-                logger.warning("[ai_analyzer] openai package not installed; using fallback scorer")
+        self._client, self._model, backend = get_chat_client()
+        if backend == "github":
+            logger.info("[ai_analyzer] using GitHub Models (%s)", self._model)
+        elif backend == "openai":
+            logger.info("[ai_analyzer] using OpenAI (%s)", self._model)
+        else:
+            logger.info("[ai_analyzer] no LLM credentials configured; using fallback scorer")
 
     def analyze(self, prop: Property) -> Property:
         """Attach AIAnalysis to *prop* in place and return it."""
@@ -76,7 +77,7 @@ class AIAnalyzerAgent:
         user_message = self._build_user_message(prop)
         try:
             response = self._client.chat.completions.create(
-                model=settings.openai_model,
+                model=self._model,
                 messages=[
                     {"role": "system", "content": _SYSTEM_PROMPT},
                     {"role": "user", "content": user_message},

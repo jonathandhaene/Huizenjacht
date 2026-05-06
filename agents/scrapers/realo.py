@@ -25,7 +25,7 @@ from models.property import Property, PropertyType
 
 logger = logging.getLogger(__name__)
 
-_REALO_SEARCH = "https://www.realo.be/nl/zoeken/te-koop"
+_REALO_SEARCH = "https://www.realo.be/en/search/for-sale/country-be"
 
 
 class RealoScraper(BaseScraper):
@@ -80,7 +80,14 @@ class RealoScraper(BaseScraper):
 
     def _parse_html(self, html: str, base_url: str) -> List[Property]:
         soup = BeautifulSoup(html, "lxml")
-        cards = soup.select("article.property-card, div[data-testid='property-card']")
+        # Realo's current grid markup uses `component-estate-grid-item`
+        # nested inside `component-estate-list-grid-item`.  Fall back to the
+        # older selectors as well in case the layout is A/B-tested.
+        cards = soup.select(
+            "div.component-estate-grid-item[data-href], "
+            "article.property-card, "
+            "div[data-testid='property-card']"
+        )
         props: List[Property] = []
         for card in cards:
             prop = self._parse_card(card)
@@ -90,15 +97,32 @@ class RealoScraper(BaseScraper):
 
     def _parse_card(self, card) -> Property | None:
         try:
-            link_tag = card.find("a", href=True)
-            url = link_tag["href"] if link_tag else ""
+            # Newer markup exposes the canonical detail URL on `data-href`
+            # and the numeric estate id on `data-id`.  Older markup only
+            # has a nested <a href>.
+            href = card.get("data-href") or ""
+            if not href:
+                link_tag = card.find("a", href=True)
+                href = link_tag["href"] if link_tag else ""
+            url = href.strip()
             if url and not url.startswith("http"):
                 url = "https://www.realo.be" + url
 
-            prop_id = f"realo-{url.rstrip('/').split('/')[-1]}"
+            # Prefer `data-listingid` (unique per listing) over `data-id`
+            # (which is the underlying address/estate id and can repeat
+            # across multiple active listings on the same property).
+            estate_id = (
+                card.get("data-listingid")
+                or card.get("data-id")
+                or card.get("id")
+            )
+            if estate_id:
+                prop_id = f"realo-{estate_id}"
+            else:
+                prop_id = f"realo-{url.rstrip('/').split('/')[-1]}" if url else "realo-unknown"
 
             title_tag = card.find(["h2", "h3", "span"], class_=lambda c: c and "title" in c.lower())
-            title = title_tag.get_text(strip=True) if title_tag else "Woning"
+            title = title_tag.get_text(strip=True) if title_tag else ""
 
             # Full card text for NLP extraction
             card_text = card.get_text(" ", strip=True)
@@ -117,8 +141,31 @@ class RealoScraper(BaseScraper):
             )
             address = location_tag.get_text(strip=True) if location_tag else None
 
-            img_tag = card.find("img")
-            images = [img_tag["src"]] if img_tag and img_tag.get("src") else []
+            # Use the address as the title when the markup doesn't expose
+            # a dedicated heading (Realo's grid view is image-first).
+            if not title:
+                title = address or "Woning"
+
+            # Realo's carousel embeds the full image list as a JSON blob on
+            # the carousel <ul data-images=...>.  Fall back to the first
+            # <img src> if the JSON is missing or malformed.
+            images: list[str] = []
+            carousel = card.find(attrs={"data-images": True})
+            if carousel:
+                import json as _json
+
+                try:
+                    raw = carousel.get("data-images") or "[]"
+                    for entry in _json.loads(raw):
+                        src = entry.get("srcAt2x") or entry.get("src")
+                        if src:
+                            images.append(src)
+                except Exception:
+                    pass
+            if not images:
+                img_tag = card.find("img")
+                if img_tag and img_tag.get("src"):
+                    images = [img_tag["src"]]
 
             # Use NLP to enrich fields missing from structured markup
             bedrooms = extract_bedrooms(card_text)

@@ -44,6 +44,22 @@ class Settings(BaseSettings):
     openai_api_key: str = Field("", description="OpenAI API key")
     openai_model: str = Field("gpt-4o")
 
+    # ── GitHub Models (free OpenAI-compatible inference for GitHub users) ─────
+    # Used as a fallback when openai_api_key is not set. Authenticates with a
+    # personal access token (or the GITHUB_TOKEN exposed inside Actions).
+    github_token: str = Field(
+        "",
+        description="GitHub PAT or Actions token used for GitHub Models inference",
+    )
+    github_models_base_url: str = Field(
+        "https://models.github.ai/inference",
+        description="Base URL of the GitHub Models OpenAI-compatible endpoint",
+    )
+    github_models_model: str = Field(
+        "openai/gpt-4o-mini",
+        description="Model id on GitHub Models (publisher/name format)",
+    )
+
     # ── Cache ─────────────────────────────────────────────────────────────────
     cache_dir: str = Field(".cache")
 
