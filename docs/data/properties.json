@@ -1,5 +1,60 @@
 [
   {
+    "id": "immodhondt-c9e6ad143f18",
+    "source": "immodhondt",
+    "source_url": "https://www.immodhondt.be/nl/component/contactme/?view=demand_register&from=list",
+    "title": "Google kaart",
+    "description": null,
+    "property_type": "farm",
+    "price": 50000.0,
+    "address": null,
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [],
+    "images_remote": [],
+    "images_local": [],
+    "images_cached_at": null,
+    "features": [],
+    "first_seen": "2026-05-08T11:51:31.520635+00:00",
+    "last_seen": "2026-05-08T11:51:31.520639+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Google kaart in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 50,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "realo-2061283784",
     "source": "realo",
     "source_url": "https://www.realo.be/en/rue-saint-vincent-36-1457-walhain-saint-paul/5194365?l=2061283784",
