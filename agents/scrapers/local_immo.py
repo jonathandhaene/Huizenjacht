@@ -226,6 +226,13 @@ class LocalImmoScraper(BaseScraper):
         if land_area is not None and living_area is not None and land_area < living_area:
             all_areas = _extract_all_area_values(card_text)
             if all_areas:
+                logger.debug(
+                    "[local_immo:%s] correcting swapped card areas: land=%s living=%s text=%s",
+                    source.slug,
+                    land_area,
+                    living_area,
+                    card_text[:200],
+                )
                 land_area = max(all_areas)
                 plausible_living = [
                     area
@@ -318,7 +325,8 @@ class LocalImmoScraper(BaseScraper):
                 continue
             postal = _extract_postal_code(text)
             if postal:
-                remainder = re.sub(rf".*?\b{re.escape(postal)}\b[\s,/-]*", "", text).strip(" ,-")
+                _, _, suffix = text.partition(postal)
+                remainder = suffix.lstrip(" ,-/")
                 if remainder:
                     return remainder.split(" | ")[0].strip()
         return None
@@ -462,8 +470,9 @@ def _extract_all_area_values(text: str) -> list[float]:
         # Belgian listings usually use 8.000 / 8,000 for thousands, while
         # endings like 8,5 or 8,50 behave like decimals. Example:
         # "8.000" -> 8000, but "8,5" -> 8.5. Treat a trailing three-digit
-        # group as a thousands separator and strip it; shorter suffixes fall
-        # through to decimal-style normalization below.
+        # group as a thousands separator and strip it; exactly three trailing
+        # digits means thousands here, while shorter suffixes fall through to
+        # decimal-style normalization below.
         if re.search(r"[,.](\d{3})$", cleaned):
             cleaned = re.sub(r"[,.]", "", cleaned)
         else:
