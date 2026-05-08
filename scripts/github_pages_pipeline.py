@@ -28,6 +28,7 @@ from agents.enrichment.ai_analyzer import AIAnalyzerAgent
 from agents.enrichment.government import GovernmentEnrichmentAgent
 from agents.notification.email_agent import EmailNotificationAgent
 from agents.scrapers.immoweb import ImmowebScraper
+from agents.scrapers.local_immo import LocalImmoScraper
 from agents.scrapers.logic_immo import LogicImmoScraper
 from agents.scrapers.realo import RealoScraper
 from agents.scrapers.social_media import SocialMediaScraper
@@ -143,6 +144,7 @@ def _scrape_new(existing_ids: Set[str]) -> List[Property]:
 
     scrapers = [
         ImmowebScraper(),
+        LocalImmoScraper(),
         ZimmoScraper(),
         RealoScraper(),
         LogicImmoScraper(),
