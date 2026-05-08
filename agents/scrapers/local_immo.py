@@ -338,7 +338,7 @@ class LocalImmoScraper(BaseScraper):
 
     def _make_property_id(self, source: LocalImmoSource, url: str | None, fallback: str | None) -> str:
         seed = url or fallback or source.search_url
-        digest = hashlib.sha1(seed.encode("utf-8")).hexdigest()[:12]
+        digest = hashlib.sha256(seed.encode("utf-8")).hexdigest()[:12]
         return f"{source.slug}-{digest}"
 
     def _absolute_url(self, base_url: str, raw_url: str | None) -> str | None:
@@ -348,7 +348,7 @@ class LocalImmoScraper(BaseScraper):
 
     def _with_source_context(self, prop: Property, source: LocalImmoSource) -> Property:
         seed = f"{prop.source_url}|{prop.title}|{prop.id}"
-        digest = hashlib.sha1(seed.encode("utf-8")).hexdigest()[:12]
+        digest = hashlib.sha256(seed.encode("utf-8")).hexdigest()[:12]
         return prop.model_copy(
             update={
                 "id": f"{source.slug}-{digest}",
@@ -460,9 +460,10 @@ def _extract_all_area_values(text: str) -> list[float]:
     for raw in re.findall(r"([\d][\d.,\s]*)\s*m\s?[²2]", text.lower()):
         cleaned = re.sub(r"\s", "", raw)
         # Belgian listings usually use 8.000 / 8,000 for thousands, while
-        # endings like 8,5 or 8,50 behave like decimals. Treat a trailing
-        # three-digit group as a thousands separator and strip it; shorter
-        # suffixes fall through to decimal-style normalization below.
+        # endings like 8,5 or 8,50 behave like decimals. Example:
+        # "8.000" -> 8000, but "8,5" -> 8.5. Treat a trailing three-digit
+        # group as a thousands separator and strip it; shorter suffixes fall
+        # through to decimal-style normalization below.
         if re.search(r"[,.](\d{3})$", cleaned):
             cleaned = re.sub(r"[,.]", "", cleaned)
         else:
