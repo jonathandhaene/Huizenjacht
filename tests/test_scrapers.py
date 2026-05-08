@@ -235,6 +235,119 @@ def test_zimmo_scraper_handles_error():
 
 
 # ---------------------------------------------------------------------------
+# Local Vlaamse Ardennen agency scraper
+# ---------------------------------------------------------------------------
+
+_LOCAL_IMMO_JSON_LD_HTML = """
+<!doctype html><html><body>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "item": {
+        "@type": "RealEstateListing",
+        "name": "Hoeve met schuur",
+        "url": "/nl/te-koop/hoeve-met-schuur",
+        "description": "Ruime hoeve met 4 slaapkamers op 12.000 m² in Brakel",
+        "image": ["https://cdn.local/hoeve.jpg"],
+        "numberOfBedrooms": 4,
+        "floorSize": {"@type": "QuantitativeValue", "value": 280},
+        "lotSize": {"@type": "QuantitativeValue", "value": 12000},
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Kasteeldreef 1",
+          "postalCode": "9660",
+          "addressLocality": "Brakel"
+        },
+        "offers": {"@type": "Offer", "price": 480000, "priceCurrency": "EUR"}
+      }
+    },
+    {
+      "@type": "ListItem",
+      "item": {
+        "@type": "RealEstateListing",
+        "name": "Woning buiten regio",
+        "url": "/nl/te-koop/woning-buiten-regio",
+        "description": "Mooie woning in Gent",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Stationsstraat 10",
+          "postalCode": "9000",
+          "addressLocality": "Gent"
+        },
+        "offers": {"@type": "Offer", "price": 450000, "priceCurrency": "EUR"}
+      }
+    }
+  ]
+}
+</script>
+</body></html>
+"""
+
+_LOCAL_IMMO_CARD_HTML = """
+<!doctype html><html><body>
+<div class="property-card">
+  <a href="/nl/te-koop/landelijke-woning">
+    <h2>Landelijke woning met tuin</h2>
+  </a>
+  <p class="price">€ 525.000</p>
+  <p class="location">Kerkstraat 5, 9700 Oudenaarde</p>
+  <p>4 slaapkamers · 8.000 m² perceel · 240 m² bewoonbaar</p>
+  <img src="/images/woning.jpg" />
+</div>
+</body></html>
+"""
+
+
+def test_local_immo_scraper_parses_json_ld_and_filters_region():
+    from agents.scrapers.local_immo import LocalImmoScraper, LocalImmoSource
+
+    scraper = LocalImmoScraper()
+    source = LocalImmoSource("immoroman", "https://immoroman.be/fr/a-vendre")
+
+    props = scraper._parse_search_page(_LOCAL_IMMO_JSON_LD_HTML, source)
+    props = [p for p in props if scraper._matches_search_criteria(p)]
+
+    assert len(props) == 1
+    prop = props[0]
+    assert prop.source == "immoroman"
+    assert prop.source_url == "https://immoroman.be/nl/te-koop/hoeve-met-schuur"
+    assert prop.title == "Hoeve met schuur"
+    assert prop.price == 480_000
+    assert prop.bedrooms == 4
+    assert prop.land_area == 12_000
+    assert prop.living_area == 280
+    assert prop.postal_code == "9660"
+    assert prop.municipality == "Brakel"
+    assert prop.images == ["https://cdn.local/hoeve.jpg"]
+    assert prop.property_type == PropertyType.FARM
+
+
+def test_local_immo_scraper_parses_card_fallback():
+    from agents.scrapers.local_immo import LocalImmoScraper, LocalImmoSource
+
+    scraper = LocalImmoScraper()
+    source = LocalImmoSource("vastgoedlietaer", "https://www.vastgoedlietaer.be/nl/te-koop")
+
+    props = scraper._parse_search_page(_LOCAL_IMMO_CARD_HTML, source)
+
+    assert len(props) == 1
+    prop = props[0]
+    assert prop.source == "vastgoedlietaer"
+    assert prop.source_url == "https://www.vastgoedlietaer.be/nl/te-koop/landelijke-woning"
+    assert prop.price == 525_000
+    assert prop.postal_code == "9700"
+    assert prop.municipality == "Oudenaarde"
+    assert prop.bedrooms == 4
+    assert prop.land_area == 8_000
+    assert prop.living_area == 240
+    assert prop.images == ["https://www.vastgoedlietaer.be/images/woning.jpg"]
+
+
+# ---------------------------------------------------------------------------
 # Social media scraper
 # ---------------------------------------------------------------------------
 
@@ -354,4 +467,3 @@ def test_immoweb_scraper_uses_playwright_fallback():
 
     assert len(props) == 1
     assert props[0].id == "immoweb-12345"
-
