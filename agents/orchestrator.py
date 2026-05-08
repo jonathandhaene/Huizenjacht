@@ -26,6 +26,7 @@ from agents.enrichment.ai_analyzer import AIAnalyzerAgent
 from agents.enrichment.government import GovernmentEnrichmentAgent
 from agents.notification.email_agent import EmailNotificationAgent
 from agents.scrapers.immoweb import ImmowebScraper
+from agents.scrapers.local_immo import LocalImmoScraper
 from agents.scrapers.logic_immo import LogicImmoScraper
 from agents.scrapers.nlp_normalizer import deduplicate_properties
 from agents.scrapers.realo import RealoScraper
@@ -56,6 +57,7 @@ class Orchestrator:
             ZimmoScraper(),
             RealoScraper(),
             LogicImmoScraper(),
+            LocalImmoScraper(),
             SocialMediaScraper(),
         ]
         self._gov_agent = GovernmentEnrichmentAgent()

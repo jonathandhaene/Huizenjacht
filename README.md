@@ -19,12 +19,12 @@ Elke ochtend om 07:00
 │ • Zimmo          │     │   (Geopunt,      │     │   naar           │
 │ • Realo          │     │    bestemmings-  │     │   jonathan.      │
 │ • Logic Immo     │     │    zone, vloeden,│     │   dhaene@        │
-│ • Facebook /     │     │    erfgoed)      │     │   gmail.com      │
-│   sociale media  │     │                  │     │                  │
-└──────────────────┘     │ • AI Analyse     │     │ • Match e-mail   │
-                         │   (score 0–10,   │     │   wanneer jullie │
-                         │    pro's/con's,  │     │   beiden ❤️      │
-                         │    aanbevelingen)│     │   geven          │
+│ • Lokale immo-   │     │    erfgoed)      │     │   gmail.com      │
+│   sites Vlaamse  │     │                  │     │                  │
+│   Ardennen       │     │ • AI Analyse     │     │ • Match e-mail   │
+│ • Facebook /     │     │   (score 0–10,   │     │   wanneer jullie │
+│   sociale media  │     │    pro's/con's,  │     │   beiden ❤️      │
+└──────────────────┘     │    aanbevelingen)│     │   geven          │
                          └──────────────────┘     └──────────────────┘
                                   │
                                   ▼
@@ -209,6 +209,7 @@ Huizenjacht/
 │   │   ├── zimmo.py            # Zimmo scraper
 │   │   ├── realo.py            # Realo scraper
 │   │   ├── logic_immo.py       # Logic Immo scraper
+│   │   ├── local_immo.py       # Lokale immokantoren Vlaamse Ardennen
 │   │   └── social_media.py     # Publieke Facebook-groepen
 │   ├── enrichment/
 │   │   ├── government.py       # Geopunt / Vlaams overheidsdata

@@ -18,8 +18,6 @@ from __future__ import annotations
 import logging
 from typing import Optional, Tuple
 
-from config.settings import settings
-
 logger = logging.getLogger(__name__)
 
 
@@ -43,6 +41,9 @@ def get_chat_client(prefer_cheap: bool = False) -> Tuple[Optional[object], str, 
     except ImportError:
         logger.warning("[llm_client] openai package not installed")
         return None, "", "none"
+
+    # Import lazily so patched settings objects in tests are picked up here too.
+    from config.settings import settings
 
     if settings.openai_api_key:
         model = settings.openai_model or "gpt-4o"
