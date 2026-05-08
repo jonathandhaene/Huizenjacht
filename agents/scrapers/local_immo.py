@@ -73,6 +73,7 @@ _CARD_SELECTOR = (
 
 _MIN_PLAUSIBLE_LIVING_AREA = 50.0
 _MAX_PLAUSIBLE_LIVING_AREA = 500.0
+_MIN_LISTING_TEXT_LENGTH = 20
 
 
 class LocalImmoScraper(BaseScraper):
@@ -223,7 +224,7 @@ class LocalImmoScraper(BaseScraper):
         municipality = self._extract_municipality(address_text, card_text)
         land_area = extract_land_area(card_text)
         living_area = extract_living_area(card_text)
-        if land_area is not None and living_area is not None and land_area < living_area:
+        if self._needs_area_correction(land_area, living_area):
             all_areas = _extract_all_area_values(card_text)
             if all_areas:
                 logger.debug(
@@ -335,7 +336,7 @@ class LocalImmoScraper(BaseScraper):
     def _looks_like_listing(self, url: str | None, title: str | None, price: float | None, text_blob: str) -> bool:
         if not url or not title:
             return False
-        if len(text_blob.strip()) < 20:
+        if len(text_blob.strip()) < _MIN_LISTING_TEXT_LENGTH:
             return False
         return bool(
             price
@@ -375,6 +376,13 @@ class LocalImmoScraper(BaseScraper):
         if prop.land_area is not None and prop.land_area < settings.min_land_area:
             return False
         return True
+
+    def _needs_area_correction(self, land_area: float | None, living_area: float | None) -> bool:
+        return (
+            land_area is not None
+            and living_area is not None
+            and land_area < living_area
+        )
 
 
 def _as_list(value: Any) -> list[Any]:

@@ -42,6 +42,7 @@ def get_chat_client(prefer_cheap: bool = False) -> Tuple[Optional[object], str, 
         logger.warning("[llm_client] openai package not installed")
         return None, "", "none"
 
+    # Import lazily so patched settings objects in tests are picked up here too.
     from config.settings import settings
 
     if settings.openai_api_key:
