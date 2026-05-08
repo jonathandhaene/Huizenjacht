@@ -304,10 +304,11 @@ class LocalImmoScraper(BaseScraper):
         if "house" in node_types or "singlefamilyresidence" in node_types:
             return classify_property_type(text_blob)
         if "apartment" in node_types:
+            # The shared PropertyType enum has no apartment-specific value.
             return PropertyType.OTHER
         return classify_property_type(text_blob)
 
-    def _extract_address(self, address: dict | None) -> tuple[str | None, str | None, str | None]:
+    def _extract_address(self, address: dict | str | None) -> tuple[str | None, str | None, str | None]:
         if not address:
             return None, None, None
         if isinstance(address, str):
@@ -465,20 +466,22 @@ def _extract_postal_code(text: str) -> str | None:
 
 def _extract_all_area_values(text: str) -> list[float]:
     values: list[float] = []
-    for raw in re.findall(r"([\d][\d.,\s]*)\s*m\s?[²2]", text.lower()):
-        cleaned = re.sub(r"\s", "", raw)
-        # Belgian listings usually use 8.000 / 8,000 for thousands, while
-        # endings like 8,5 or 8,50 behave like decimals. Example:
-        # "8.000" -> 8000, but "8,5" -> 8.5. Treat a trailing three-digit
-        # group as a thousands separator and strip it; exactly three trailing
-        # digits means thousands here, while shorter suffixes fall through to
-        # decimal-style normalization below.
-        if re.search(r"[,.](\d{3})$", cleaned):
-            cleaned = re.sub(r"[,.]", "", cleaned)
-        else:
-            cleaned = cleaned.replace(".", "").replace(",", ".")
+    for raw in re.findall(r"(\d[\d.,\s]*)\s*m\s?[²2]", text.lower()):
+        cleaned = _normalize_area_numeric(raw)
         try:
             values.append(float(cleaned))
         except ValueError:
             continue
     return values
+
+
+def _normalize_area_numeric(raw: str) -> str:
+    cleaned = re.sub(r"\s", "", raw)
+    # Belgian-style values commonly look like 8.000 or 12.345,67:
+    # - 1-2 trailing digits => decimal suffix ("8,5" -> "8.5")
+    # - otherwise separators are thousands separators ("8.000" -> "8000")
+    decimal_match = re.search(r"([,.])(\d{1,2})$", cleaned)
+    if decimal_match:
+        integer_part = re.sub(r"[,.]", "", cleaned[: decimal_match.start()])
+        return f"{integer_part}.{decimal_match.group(2)}"
+    return re.sub(r"[,.]", "", cleaned)
