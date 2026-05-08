@@ -71,6 +71,9 @@ _CARD_SELECTOR = (
     "li[class*='property'], li[class*='listing']"
 )
 
+_MIN_PLAUSIBLE_LIVING_AREA = 50.0
+_MAX_PLAUSIBLE_LIVING_AREA = 500.0
+
 
 class LocalImmoScraper(BaseScraper):
     """Scrape local agency websites in the Vlaamse Ardennen."""
@@ -224,7 +227,11 @@ class LocalImmoScraper(BaseScraper):
             all_areas = _extract_all_area_values(card_text)
             if all_areas:
                 land_area = max(all_areas)
-                plausible_living = [area for area in all_areas if 50 <= area <= 500]
+                plausible_living = [
+                    area
+                    for area in all_areas
+                    if _MIN_PLAUSIBLE_LIVING_AREA <= area <= _MAX_PLAUSIBLE_LIVING_AREA
+                ]
                 if plausible_living:
                     living_area = min(plausible_living)
 
@@ -452,6 +459,9 @@ def _extract_all_area_values(text: str) -> list[float]:
     values: list[float] = []
     for raw in re.findall(r"([\d][\d.,\s]*)\s*m\s?[²2]", text.lower()):
         cleaned = re.sub(r"\s", "", raw)
+        # Belgian listings usually use 8.000 / 8,000 for thousands, while
+        # shorter fractional endings behave like decimals. Treat a trailing
+        # three-digit group as a thousands separator and strip it.
         if re.search(r"[,.](\d{3})$", cleaned):
             cleaned = re.sub(r"[,.]", "", cleaned)
         else:
