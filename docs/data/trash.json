@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "property_id": "immoweb-99999",
+    "image_paths": [
+      "data/images/immoweb-99999/f0214344bad05f3d.jpg"
+    ],
+    "deleted_at": "2026-05-08T11:39:34.084Z",
+    "purge_after": "2026-05-22T11:39:34.084Z"
+  }
+]
