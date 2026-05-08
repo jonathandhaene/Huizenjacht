@@ -305,7 +305,7 @@ class LocalImmoScraper(BaseScraper):
             return None, None, None
         if isinstance(address, str):
             text = address.strip()
-            return text or None, _extract_postal_code(text), self._extract_municipality(text, text)
+            return text or None, _extract_postal_code(text), self._extract_municipality(text, "")
         street = _first_text(address.get("streetAddress"), address.get("name"))
         postal = _first_text(address.get("postalCode"), address.get("zip"))
         municipality = _first_text(address.get("addressLocality"), address.get("city"))
@@ -460,8 +460,9 @@ def _extract_all_area_values(text: str) -> list[float]:
     for raw in re.findall(r"([\d][\d.,\s]*)\s*m\s?[²2]", text.lower()):
         cleaned = re.sub(r"\s", "", raw)
         # Belgian listings usually use 8.000 / 8,000 for thousands, while
-        # shorter fractional endings behave like decimals. Treat a trailing
-        # three-digit group as a thousands separator and strip it.
+        # endings like 8,5 or 8,50 behave like decimals. Treat a trailing
+        # three-digit group as a thousands separator and strip it; shorter
+        # suffixes fall through to decimal-style normalization below.
         if re.search(r"[,.](\d{3})$", cleaned):
             cleaned = re.sub(r"[,.]", "", cleaned)
         else:
