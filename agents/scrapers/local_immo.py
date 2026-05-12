@@ -48,7 +48,19 @@ _LOCAL_SOURCES = [
     ),
     LocalImmoSource(
         "axellenaerts_vlaamse_ardennen",
-        "https://www.axellenaerts.be/nl/te-koop?location=oudenaarde",
+        "https://www.axellenaerts.be/nl/kopen?location=oudenaarde",
+    ),
+    LocalImmoSource(
+        "agence_rosseel",
+        "https://rosseel.be/te-koop",
+    ),
+    LocalImmoSource(
+        "weva_vastgoed",
+        "https://weva-vastgoed.be/properties/?filter-status=63",
+    ),
+    LocalImmoSource(
+        "dewaele_oudenaarde",
+        "https://www.dewaele.com/nl/te-koop?kantoor=oudenaarde",
     ),
 ]
 
