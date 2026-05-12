@@ -59,8 +59,32 @@ _LOCAL_SOURCES = [
         "https://weva-vastgoed.be/properties/?filter-status=63",
     ),
     LocalImmoSource(
-        "dewaele_oudenaarde",
-        "https://www.dewaele.com/nl/te-koop?kantoor=oudenaarde",
+        "dewaele_vlaamse_ardennen",
+        "https://www.dewaele.com/nl/te-koop/alle/huis/lk-huis-te-koop-vlaamse-ardennen",
+    ),
+    LocalImmoSource(
+        "immocasteels",
+        "https://www.immocasteels.com/realestate/",
+    ),
+    LocalImmoSource(
+        "immonobels",
+        "https://www.nobels.be/nl/te-koop",
+    ),
+    LocalImmoSource(
+        "vastgoedcoorevits",
+        "https://www.vastgoedcoorevits.be/te-koop",
+    ),
+    LocalImmoSource(
+        "vastgoedbrowaeys",
+        "https://vastgoedbrowaeys.be/nl/te-koop",
+    ),
+    LocalImmoSource(
+        "immobeguin",
+        "https://www.immobeguin.be/nl/te-koop",
+    ),
+    LocalImmoSource(
+        "vastgoedlammers",
+        "https://vastgoedlammers.be/te-koop",
     ),
 ]
 
