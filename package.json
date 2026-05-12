@@ -1,0 +1,28 @@
+{
+  "name": "huizenjacht",
+  "version": "1.0.0",
+  "description": "> **Multi-agent system om samen met je partner jullie droomhuis in de Vlaamse Ardennen te vinden.**",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node tests/ui/test_ui_integration.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonathandhaene/Huizenjacht.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jonathandhaene/Huizenjacht/issues"
+  },
+  "homepage": "https://github.com/jonathandhaene/Huizenjacht#readme",
+  "devDependencies": {
+    "jsdom": "^29.1.1"
+  }
+}

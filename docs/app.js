@@ -530,7 +530,7 @@ async function toggleDismiss(propertyId) {
     showToast('📥 Terug naar Inbox');
   } else {
     state.annotations[propertyId].dismissed[name] = new Date().toISOString();
-    showToast('📦 Verplaatst naar Overige');
+    showToast('🗑️ Verplaatst naar Prullenbak');
   }
 
   renderCurrentTab();
@@ -631,7 +631,6 @@ function filteredProperties() {
       case 'liked':   props = props.filter(p => isLikedByMe(p.id));  break;
       case 'matched': props = props.filter(p => isMatched(p.id));     break;
       case 'noted':   props = props.filter(p => getAnnotations(p.id).notes.length > 0); break;
-      case 'trashed': props = props.filter(p => hasTrash(p.id)); break;
       case 'new': {
         const today = new Date(); today.setHours(0,0,0,0);
         props = props.filter(p => p.first_seen && new Date(p.first_seen) >= today);
@@ -655,15 +654,12 @@ function renderProperties() {
       state.activeFilter === 'matched'   ? '🤝' :
       state.activeFilter === 'noted'     ? '📝' :
       state.activeFilter === 'new'       ? '🔍' :
-      state.activeFilter === 'dismissed' ? '📦' :
-      state.activeFilter === 'trashed'   ? '🗑️' :
+      state.activeFilter === 'dismissed' ? '🗑️' :
       state.activeTagFilter              ? '🏷️' : '🏡',
       state.activeFilter === 'all' && !state.activeTagFilter
         ? 'Nog geen panden gevonden.<br>De dagelijkse scan loopt elke ochtend om 07:00.'
         : state.activeFilter === 'dismissed'
-        ? 'Geen panden gemarkeerd als niet interessant.'
-        : state.activeFilter === 'trashed'
-        ? 'Prullenbak is leeg — geen afbeeldingen gepland voor verwijdering.'
+        ? 'Prullenbak is leeg.'
         : 'Geen panden in deze categorie.'
     ));
     return;
@@ -681,7 +677,6 @@ function propertyCard(prop) {
   const isNew      = isNewToday(prop.first_seen);
   const ann        = getAnnotations(prop.id);
   const hasNote    = ann.notes.length > 0;
-  const inTrash    = hasTrash(prop.id);
   const others  = matched
     ? Object.keys(state.likes[prop.id] || {}).filter(n => n !== state.user?.name)
     : [];
@@ -700,7 +695,6 @@ function propertyCard(prop) {
   if (dismissed) cardCls += ' dismissed';
   else if (matched) cardCls += ' matched';
   else if (liked)   cardCls += ' liked';
-  if (inTrash) cardCls += ' has-trash';
 
   const displayImages = getDisplayImages(prop);
   const firstImage = displayImages[0];
@@ -709,7 +703,7 @@ function propertyCard(prop) {
   const card = el('div', cardCls);
   card.dataset.id = prop.id;
   card.innerHTML = `
-    <div class="swipe-hint swipe-hint-left" aria-hidden="true"><span>👎</span></div>
+    <div class="swipe-hint swipe-hint-left" aria-hidden="true"><span>🗑️</span></div>
     <div class="swipe-hint swipe-hint-right" aria-hidden="true"><span>❤️</span></div>
     <div class="card-image">
       ${firstImage
@@ -723,8 +717,7 @@ function propertyCard(prop) {
         ${isNew      ? '<span class="card-badge badge-new">Nieuw</span>' : ''}
         ${matched    ? '<span class="card-badge badge-match">🎉 Match!</span>' : ''}
         ${hasNote    ? '<span class="card-badge badge-noted">📝</span>' : ''}
-        ${dismissed  ? '<span class="card-badge badge-dismissed">📦 Overige</span>' : ''}
-        ${inTrash    ? '<span class="card-badge badge-trashed">🗑️</span>' : ''}
+        ${dismissed  ? '<span class="card-badge badge-dismissed">🗑️ Prullenbak</span>' : ''}
       </div>
       ${riskChipHtml}
       ${score != null ? `<span class="score-badge ${scoreCls(score)}">⭐ ${score}/10</span>` : ''}
@@ -743,12 +736,8 @@ function propertyCard(prop) {
     </div>
     <div class="card-footer">
       <button class="btn-detail" onclick="showDetail('${esc(prop.id)}')">Meer info ▶</button>
-      <button class="btn-trash ${inTrash ? 'trashed' : ''}" onclick="handleTrash(event,'${esc(prop.id)}')"
-        aria-label="${inTrash ? 'Herstel afbeeldingen' : 'Afbeeldingen naar prullenbak'}">
-        ${inTrash ? '♻️' : '🗑️'}
-      </button>
-      <button class="btn-dismiss ${dismissed ? 'dismissed' : ''}" onclick="handleDismiss(event,'${esc(prop.id)}')" aria-label="${dismissed ? 'Terug naar Inbox' : 'Niet interessant'}">
-        ${dismissed ? '↩️' : '👎'}
+      <button class="btn-dismiss ${dismissed ? 'dismissed' : ''}" onclick="handleDismiss(event,'${esc(prop.id)}')" aria-label="${dismissed ? 'Herstel uit Prullenbak' : 'Verplaats naar Prullenbak'}">
+        ${dismissed ? '♻️' : '🗑️'}
       </button>
       <button class="btn-like ${liked ? 'liked' : ''}" onclick="handleLike(event,'${esc(prop.id)}')" aria-label="Like">
         <span class="heart">${liked ? '❤️' : '🤍'}</span>
@@ -842,15 +831,6 @@ function renderSettings() {
       Data bijgewerkt door GitHub Actions elke ochtend om 07:00.
     </p>`;
 
-  // ── Trash management section ──────────────────────────────────────────────
-  container.innerHTML += `
-    <p class="settings-section-title" style="margin-top:24px">🗑️ Prullenbak beheer</p>
-    <p class="settings-note">
-      Afbeeldingen in de prullenbak worden na 14 dagen automatisch verwijderd.
-      Je kunt ze eerder verwijderen of herstellen hieronder.
-    </p>
-    ${renderTrashManagementSection()}
-  `;
 }
 
 function renderTrashManagementSection() {
@@ -1061,12 +1041,6 @@ function showDetail(propertyId) {
         <p style="font-size:.88rem;color:var(--stone-600);line-height:1.6">${esc(prop.description.substring(0,600))}${prop.description.length > 600 ? '…' : ''}</p>
       </div>` : ''}
 
-      <!-- Image trash management -->
-      <div class="detail-section" id="modal-trash-section">
-        <h3>🗑️ Afbeeldingen prullenbak</h3>
-        ${renderTrashSection(propertyId)}
-      </div>
-
       <!-- Notes -->
       <div class="detail-section" id="modal-notes-section">
         <h3>Notities</h3>
@@ -1084,8 +1058,8 @@ function showDetail(propertyId) {
         🔗 Bekijk advertentie
       </a>
       <button class="btn-dismiss-large ${isDismissedByMe(propertyId) ? 'dismissed' : ''}" id="modal-dismiss-btn"
-        onclick="handleDismiss(event,'${esc(prop.id)}',true)" aria-label="${isDismissedByMe(propertyId) ? 'Terug naar Inbox' : 'Niet interessant'}">
-        ${isDismissedByMe(propertyId) ? '↩️' : '👎'}
+        onclick="handleDismiss(event,'${esc(prop.id)}',true)" aria-label="${isDismissedByMe(propertyId) ? 'Herstel uit Prullenbak' : 'Verplaats naar Prullenbak'}">
+        ${isDismissedByMe(propertyId) ? '♻️' : '🗑️'}
       </button>
       <button class="btn-like-large ${liked ? 'liked' : ''}" id="modal-like-btn"
         onclick="handleLike(event,'${esc(prop.id)}',true)" aria-label="Like">
@@ -1485,7 +1459,8 @@ async function handleDismiss(event, propertyId, fromModal = false) {
   const modalBtn = $('#modal-dismiss-btn');
   if (modalBtn) {
     const dismissed = isDismissedByMe(propertyId);
-    modalBtn.textContent = dismissed ? '↩️' : '👎';
+    modalBtn.textContent = dismissed ? '♻️' : '🗑️';
+    modalBtn.setAttribute('aria-label', dismissed ? 'Herstel uit Prullenbak' : 'Verplaats naar Prullenbak');
     modalBtn.classList.toggle('dismissed', dismissed);
   }
 }

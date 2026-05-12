@@ -10,3 +10,5 @@ venv/
 *.log
 .DS_Store
 .playwright/
+node_modules/
+.vscode/
