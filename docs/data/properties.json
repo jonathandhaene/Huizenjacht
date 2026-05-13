@@ -79,9 +79,13 @@
     "images": [
       "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2F1a1838f4-b28e-4fbd-b371-d693e075e889%2Fimage3089647.png?auto=compress%2Cformat&w=440&h=291&fit=crop"
     ],
-    "images_remote": [],
-    "images_local": [],
-    "images_cached_at": null,
+    "images_remote": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2F1a1838f4-b28e-4fbd-b371-d693e075e889%2Fimage3089647.png?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_local": [
+      "data/images/dewaele_vlaamse_ardennen-4522a5cd8cb2/e97a84ec6a7d9bf8.png"
+    ],
+    "images_cached_at": "2026-05-13T07:48:24.034683+00:00",
     "features": [],
     "first_seen": "2026-05-12T17:30:31.380076+00:00",
     "last_seen": "2026-05-12T17:30:31.380077+00:00",
