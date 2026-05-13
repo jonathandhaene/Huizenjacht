@@ -22,6 +22,7 @@ def _mock_property(prop_id: str = "test-1", score: float = 7.0) -> Property:
         price=500_000,
         bedrooms=4,
         land_area=8_000,
+        postal_code="9660",
     )
     p.ai_analysis = AIAnalysis(
         score=score,
@@ -90,6 +91,92 @@ def test_mark_seen_is_additive(tmp_path):
     seen = orch._load_seen()
     assert "a" in seen
     assert "b" in seen
+
+
+# ---------------------------------------------------------------------------
+# Region filtering
+# ---------------------------------------------------------------------------
+
+def test_filter_by_region_keeps_in_area():
+    from agents.orchestrator import Orchestrator
+    from config.settings import settings
+
+    orch = Orchestrator()
+    allowed = settings.postal_code_list[0]
+    props = [
+        Property(
+            id="ok-1",
+            source="test",
+            source_url="https://example.com/1",
+            title="Woning in regio",
+            postal_code=allowed,
+        ),
+    ]
+    kept = orch._filter_by_region(props)
+    assert len(kept) == 1
+
+
+def test_filter_by_region_drops_out_of_area():
+    """Realo-style listings from Walloon Brabant (1435/1457) must be dropped."""
+    from agents.orchestrator import Orchestrator
+
+    orch = Orchestrator()
+    props = [
+        Property(
+            id="realo-1",
+            source="realo",
+            source_url="https://realo.be/x",
+            title="Rue saint-Vincent 36, 1457 Walhain-Saint-Paul",
+            address="Rue saint-Vincent 36, 1457 Walhain-Saint-Paul",
+        ),
+        Property(
+            id="realo-2",
+            source="realo",
+            source_url="https://realo.be/y",
+            title="Grand route 57, 1435 Mont-Saint-Guibert",
+            address="1435 Mont-Saint-Guibert",
+        ),
+    ]
+    kept = orch._filter_by_region(props)
+    assert kept == []
+
+
+def test_filter_by_region_recovers_postal_from_address():
+    """When postal_code is missing but address contains one in the allowed
+    list, the property is kept and postal_code is back-filled."""
+    from agents.orchestrator import Orchestrator
+    from config.settings import settings
+
+    orch = Orchestrator()
+    allowed = settings.postal_code_list[0]
+    props = [
+        Property(
+            id="x-1",
+            source="test",
+            source_url="https://example.com/1",
+            title=f"Mooie hoeve in {allowed} Brakel",
+        ),
+    ]
+    kept = orch._filter_by_region(props)
+    assert len(kept) == 1
+    assert kept[0].postal_code == allowed
+
+
+def test_filter_by_region_drops_unknown_postal():
+    """Properties without any extractable postal code are discarded."""
+    from agents.orchestrator import Orchestrator
+
+    orch = Orchestrator()
+    props = [
+        Property(
+            id="junk-1",
+            source="local_immo",
+            source_url="https://example.com/contact",
+            title="Google kaart",
+        ),
+    ]
+    kept = orch._filter_by_region(props)
+    assert kept == []
 
 
 # ---------------------------------------------------------------------------

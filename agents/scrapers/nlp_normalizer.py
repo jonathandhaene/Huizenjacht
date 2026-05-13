@@ -240,6 +240,32 @@ _TYPE_KEYWORDS: dict[PropertyType, List[str]] = {
 }
 
 
+# ── Postal code extraction ────────────────────────────────────────────────────
+
+# Belgian postal codes are exactly 4 digits (1000–9999).
+_POSTAL_CODE_PATTERN = re.compile(r"\b([1-9]\d{3})\b")
+
+
+def extract_postal_code(*texts: Optional[str]) -> Optional[str]:
+    """Return the first Belgian-style 4-digit postal code found in any of the
+    given text fragments.
+
+    >>> extract_postal_code("Rue saint-Vincent 36, 1457 Walhain-Saint-Paul")
+    '1457'
+    >>> extract_postal_code(None, "Brakel 9660")
+    '9660'
+    >>> extract_postal_code("No code here") is None
+    True
+    """
+    for text in texts:
+        if not text:
+            continue
+        match = _POSTAL_CODE_PATTERN.search(str(text))
+        if match:
+            return match.group(1)
+    return None
+
+
 def classify_property_type(text: str) -> PropertyType:
     """Classify property type from free-form text.
 

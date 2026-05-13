@@ -372,6 +372,22 @@ class LocalImmoScraper(BaseScraper):
     def _looks_like_listing(self, url: str | None, title: str | None, price: float | None, text_blob: str) -> bool:
         if not url or not title:
             return False
+        # Reject obvious non-listing URLs: contact forms, registration links,
+        # newsletter sign-ups, generic component endpoints.
+        url_lower = url.lower()
+        if any(
+            token in url_lower
+            for token in (
+                "contactme",
+                "demand_register",
+                "/contact",
+                "/inschrijven",
+                "/newsletter",
+                "/login",
+                "/register",
+            )
+        ):
+            return False
         if len(text_blob.strip()) < _MIN_LISTING_TEXT_LENGTH:
             return False
         return bool(

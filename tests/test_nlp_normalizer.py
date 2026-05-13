@@ -11,6 +11,7 @@ from agents.scrapers.nlp_normalizer import (
     extract_bedrooms,
     extract_land_area,
     extract_living_area,
+    extract_postal_code,
     extract_price,
 )
 from models.property import Property, PropertyType
@@ -201,3 +202,22 @@ def test_deduplicate_empty_list():
 def test_deduplicate_single_item():
     p = _make_prop("a", "immoweb")
     assert deduplicate_properties([p]) == [p]
+
+
+# ── extract_postal_code ──────────────────────────────────────────────────────
+
+def test_extract_postal_code_finds_first_belgian_code():
+    assert extract_postal_code("Mooie woning te 9660 Brakel") == "9660"
+
+
+def test_extract_postal_code_scans_multiple_texts():
+    assert extract_postal_code(None, "no digits here", "1457 Walhain") == "1457"
+
+
+def test_extract_postal_code_returns_none_when_absent():
+    assert extract_postal_code("woning te koop", None, "") is None
+
+
+def test_extract_postal_code_ignores_leading_zero():
+    # Belgian postal codes are 1000-9999.
+    assert extract_postal_code("ref 0123 test") is None

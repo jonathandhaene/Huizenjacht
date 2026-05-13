@@ -29,7 +29,7 @@ from agents.scrapers.immoweb import ImmowebScraper
 from agents.scrapers.immovlan import ImmovlanScraper
 from agents.scrapers.local_immo import LocalImmoScraper
 from agents.scrapers.logic_immo import LogicImmoScraper
-from agents.scrapers.nlp_normalizer import deduplicate_properties
+from agents.scrapers.nlp_normalizer import deduplicate_properties, extract_postal_code
 from agents.scrapers.realo import RealoScraper
 from agents.scrapers.social_media import SocialMediaScraper
 from agents.scrapers.zimmo import ZimmoScraper
@@ -87,6 +87,17 @@ class Orchestrator:
             "%d listings after cross-source deduplication", len(raw_properties)
         )
 
+        # 1b. Enforce region filter — drop properties whose postal code is
+        #     not in our search area (or cannot be determined).  Scrapers
+        #     sometimes return listings outside the area when the upstream
+        #     site ignores the postal-code query parameter.
+        raw_properties = self._filter_by_region(raw_properties)
+        logger.info(
+            "%d listings after region filter (postal codes: %s)",
+            len(raw_properties),
+            ",".join(settings.postal_code_list),
+        )
+
         # 2. Deduplicate
         new_properties = self._filter_new(raw_properties)
         logger.info("%d new listings after deduplication", len(new_properties))
@@ -142,6 +153,36 @@ class Orchestrator:
     def _filter_new(self, properties: List[Property]) -> List[Property]:
         seen = self._load_seen()
         return [p for p in properties if p.id not in seen]
+
+    def _filter_by_region(self, properties: List[Property]) -> List[Property]:
+        """Drop properties whose postal code is outside the configured area.
+
+        Some scrapers (notably Realo) silently ignore the postal-code query
+        parameter and return nationwide results.  We therefore enforce the
+        region filter centrally: if a property has no postal_code, attempt
+        to recover it from the address/title; if it is still missing or not
+        in ``settings.postal_code_list``, the property is discarded.
+        """
+        allowed = set(settings.postal_code_list)
+        kept: List[Property] = []
+        dropped = 0
+        for prop in properties:
+            postal = prop.postal_code or extract_postal_code(
+                prop.address, prop.title, prop.description
+            )
+            if postal and postal != prop.postal_code:
+                prop = prop.model_copy(update={"postal_code": postal})
+            if not postal or postal not in allowed:
+                dropped += 1
+                logger.debug(
+                    "[region] dropping %s (%s) postal=%s",
+                    prop.id, prop.source, postal,
+                )
+                continue
+            kept.append(prop)
+        if dropped:
+            logger.info("[region] dropped %d out-of-area listings", dropped)
+        return kept
 
     def _load_seen(self) -> Set[str]:
         if self._seen_cache_path.exists():

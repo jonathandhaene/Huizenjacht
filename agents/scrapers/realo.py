@@ -18,6 +18,7 @@ from agents.scrapers.nlp_normalizer import (
     extract_bedrooms,
     extract_land_area,
     extract_living_area,
+    extract_postal_code,
     extract_price,
 )
 from config.settings import settings
@@ -172,6 +173,7 @@ class RealoScraper(BaseScraper):
             land_area = extract_land_area(card_text)
             living_area = extract_living_area(card_text)
             prop_type = classify_property_type(title + " " + card_text)
+            postal_code = extract_postal_code(address, title, card_text)
 
             return Property(
                 id=prop_id,
@@ -180,6 +182,7 @@ class RealoScraper(BaseScraper):
                 title=title,
                 price=price,
                 address=address,
+                postal_code=postal_code,
                 images=images,
                 property_type=prop_type,
                 bedrooms=bedrooms,
