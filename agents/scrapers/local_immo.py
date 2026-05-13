@@ -88,6 +88,11 @@ _LOCAL_SOURCES = [
     ),
 ]
 
+# Slugs for local agencies whose entire portfolio lies inside the Vlaamse
+# Ardennen by construction.  The central region filter trusts these even
+# when an individual listing card omits a postal code.
+LOCAL_SOURCE_SLUGS: frozenset[str] = frozenset(s.slug for s in _LOCAL_SOURCES)
+
 _LISTING_TYPES = {
     "realestatelisting",
     "offer",
@@ -151,7 +156,56 @@ class LocalImmoScraper(BaseScraper):
         deduped: dict[str, Property] = {}
         for prop in props:
             deduped[prop.id] = prop
-        return list(deduped.values())
+        merged = list(deduped.values())
+        return [self._enrich_with_html_image(p, soup, source) for p in merged]
+
+    def _enrich_with_html_image(
+        self, prop: Property, soup: BeautifulSoup, source: LocalImmoSource
+    ) -> Property:
+        """For properties whose images list is empty (e.g. JSON-LD offers
+        without an ``image`` field), try to recover an image by locating
+        the corresponding ``<a href>`` in the rendered HTML and walking up
+        to a container that holds an ``<img>``."""
+        if prop.images:
+            return prop
+        if not prop.source_url:
+            return prop
+        # Match by absolute URL or by trailing path so JSON-LD's
+        # http://www.example.com/detail/x matches an HTML href="/detail/x".
+        candidates = []
+        try:
+            from urllib.parse import urlparse
+            target_path = urlparse(prop.source_url).path or prop.source_url
+        except Exception:
+            target_path = prop.source_url
+        for a in soup.find_all("a", href=True):
+            href = a["href"]
+            if href == prop.source_url or (target_path and target_path in href):
+                candidates.append(a)
+                if len(candidates) >= 3:
+                    break
+        for anchor in candidates:
+            node = anchor
+            for _ in range(5):
+                if node is None:
+                    break
+                img = node.find("img") if hasattr(node, "find") else None
+                if img is not None:
+                    src = (
+                        img.get("src")
+                        or img.get("data-src")
+                        or img.get("data-lazy")
+                        or img.get("data-original")
+                    )
+                    if not src:
+                        srcset = img.get("data-srcset") or img.get("srcset")
+                        if srcset:
+                            src = srcset.split(",")[0].strip().split(" ")[0]
+                    if src:
+                        abs_url = self._absolute_url(source.search_url, src)
+                        return prop.model_copy(update={"images": [abs_url]})
+                node = node.parent
+        return prop
 
     def _parse_json_ld(self, soup: BeautifulSoup, source: LocalImmoSource) -> List[Property]:
         props: List[Property] = []

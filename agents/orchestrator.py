@@ -27,7 +27,7 @@ from agents.enrichment.government import GovernmentEnrichmentAgent
 from agents.notification.email_agent import EmailNotificationAgent
 from agents.scrapers.immoweb import ImmowebScraper
 from agents.scrapers.immovlan import ImmovlanScraper
-from agents.scrapers.local_immo import LocalImmoScraper
+from agents.scrapers.local_immo import LocalImmoScraper, LOCAL_SOURCE_SLUGS
 from agents.scrapers.logic_immo import LogicImmoScraper
 from agents.scrapers.nlp_normalizer import deduplicate_properties, extract_postal_code
 from agents.scrapers.realo import RealoScraper
@@ -172,14 +172,20 @@ class Orchestrator:
             )
             if postal and postal != prop.postal_code:
                 prop = prop.model_copy(update={"postal_code": postal})
-            if not postal or postal not in allowed:
-                dropped += 1
-                logger.debug(
-                    "[region] dropping %s (%s) postal=%s",
-                    prop.id, prop.source, postal,
-                )
+            if postal and postal in allowed:
+                kept.append(prop)
                 continue
-            kept.append(prop)
+            # Trust local Vlaamse-Ardennen agencies even when the card
+            # itself omits the postal code (their whole catalogue is in
+            # the region by construction).
+            if not postal and prop.source in LOCAL_SOURCE_SLUGS:
+                kept.append(prop)
+                continue
+            dropped += 1
+            logger.debug(
+                "[region] dropping %s (%s) postal=%s",
+                prop.id, prop.source, postal,
+            )
         if dropped:
             logger.info("[region] dropped %d out-of-area listings", dropped)
         return kept

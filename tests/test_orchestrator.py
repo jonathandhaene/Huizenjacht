@@ -179,6 +179,27 @@ def test_filter_by_region_drops_unknown_postal():
     assert kept == []
 
 
+def test_filter_by_region_trusts_local_agencies_without_postal():
+    """Local Vlaamse-Ardennen agencies (dewaele, vastgoedcoorevits, ...) are
+    pre-vetted as in-region; listings should be kept even when the card
+    omits a postal code."""
+    from agents.orchestrator import Orchestrator
+    from agents.scrapers.local_immo import LOCAL_SOURCE_SLUGS
+
+    orch = Orchestrator()
+    trusted_slug = next(iter(LOCAL_SOURCE_SLUGS))
+    props = [
+        Property(
+            id=f"{trusted_slug}-1",
+            source=trusted_slug,
+            source_url="https://example.com/listing",
+            title="Te koop: woning met tuin",
+        ),
+    ]
+    kept = orch._filter_by_region(props)
+    assert len(kept) == 1
+
+
 # ---------------------------------------------------------------------------
 # Score filtering
 # ---------------------------------------------------------------------------
