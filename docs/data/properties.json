@@ -1,5 +1,67 @@
 [
   {
+    "id": "dewaele_vlaamse_ardennen-48696fc93d1a",
+    "source": "dewaele_vlaamse_ardennen",
+    "source_url": "https://www.dewaele.com/nl/te-koop/9500-ophasselt/huis/te-renoveren-woning-188-m2-te-koop-in-geraardsbergen-t9051-252111-2-250125",
+    "title": "Huis te koop Ophasselt",
+    "description": null,
+    "property_type": "house",
+    "price": 325000.0,
+    "address": "Bekijk meer foto's",
+    "postal_code": null,
+    "municipality": null,
+    "land_area": 52188.0,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2Fc7db3de6-a64e-4571-8d53-c1952696bb23.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_remote": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2Fc7db3de6-a64e-4571-8d53-c1952696bb23.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_local": [
+      "data/images/dewaele_vlaamse_ardennen-48696fc93d1a/38fb3903a49987a5.jpg"
+    ],
+    "images_cached_at": "2026-05-14T07:41:17.662945+00:00",
+    "features": [],
+    "first_seen": "2026-05-14T07:40:56.892404+00:00",
+    "last_seen": "2026-05-14T07:40:56.892406+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 6.5,
+      "summary": "Huis te koop Ophasselt in de Vlaamse Ardennen — overeenkoms­score 6.5/10. 2 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 325,000) past binnen budget",
+        "Groot perceel van 52,188 m²"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "dewaele_vlaamse_ardennen-49254e09fa9e",
     "source": "dewaele_vlaamse_ardennen",
     "source_url": "https://www.dewaele.com/nl/te-koop/9700-oudenaarde/huis/gerenoveerde-energiezuinige-woning-te-koop-te-oudenaarde-d9700-26015-188381",
