@@ -1,5 +1,128 @@
 [
   {
+    "id": "vastgoedcoorevits-0db0a384fb98",
+    "source": "vastgoedcoorevits",
+    "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-woning-kruisem/7555138",
+    "title": "Kruisem Veldstraat 5",
+    "description": null,
+    "property_type": "house",
+    "price": 420000.0,
+    "address": null,
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/123036220068030054159188225153203166184039006123/medium/fallback"
+    ],
+    "images_remote": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/123036220068030054159188225153203166184039006123/medium/fallback"
+    ],
+    "images_local": [
+      "data/images/vastgoedcoorevits-0db0a384fb98/dc0a0693ce8e4383.jpg"
+    ],
+    "images_cached_at": "2026-05-19T08:25:59.729050+00:00",
+    "features": [],
+    "first_seen": "2026-05-19T08:25:43.788776+00:00",
+    "last_seen": "2026-05-19T08:25:43.788779+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Kruisem Veldstraat 5 in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 420,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
+    "id": "dewaele_vlaamse_ardennen-731649a0896a",
+    "source": "dewaele_vlaamse_ardennen",
+    "source_url": "https://www.dewaele.com/nl/te-koop/9600-ronse/huis/villa-op-ruim-perceel-in-ronse-te-koop-d9700-26032-241809",
+    "title": "Huis te koop Ronse",
+    "description": null,
+    "property_type": "house",
+    "price": 550000.0,
+    "address": "Bekijk meer foto's",
+    "postal_code": null,
+    "municipality": null,
+    "land_area": 607342.0,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2Fd09d65d7-242e-48fe-8ec8-c31290d3472c%2Fimage3187695.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_remote": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2Fd09d65d7-242e-48fe-8ec8-c31290d3472c%2Fimage3187695.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_local": [
+      "data/images/dewaele_vlaamse_ardennen-731649a0896a/ed37d82e92669019.jpg"
+    ],
+    "images_cached_at": "2026-05-19T08:26:00.167956+00:00",
+    "features": [],
+    "first_seen": "2026-05-19T08:25:38.489946+00:00",
+    "last_seen": "2026-05-19T08:25:38.489950+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 6.5,
+      "summary": "Huis te koop Ronse in de Vlaamse Ardennen — overeenkoms­score 6.5/10. 2 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 550,000) past binnen budget",
+        "Groot perceel van 607,342 m²"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "realo-958718183",
     "source": "realo",
     "source_url": "https://www.realo.be/en/rue-saint-vincent-36-1457-walhain-saint-paul/5194365?l=958718183",
