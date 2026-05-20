@@ -1,5 +1,92 @@
 [
   {
+    "id": "realo-648727534",
+    "source": "realo",
+    "source_url": "https://www.realo.be/en/le-ponceau-10a-1457-nil-saint-vincent-saint-martin/350888?l=648727534",
+    "title": "Le ponceau 10A, 1457 Nil-Saint-Vincent-Saint-Martin",
+    "description": null,
+    "property_type": "land",
+    "price": 219000.0,
+    "address": "Le ponceau 10A, 1457 Nil-Saint-Vincent-Saint-Martin",
+    "postal_code": "1457",
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://realocdn.com/image/5/BE-master_listing_44362b_44362b50d1d93657bc5b60286508f371.jpg/736x491/490x326/0/d0ca",
+      "https://realocdn.com/image/5/BE-master_listing_c91dcc_c91dcc279c3d4c9dd0cdd16cd4e3bf2f.jpg/736x491/490x326/0/d145",
+      "https://realocdn.com/image/5/BE-master_listing_c5175e_c5175ef06a4ba7a9d4f1d1d34cb352ba.jpg/736x491/490x326/0/ba58",
+      "https://realocdn.com/image/5/BE-master_listing_93b9f1_93b9f1a9b20b3d4626c0695a56cd1347.jpg/736x516/490x326/0/6e2d",
+      "https://realocdn.com/image/5/BE-master_listing_9e2357_9e2357166750d0bbdefb4309fd6915f4.jpg/736x491/490x326/0/c85d",
+      "https://realocdn.com/image/5/BE-master_listing_aaf792_aaf792626feb62220a74f76c7006c97e.jpg/736x491/490x326/0/4837",
+      "https://realocdn.com/image/5/BE-master_listing_65a442_65a442f9630d59df4980de885ebb8629.jpg/736x491/490x326/0/fd85",
+      "https://realocdn.com/image/5/BE-master_listing_1b0852_1b0852692521bd60204bf3e8014e5be7.jpg/736x491/490x326/0/d034",
+      "https://realocdn.com/image/5/BE-master_listing_51c808_51c808ff29c8e8225248b72ef37d471d.jpg/736x491/490x326/0/62cb",
+      "https://realocdn.com/image/5/BE-master_listing_40afb1_40afb1fc2ad14fe5668f03bb8a2afcff.jpg/736x491/490x326/0/0289",
+      "https://realocdn.com/image/5/BE-master_listing_c2c938_c2c938ea54f2ac479cce5c1c53ab2bf8.jpg/736x491/490x326/0/abb4",
+      "https://realocdn.com/image/5/BE-master_listing_6b809b_6b809b6abd1f0469953f9f36d20a483a.jpg/736x491/490x326/0/38ee"
+    ],
+    "images_remote": [
+      "https://realocdn.com/image/5/BE-master_listing_44362b_44362b50d1d93657bc5b60286508f371.jpg/736x491/490x326/0/d0ca",
+      "https://realocdn.com/image/5/BE-master_listing_c91dcc_c91dcc279c3d4c9dd0cdd16cd4e3bf2f.jpg/736x491/490x326/0/d145",
+      "https://realocdn.com/image/5/BE-master_listing_c5175e_c5175ef06a4ba7a9d4f1d1d34cb352ba.jpg/736x491/490x326/0/ba58",
+      "https://realocdn.com/image/5/BE-master_listing_93b9f1_93b9f1a9b20b3d4626c0695a56cd1347.jpg/736x516/490x326/0/6e2d",
+      "https://realocdn.com/image/5/BE-master_listing_9e2357_9e2357166750d0bbdefb4309fd6915f4.jpg/736x491/490x326/0/c85d",
+      "https://realocdn.com/image/5/BE-master_listing_aaf792_aaf792626feb62220a74f76c7006c97e.jpg/736x491/490x326/0/4837",
+      "https://realocdn.com/image/5/BE-master_listing_65a442_65a442f9630d59df4980de885ebb8629.jpg/736x491/490x326/0/fd85",
+      "https://realocdn.com/image/5/BE-master_listing_1b0852_1b0852692521bd60204bf3e8014e5be7.jpg/736x491/490x326/0/d034",
+      "https://realocdn.com/image/5/BE-master_listing_51c808_51c808ff29c8e8225248b72ef37d471d.jpg/736x491/490x326/0/62cb",
+      "https://realocdn.com/image/5/BE-master_listing_40afb1_40afb1fc2ad14fe5668f03bb8a2afcff.jpg/736x491/490x326/0/0289",
+      "https://realocdn.com/image/5/BE-master_listing_c2c938_c2c938ea54f2ac479cce5c1c53ab2bf8.jpg/736x491/490x326/0/abb4",
+      "https://realocdn.com/image/5/BE-master_listing_6b809b_6b809b6abd1f0469953f9f36d20a483a.jpg/736x491/490x326/0/38ee"
+    ],
+    "images_local": [
+      "data/images/realo-648727534/ac74789f42482c4c.jpg",
+      "data/images/realo-648727534/eee2e256af7438ed.jpg",
+      "data/images/realo-648727534/846a63d71be89508.jpg",
+      "data/images/realo-648727534/7ca55f52a65a61e7.jpg",
+      "data/images/realo-648727534/a8e908e2ed74a56f.jpg"
+    ],
+    "images_cached_at": "2026-05-20T08:25:53.755308+00:00",
+    "features": [],
+    "first_seen": "2026-05-20T08:25:09.850022+00:00",
+    "last_seen": "2026-05-20T08:25:09.850023+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Le ponceau 10A, 1457 Nil-Saint-Vincent-Saint-Martin in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 219,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "vastgoedcoorevits-0db0a384fb98",
     "source": "vastgoedcoorevits",
     "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-woning-kruisem/7555138",
