@@ -28,6 +28,7 @@ import re
 from typing import Any, Dict, List, Optional
 
 from models.property import Property, PropertyType
+from agents.scrapers.nlp_normalizer import sanitize_areas
 
 logger = logging.getLogger(__name__)
 
@@ -300,6 +301,10 @@ def _dict_to_property(
     # Build a stable-ish ID: source + sequential index + title hash
     prop_id = f"{source_name}_ai_{idx}_{hash(title + str(price)) & 0xFFFFFFFF}"
 
+    _land_area, _living_area = sanitize_areas(
+        _to_float(item.get("land_area")),
+        _to_float(item.get("living_area")),
+    )
     return Property(
         id=prop_id,
         source=source_name,
@@ -311,8 +316,8 @@ def _dict_to_property(
         address=item.get("address"),
         postal_code=str(item.get("postal_code") or ""),
         municipality=item.get("municipality"),
-        land_area=_to_float(item.get("land_area")),
-        living_area=_to_float(item.get("living_area")),
+        land_area=_land_area,
+        living_area=_living_area,
         bedrooms=_to_int(item.get("bedrooms")),
     )
 

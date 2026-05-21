@@ -29,6 +29,7 @@ from agents.scrapers.nlp_normalizer import (
     extract_land_area,
     extract_living_area,
     extract_price,
+    sanitize_areas,
 )
 from config.settings import settings
 from models.property import Property, PropertyType
@@ -142,6 +143,7 @@ class SocialMediaScraper(BaseScraper):
         bedrooms = extract_bedrooms(text)
         land_area = extract_land_area(text)
         living_area = extract_living_area(text)
+        land_area, living_area = sanitize_areas(land_area, living_area)
         prop_type = classify_property_type(text)
         return Property(
             id=prop_id,

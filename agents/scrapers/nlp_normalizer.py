@@ -136,6 +136,15 @@ def extract_price(text: str) -> Optional[float]:
 
 # ── Area extraction ───────────────────────────────────────────────────────────
 
+# Area values near these words describe secondary spaces, not habitable floor
+# area — used by the generic extract_living_area fallback to skip false hits.
+_NOISE_AREA_KEYWORDS: frozenset = frozenset({
+    "garage", "carport", "berging", "kelder", "kelderverdieping",
+    "terras", "balkon", "oprit", "parking",
+    "cave", "terrasse", "balcon", "stationnement",
+    "zolder", "bijgebouw",
+})
+
 def _extract_area_with_keywords(text: str, keywords: List[str]) -> Optional[float]:
     """Generic area extractor anchored to given Dutch/French/English keywords."""
     lower = text.lower()
@@ -161,7 +170,7 @@ def _extract_area_with_keywords(text: str, keywords: List[str]) -> Optional[floa
     for m in filter(None, [kw_first, val_first]):
         raw = m.group(1).strip()
         context = m.group(0)
-        is_ha = "ha" in context and "m²" not in context and "m2" not in context
+        is_ha = context.endswith("ha")
         cleaned = _normalize_numeric(raw)
         try:
             val = float(cleaned)
@@ -206,20 +215,42 @@ def extract_living_area(text: str) -> Optional[float]:
     result = _extract_area_with_keywords(text, keywords)
     if result is not None:
         return result
-    # Generic fallback: when a card has no explicit "habitable" keyword but
-    # only short m² figures (typical of search-result tiles like Realo's
-    # "4 beds 1 bath 215m²"), pick the smallest plausible value 50–500 m².
-    matches = re.findall(r"([\d][\d.,\s]*)\s*m\s?[²2]", text.lower())
+    # Generic fallback: scan all m² figures and pick the largest plausible
+    # habitable-area value (50–800 m²) that is not accompanied by noise
+    # keywords indicating a secondary space (garage, terrace, etc.).
+    _lower = text.lower()
     values: List[float] = []
-    for raw in matches:
+    for m in re.finditer(r"([\d][\d.,\s]*)\s*m\s?[²2]", _lower):
         try:
-            v = float(_normalize_numeric(raw.strip()))
-            if 50 <= v <= 500:
-                values.append(v)
+            v = float(_normalize_numeric(m.group(1).strip()))
         except ValueError:
-            pass
-    return min(values) if values else None
+            continue
+        if not (50 <= v <= 800):
+            continue
+        window = _lower[max(0, m.start() - 60) : m.end() + 30]
+        if any(kw in window for kw in _NOISE_AREA_KEYWORDS):
+            continue
+        values.append(v)
+    return max(values) if values else None
 
+
+
+def sanitize_areas(land_area, living_area):
+    """Cross-validate and correct extracted land_area / living_area values.
+
+    Rules:
+    - Both set and land_area < living_area  ->  swap them (plot is always
+      bigger than habitable area; values were likely extracted in wrong order).
+    - Only living_area set and value > 1000 m2  ->  reassign as land_area
+      (implausibly large for habitable surface; almost certainly a plot size).
+    """
+    if land_area is not None and living_area is not None:
+        if land_area < living_area:
+            land_area, living_area = living_area, land_area
+    elif living_area is not None and living_area > 1_000:
+        land_area = living_area
+        living_area = None
+    return land_area, living_area
 
 # ── Property type classification ──────────────────────────────────────────────
 
