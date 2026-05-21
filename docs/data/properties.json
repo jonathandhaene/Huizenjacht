@@ -1,5 +1,66 @@
 [
   {
+    "id": "vastgoedcoorevits-fa3c27990139",
+    "source": "vastgoedcoorevits",
+    "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-woning-gent/7558288",
+    "title": "Gent Hazelaarstraat 25",
+    "description": null,
+    "property_type": "house",
+    "price": 390000.0,
+    "address": null,
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/065238213143252192181120191180081166067251153179/medium/fallback"
+    ],
+    "images_remote": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/065238213143252192181120191180081166067251153179/medium/fallback"
+    ],
+    "images_local": [
+      "data/images/vastgoedcoorevits-fa3c27990139/2d160b5f3d721e80.jpg"
+    ],
+    "images_cached_at": "2026-05-21T08:31:12.172174+00:00",
+    "features": [],
+    "first_seen": "2026-05-21T08:31:02.019988+00:00",
+    "last_seen": "2026-05-21T08:31:02.019992+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Gent Hazelaarstraat 25 in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 390,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "realo-648727534",
     "source": "realo",
     "source_url": "https://www.realo.be/en/le-ponceau-10a-1457-nil-saint-vincent-saint-martin/350888?l=648727534",
