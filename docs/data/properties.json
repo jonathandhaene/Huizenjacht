@@ -1,5 +1,188 @@
 [
   {
+    "id": "vastgoedcoorevits-8325e932059a",
+    "source": "vastgoedcoorevits",
+    "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-loft-appartement-kluisbergen/7569051",
+    "title": "Kluisbergen Kapellestraat 5/b",
+    "description": null,
+    "property_type": "house",
+    "price": 395000.0,
+    "address": null,
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/035082013027215148147110116185020204217076063024/medium/fallback"
+    ],
+    "images_remote": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/035082013027215148147110116185020204217076063024/medium/fallback"
+    ],
+    "images_local": [
+      "data/images/vastgoedcoorevits-8325e932059a/c3ffcb169aadf0ab.jpg"
+    ],
+    "images_cached_at": "2026-06-03T09:24:47.307880+00:00",
+    "features": [],
+    "first_seen": "2026-06-03T09:24:34.513795+00:00",
+    "last_seen": "2026-06-03T09:24:34.513796+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Kluisbergen Kapellestraat 5/b in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 395,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
+    "id": "vastgoedcoorevits-04480b93cf96",
+    "source": "vastgoedcoorevits",
+    "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-appartement-huise/7569266",
+    "title": "Huise Lange Aststraat 1 1",
+    "description": null,
+    "property_type": "house",
+    "price": 395000.0,
+    "address": null,
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/049052198143012105062106206071229019044166091077/medium/fallback"
+    ],
+    "images_remote": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/049052198143012105062106206071229019044166091077/medium/fallback"
+    ],
+    "images_local": [
+      "data/images/vastgoedcoorevits-04480b93cf96/85e82cb76bd8f6b8.jpg"
+    ],
+    "images_cached_at": "2026-06-03T09:24:47.514009+00:00",
+    "features": [],
+    "first_seen": "2026-06-03T09:24:34.513681+00:00",
+    "last_seen": "2026-06-03T09:24:34.513684+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Huise Lange Aststraat 1 1 in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 395,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
+    "id": "vastgoedcoorevits-965512da55bd",
+    "source": "vastgoedcoorevits",
+    "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-woning-maarkedal/7568464",
+    "title": "Maarkedal Ellestraat 3",
+    "description": null,
+    "property_type": "house",
+    "price": 299000.0,
+    "address": null,
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/067255144029254216238223152174081072028050242180/medium/fallback"
+    ],
+    "images_remote": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/067255144029254216238223152174081072028050242180/medium/fallback"
+    ],
+    "images_local": [
+      "data/images/vastgoedcoorevits-965512da55bd/0f667d89c6a4de73.jpg"
+    ],
+    "images_cached_at": "2026-06-03T09:24:47.713395+00:00",
+    "features": [],
+    "first_seen": "2026-06-03T09:24:34.513891+00:00",
+    "last_seen": "2026-06-03T09:24:34.513892+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Maarkedal Ellestraat 3 in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 299,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "vastgoedcoorevits-3bdd31251150",
     "source": "vastgoedcoorevits",
     "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-woning-oudenaarde/7563467",
