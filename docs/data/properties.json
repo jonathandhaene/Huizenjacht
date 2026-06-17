@@ -1,5 +1,66 @@
 [
   {
+    "id": "vastgoedcoorevits-ec0e54ac0376",
+    "source": "vastgoedcoorevits",
+    "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-woning-oudenaarde/7581739",
+    "title": "Oudenaarde Dijkstraat 68",
+    "description": null,
+    "property_type": "house",
+    "price": 230000.0,
+    "address": null,
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/015161203147246041029099041168047254209194089227/medium/fallback"
+    ],
+    "images_remote": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/015161203147246041029099041168047254209194089227/medium/fallback"
+    ],
+    "images_local": [
+      "data/images/vastgoedcoorevits-ec0e54ac0376/f259672b4838d825.jpg"
+    ],
+    "images_cached_at": "2026-06-17T09:32:11.273123+00:00",
+    "features": [],
+    "first_seen": "2026-06-17T09:32:02.793687+00:00",
+    "last_seen": "2026-06-17T09:32:02.793691+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Oudenaarde Dijkstraat 68 in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 230,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "vastgoedcoorevits-8022d8af25cc",
     "source": "vastgoedcoorevits",
     "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-woning-avelgem/7580638",
