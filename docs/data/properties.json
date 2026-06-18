@@ -1,5 +1,190 @@
 [
   {
+    "id": "vastgoedcoorevits-ccc1abc7aa9d",
+    "source": "vastgoedcoorevits",
+    "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-woning-kruisem/7582704",
+    "title": "Kruisem Hedekensdriesstraat 23",
+    "description": null,
+    "property_type": "house",
+    "price": 375000.0,
+    "address": null,
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/241020075043179098168218190187123015120046147174/medium/fallback"
+    ],
+    "images_remote": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/241020075043179098168218190187123015120046147174/medium/fallback"
+    ],
+    "images_local": [
+      "data/images/vastgoedcoorevits-ccc1abc7aa9d/60796c69b82fa893.jpg"
+    ],
+    "images_cached_at": "2026-06-18T09:13:18.329740+00:00",
+    "features": [],
+    "first_seen": "2026-06-18T09:13:00.270342+00:00",
+    "last_seen": "2026-06-18T09:13:00.270344+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Kruisem Hedekensdriesstraat 23 in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 375,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
+    "id": "dewaele_vlaamse_ardennen-558c9e96557a",
+    "source": "dewaele_vlaamse_ardennen",
+    "source_url": "https://www.dewaele.com/nl/te-koop/9700-oudenaarde/huis/instapklare-bel-etage-woning-te-koop-in-oudenaarde-d9700-26047-251094",
+    "title": "Huis te koop Oudenaarde",
+    "description": null,
+    "property_type": "house",
+    "price": 359000.0,
+    "address": "Bekijk meer foto's",
+    "postal_code": null,
+    "municipality": null,
+    "land_area": 36152.0,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2F49f514f8-d582-44c8-93ad-870f1152fb27%2Fimage3217325.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_remote": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2F49f514f8-d582-44c8-93ad-870f1152fb27%2Fimage3217325.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_local": [
+      "data/images/dewaele_vlaamse_ardennen-558c9e96557a/dcaae3a55ebd71eb.jpg"
+    ],
+    "images_cached_at": "2026-06-18T09:13:19.003089+00:00",
+    "features": [],
+    "first_seen": "2026-06-18T09:12:56.743631+00:00",
+    "last_seen": "2026-06-18T09:12:56.743633+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 6.5,
+      "summary": "Huis te koop Oudenaarde in de Vlaamse Ardennen — overeenkoms­score 6.5/10. 2 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 359,000) past binnen budget",
+        "Groot perceel van 36,152 m²"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
+    "id": "dewaele_vlaamse_ardennen-647ed2c6a5ca",
+    "source": "dewaele_vlaamse_ardennen",
+    "source_url": "https://www.dewaele.com/nl/te-koop/9700-oudenaarde/huis/stadswoning-met-3-slaapkamers-oudenaarde-te-koop-d9700-26050-240937",
+    "title": "Huis te koop Oudenaarde",
+    "description": null,
+    "property_type": "house",
+    "price": 345000.0,
+    "address": "Bekijk meer foto's",
+    "postal_code": null,
+    "municipality": null,
+    "land_area": 7183.0,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2F0371bf2e-1c19-4359-a2f8-492732e108eb%2Fimage3232706.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_remote": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2F0371bf2e-1c19-4359-a2f8-492732e108eb%2Fimage3232706.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_local": [
+      "data/images/dewaele_vlaamse_ardennen-647ed2c6a5ca/4a9a677cbd34247a.jpg"
+    ],
+    "images_cached_at": "2026-06-18T09:13:19.893393+00:00",
+    "features": [],
+    "first_seen": "2026-06-18T09:12:56.745306+00:00",
+    "last_seen": "2026-06-18T09:12:56.745308+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 6.5,
+      "summary": "Huis te koop Oudenaarde in de Vlaamse Ardennen — overeenkoms­score 6.5/10. 2 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 345,000) past binnen budget",
+        "Groot perceel van 7,183 m²"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "vastgoedcoorevits-ec0e54ac0376",
     "source": "vastgoedcoorevits",
     "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-woning-oudenaarde/7581739",
