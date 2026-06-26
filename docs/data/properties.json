@@ -1,5 +1,139 @@
 [
   {
+    "id": "vastgoedcoorevits-314f620e93e2",
+    "source": "vastgoedcoorevits",
+    "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-woning-oudenaarde/7589709",
+    "title": "Oudenaarde Aalststraat 205",
+    "description": null,
+    "property_type": "house",
+    "price": 325000.0,
+    "address": null,
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/112042051161086174095126050184063187103209137027/medium/fallback"
+    ],
+    "images_remote": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/112042051161086174095126050184063187103209137027/medium/fallback"
+    ],
+    "images_local": [
+      "data/images/vastgoedcoorevits-314f620e93e2/fda6f9ddf500deb7.jpg"
+    ],
+    "images_cached_at": "2026-06-26T08:29:04.741750+00:00",
+    "features": [],
+    "first_seen": "2026-06-26T08:28:32.984073+00:00",
+    "last_seen": "2026-06-26T08:28:32.984077+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Oudenaarde Aalststraat 205 in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 325,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
+    "id": "realo-142090457",
+    "source": "realo",
+    "source_url": "https://www.realo.be/en/rue-des-trois-fontaines-1457-nil-saint-vincent-saint-martin/351916?l=142090457",
+    "title": "Rue des trois fontaines, 1457 Nil-Saint-Vincent-Saint-Martin",
+    "description": null,
+    "property_type": "land",
+    "price": 210000.0,
+    "address": "Rue des trois fontaines, 1457 Nil-Saint-Vincent-Saint-Martin",
+    "postal_code": "1457",
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://realocdn.com/image/5/BE-master_listing_7a4e07_7a4e0728b2b09def082194fbdda473f3.jpg/736x563/490x326/0/effc",
+      "https://realocdn.com/image/5/BE-master_listing_39f31c_39f31cc75895ae7a8494a52ffef29851.jpg/736x581/490x326/0/022f",
+      "https://realocdn.com/image/5/BE-master_listing_3c30b3_3c30b3e47d21f09159b79eedf0dc56d3.jpg/736x430/490x326/0/3af6",
+      "https://realocdn.com/image/5/BE-master_listing_2b1858_2b1858aa07cd98713516c01d83d03753.jpg/736x523/490x326/0/7aeb",
+      "https://realocdn.com/image/5/BE-master_listing_30fdab_30fdab045b00eb01c3db8aee2eb493c9.jpg/736x553/490x326/0/c740"
+    ],
+    "images_remote": [
+      "https://realocdn.com/image/5/BE-master_listing_7a4e07_7a4e0728b2b09def082194fbdda473f3.jpg/736x563/490x326/0/effc",
+      "https://realocdn.com/image/5/BE-master_listing_39f31c_39f31cc75895ae7a8494a52ffef29851.jpg/736x581/490x326/0/022f",
+      "https://realocdn.com/image/5/BE-master_listing_3c30b3_3c30b3e47d21f09159b79eedf0dc56d3.jpg/736x430/490x326/0/3af6",
+      "https://realocdn.com/image/5/BE-master_listing_2b1858_2b1858aa07cd98713516c01d83d03753.jpg/736x523/490x326/0/7aeb",
+      "https://realocdn.com/image/5/BE-master_listing_30fdab_30fdab045b00eb01c3db8aee2eb493c9.jpg/736x553/490x326/0/c740"
+    ],
+    "images_local": [
+      "data/images/realo-142090457/4a20048c07d03917.jpg",
+      "data/images/realo-142090457/42f5738eadaa7f87.jpg",
+      "data/images/realo-142090457/0544ab1ed41d1815.jpg",
+      "data/images/realo-142090457/08c8180f6618f168.jpg",
+      "data/images/realo-142090457/b3bb71150c67c45b.jpg"
+    ],
+    "images_cached_at": "2026-06-26T08:29:06.874860+00:00",
+    "features": [],
+    "first_seen": "2026-06-26T08:28:16.615679+00:00",
+    "last_seen": "2026-06-26T08:28:16.615684+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Rue des trois fontaines, 1457 Nil-Saint-Vincent-Saint-Martin in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 210,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "dewaele_vlaamse_ardennen-cba24622fa4e",
     "source": "dewaele_vlaamse_ardennen",
     "source_url": "https://www.dewaele.com/nl/te-koop/9700-oudenaarde/huis/te-slopen-woning-op-een-perceel-van-756-m2-in-oudenaarde-d9700-26052-1-254327",
