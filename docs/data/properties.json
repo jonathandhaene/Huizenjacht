@@ -1,5 +1,149 @@
 [
   {
+    "id": "vastgoedcoorevits-64066162d26b",
+    "source": "vastgoedcoorevits",
+    "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-woning-oudenaarde/7594938",
+    "title": "Oudenaarde Heurnestraat 20",
+    "description": null,
+    "property_type": "house",
+    "price": 250000.0,
+    "address": null,
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/167016098220090121189059154221075138213146096145/medium/fallback"
+    ],
+    "images_remote": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/167016098220090121189059154221075138213146096145/medium/fallback"
+    ],
+    "images_local": [
+      "data/images/vastgoedcoorevits-64066162d26b/381654136d7d5727.jpg"
+    ],
+    "images_cached_at": "2026-07-02T08:10:59.683288+00:00",
+    "features": [],
+    "first_seen": "2026-07-02T08:10:41.469747+00:00",
+    "last_seen": "2026-07-02T08:10:41.469750+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Oudenaarde Heurnestraat 20 in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 250,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
+    "id": "realo-378865831",
+    "source": "realo",
+    "source_url": "https://www.realo.be/en/rue-de-corbais-148-1435-corbais/261661?l=188797457&cl=378865831%2C710339653%2C386098752%2C1518184567%2C446146283%2C1180440822%2C204936440%2C182092916%2C422013952%2C798644234",
+    "title": "Rue de corbais 148, 1435 Corbais",
+    "description": null,
+    "property_type": "house",
+    "price": 457000.0,
+    "address": "Rue de corbais 148, 1435 Corbais",
+    "postal_code": "1435",
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://realocdn.com/image/5/BE-master_listing_9712e2_9712e2f9a7f936572b05239c4d5b57b1.jpg/736x517/490x326/0/2d99",
+      "https://realocdn.com/image/5/BE-master_listing_619763_6197632f2d1c403b8c47afa8b632b8a3.jpg/736x517/490x326/0/09ee",
+      "https://realocdn.com/image/5/BE-master_listing_050cb7_050cb7d1782c552312a37010d003dd61.jpg/736x517/490x326/0/efc8",
+      "https://realocdn.com/image/5/BE-master_listing_928728_928728c6aa9dfa6b8e4845db1cc5b6ce.jpg/736x517/490x326/0/6695",
+      "https://realocdn.com/image/5/BE-master_listing_11751c_11751c3810be74ebc37ebe7fdf582327.jpg/736x517/490x326/0/d9c8",
+      "https://realocdn.com/image/5/BE-master_listing_a8c736_a8c7362874146d2132019dd182914b9a.jpg/736x517/490x326/0/c7bd",
+      "https://realocdn.com/image/5/BE-master_listing_a67ea8_a67ea8a9320e45ccf250a8e4f7adb78b.jpg/736x517/490x326/0/3ef7",
+      "https://realocdn.com/image/5/BE-master_listing_fca718_fca718f750a49b0f5c1d9902d909a5aa.jpg/736x414/490x326/0/c980",
+      "https://realocdn.com/image/5/BE-master_listing_b95e2c_b95e2cc8e70938b9a86f59a5f19e2bee.jpg/736x414/490x326/0/d6c7",
+      "https://realocdn.com/image/5/BE-master_listing_41cd44_41cd447eb7264eac7d6119132737b809.jpg/736x414/490x326/0/cd44"
+    ],
+    "images_remote": [
+      "https://realocdn.com/image/5/BE-master_listing_9712e2_9712e2f9a7f936572b05239c4d5b57b1.jpg/736x517/490x326/0/2d99",
+      "https://realocdn.com/image/5/BE-master_listing_619763_6197632f2d1c403b8c47afa8b632b8a3.jpg/736x517/490x326/0/09ee",
+      "https://realocdn.com/image/5/BE-master_listing_050cb7_050cb7d1782c552312a37010d003dd61.jpg/736x517/490x326/0/efc8",
+      "https://realocdn.com/image/5/BE-master_listing_928728_928728c6aa9dfa6b8e4845db1cc5b6ce.jpg/736x517/490x326/0/6695",
+      "https://realocdn.com/image/5/BE-master_listing_11751c_11751c3810be74ebc37ebe7fdf582327.jpg/736x517/490x326/0/d9c8",
+      "https://realocdn.com/image/5/BE-master_listing_a8c736_a8c7362874146d2132019dd182914b9a.jpg/736x517/490x326/0/c7bd",
+      "https://realocdn.com/image/5/BE-master_listing_a67ea8_a67ea8a9320e45ccf250a8e4f7adb78b.jpg/736x517/490x326/0/3ef7",
+      "https://realocdn.com/image/5/BE-master_listing_fca718_fca718f750a49b0f5c1d9902d909a5aa.jpg/736x414/490x326/0/c980",
+      "https://realocdn.com/image/5/BE-master_listing_b95e2c_b95e2cc8e70938b9a86f59a5f19e2bee.jpg/736x414/490x326/0/d6c7",
+      "https://realocdn.com/image/5/BE-master_listing_41cd44_41cd447eb7264eac7d6119132737b809.jpg/736x414/490x326/0/cd44"
+    ],
+    "images_local": [
+      "data/images/realo-378865831/92bb25757d12c600.jpg",
+      "data/images/realo-378865831/b8675d5589d79580.jpg",
+      "data/images/realo-378865831/6eb5835c92b1d921.jpg",
+      "data/images/realo-378865831/31a582449f763633.jpg",
+      "data/images/realo-378865831/e81dde794cd36088.jpg"
+    ],
+    "images_cached_at": "2026-07-02T08:11:02.270448+00:00",
+    "features": [],
+    "first_seen": "2026-07-02T08:10:10.400572+00:00",
+    "last_seen": "2026-07-02T08:10:10.400573+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Rue de corbais 148, 1435 Corbais in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 457,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "dewaele_vlaamse_ardennen-52919e27cfab",
     "source": "dewaele_vlaamse_ardennen",
     "source_url": "https://www.dewaele.com/nl/te-koop/9660-nederbrakel/huis/mooi-gerenoveerd-huis-te-koop-in-brakel-d9700-26039-237735",
