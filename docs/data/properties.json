@@ -1,5 +1,158 @@
 [
   {
+    "id": "vastgoedcoorevits-ca96306ba343",
+    "source": "vastgoedcoorevits",
+    "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-grond-oudenaarde/7598707",
+    "title": "Oudenaarde Gentstraat 0",
+    "description": null,
+    "property_type": "house",
+    "price": 550000.0,
+    "address": null,
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/168255042156241207220149088039030050053203200196/medium/fallback"
+    ],
+    "images_remote": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/168255042156241207220149088039030050053203200196/medium/fallback"
+    ],
+    "images_local": [
+      "data/images/vastgoedcoorevits-ca96306ba343/bde71f14a62f1376.jpg"
+    ],
+    "images_cached_at": "2026-07-07T08:23:00.743790+00:00",
+    "features": [],
+    "first_seen": "2026-07-07T08:20:06.884522+00:00",
+    "last_seen": "2026-07-07T08:20:06.884526+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Oudenaarde Gentstraat 0 in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 550,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
+    "id": "realo-1271203737",
+    "source": "realo",
+    "source_url": "https://www.realo.be/en/rue-haute-77-1435-corbais/263126?l=1271203737",
+    "title": "Rue haute 77, 1435 Corbais",
+    "description": null,
+    "property_type": "house",
+    "price": 560000.0,
+    "address": "Rue haute 77, 1435 Corbais",
+    "postal_code": "1435",
+    "municipality": null,
+    "land_area": null,
+    "living_area": 180.0,
+    "bedrooms": 3,
+    "bathrooms": null,
+    "images": [
+      "https://realocdn.com/image/5/BE-master_listing_6edd2e_6edd2edaa9b99ef536a5c0f7b6856791.jpg/736x552/490x326/0/f11d",
+      "https://realocdn.com/image/5/BE-master_listing_5a5bc5_5a5bc594f7c80b61063bdd409a8efd48.jpg/736x552/490x326/0/2d2b",
+      "https://realocdn.com/image/5/BE-master_listing_1bcfff_1bcfff174e285c53d577b52aa49d52b1.jpg/552x736/490x326/0/25bb",
+      "https://realocdn.com/image/5/BE-master_listing_3d843f_3d843fc2d59c80eb4bc006d129a8eec9.jpg/552x736/490x326/0/1d43",
+      "https://realocdn.com/image/5/BE-master_listing_70f8d5_70f8d5a5ae42d5b51e4eadaec6e6d4cb.jpg/552x736/490x326/0/03aa",
+      "https://realocdn.com/image/5/BE-master_listing_c8f0be_c8f0be4b906640845f18ecacc697da79.jpg/552x736/490x326/0/3ca2",
+      "https://realocdn.com/image/5/BE-master_listing_3b3c9e_3b3c9eaef8b26f2487973cc64b5fccfe.jpg/552x736/490x326/0/e063",
+      "https://realocdn.com/image/5/BE-master_listing_2156ea_2156ea41f04b3c05675d2137bfac8996.jpg/552x736/490x326/0/918e",
+      "https://realocdn.com/image/5/BE-master_listing_19e67a_19e67ae81b0a5888a3ef91ee3a7344c1.jpg/552x736/490x326/0/9643",
+      "https://realocdn.com/image/5/BE-master_listing_ee8e30_ee8e30c573516c6ebf4b80a773c499ff.jpg/552x736/490x326/0/1dc9",
+      "https://realocdn.com/image/5/BE-master_listing_a00a64_a00a648c57b9983db701255cb9a7856c.jpg/552x736/490x326/0/8675",
+      "https://realocdn.com/image/5/BE-master_listing_94123a_94123a1f8d1a48daff0b7076c948c3a3.jpg/552x736/490x326/0/7751",
+      "https://realocdn.com/image/5/BE-master_listing_061798_0617988c69f8aa5b02a8328b4ef0b876.jpg/552x736/490x326/0/93cb",
+      "https://realocdn.com/image/5/BE-master_listing_c6b233_c6b233059a55dde0056a452919e3abc8.jpg/552x736/490x326/0/faaa"
+    ],
+    "images_remote": [
+      "https://realocdn.com/image/5/BE-master_listing_6edd2e_6edd2edaa9b99ef536a5c0f7b6856791.jpg/736x552/490x326/0/f11d",
+      "https://realocdn.com/image/5/BE-master_listing_5a5bc5_5a5bc594f7c80b61063bdd409a8efd48.jpg/736x552/490x326/0/2d2b",
+      "https://realocdn.com/image/5/BE-master_listing_1bcfff_1bcfff174e285c53d577b52aa49d52b1.jpg/552x736/490x326/0/25bb",
+      "https://realocdn.com/image/5/BE-master_listing_3d843f_3d843fc2d59c80eb4bc006d129a8eec9.jpg/552x736/490x326/0/1d43",
+      "https://realocdn.com/image/5/BE-master_listing_70f8d5_70f8d5a5ae42d5b51e4eadaec6e6d4cb.jpg/552x736/490x326/0/03aa",
+      "https://realocdn.com/image/5/BE-master_listing_c8f0be_c8f0be4b906640845f18ecacc697da79.jpg/552x736/490x326/0/3ca2",
+      "https://realocdn.com/image/5/BE-master_listing_3b3c9e_3b3c9eaef8b26f2487973cc64b5fccfe.jpg/552x736/490x326/0/e063",
+      "https://realocdn.com/image/5/BE-master_listing_2156ea_2156ea41f04b3c05675d2137bfac8996.jpg/552x736/490x326/0/918e",
+      "https://realocdn.com/image/5/BE-master_listing_19e67a_19e67ae81b0a5888a3ef91ee3a7344c1.jpg/552x736/490x326/0/9643",
+      "https://realocdn.com/image/5/BE-master_listing_ee8e30_ee8e30c573516c6ebf4b80a773c499ff.jpg/552x736/490x326/0/1dc9",
+      "https://realocdn.com/image/5/BE-master_listing_a00a64_a00a648c57b9983db701255cb9a7856c.jpg/552x736/490x326/0/8675",
+      "https://realocdn.com/image/5/BE-master_listing_94123a_94123a1f8d1a48daff0b7076c948c3a3.jpg/552x736/490x326/0/7751",
+      "https://realocdn.com/image/5/BE-master_listing_061798_0617988c69f8aa5b02a8328b4ef0b876.jpg/552x736/490x326/0/93cb",
+      "https://realocdn.com/image/5/BE-master_listing_c6b233_c6b233059a55dde0056a452919e3abc8.jpg/552x736/490x326/0/faaa"
+    ],
+    "images_local": [
+      "data/images/realo-1271203737/b59bb73c060dfd06.jpg",
+      "data/images/realo-1271203737/0a92a2080cc355c1.jpg",
+      "data/images/realo-1271203737/8428b0d32a2f8594.jpg",
+      "data/images/realo-1271203737/62ccfff5ebef7f60.jpg",
+      "data/images/realo-1271203737/cb6067a97f79747e.jpg"
+    ],
+    "images_cached_at": "2026-07-07T08:23:02.537986+00:00",
+    "features": [],
+    "first_seen": "2026-07-07T08:19:37.671869+00:00",
+    "last_seen": "2026-07-07T08:19:37.671874+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 6.0,
+      "summary": "Rue haute 77, 1435 Corbais in de Vlaamse Ardennen — overeenkoms­score 6.0/10. 2 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 560,000) past binnen budget",
+        "3 slaapkamers — voldoende voor gezin"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "vastgoedcoorevits-b315a0f303d5",
     "source": "vastgoedcoorevits",
     "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-woning-zwalm/7597654",
