@@ -1,5 +1,72 @@
 [
   {
+    "id": "realo-137884053",
+    "source": "realo",
+    "source_url": "https://www.realo.be/en/rue-saint-vincent-1-1457-nil-saint-vincent-saint-martin/6658265?l=137884053",
+    "title": "Rue saint vincent 1, 1457 Nil-Saint-Vincent-Saint-Martin",
+    "description": null,
+    "property_type": "land",
+    "price": 180000.0,
+    "address": "Rue saint vincent 1, 1457 Nil-Saint-Vincent-Saint-Martin",
+    "postal_code": "1457",
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://realocdn.com/image/5/BE-master_listing_f37f16_f37f163c222cc1c95d3653f9770a017e.jpg/736x449/490x326/0/8f2c",
+      "https://realocdn.com/image/5/BE-master_listing_09018c_09018cbc6fd3d4145e20d4d75bd14404.jpg/736x480/490x326/0/259a",
+      "https://realocdn.com/image/5/BE-master_listing_670db1_670db19331c44844946df0b07fe91929.jpg/736x491/490x326/0/9142"
+    ],
+    "images_remote": [
+      "https://realocdn.com/image/5/BE-master_listing_f37f16_f37f163c222cc1c95d3653f9770a017e.jpg/736x449/490x326/0/8f2c",
+      "https://realocdn.com/image/5/BE-master_listing_09018c_09018cbc6fd3d4145e20d4d75bd14404.jpg/736x480/490x326/0/259a",
+      "https://realocdn.com/image/5/BE-master_listing_670db1_670db19331c44844946df0b07fe91929.jpg/736x491/490x326/0/9142"
+    ],
+    "images_local": [
+      "data/images/realo-137884053/323b271e7675e4ea.jpg",
+      "data/images/realo-137884053/b5461a4a61955db2.jpg",
+      "data/images/realo-137884053/ebd7cf44e32e7238.jpg"
+    ],
+    "images_cached_at": "2026-07-17T07:14:48.307709+00:00",
+    "features": [],
+    "first_seen": "2026-07-17T07:13:56.885772+00:00",
+    "last_seen": "2026-07-17T07:13:56.885777+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Rue saint vincent 1, 1457 Nil-Saint-Vincent-Saint-Martin in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 180,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "vastgoedcoorevits-f18e0dad6949",
     "source": "vastgoedcoorevits",
     "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-woning-wortegem-petegem/7608268",
