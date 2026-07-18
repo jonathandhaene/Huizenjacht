@@ -1,5 +1,127 @@
 [
   {
+    "id": "vastgoedcoorevits-7f8a98d21806",
+    "source": "vastgoedcoorevits",
+    "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-woning-nazareth/7609854",
+    "title": "Nazareth Spoorwegstraat 19",
+    "description": null,
+    "property_type": "house",
+    "price": 240000.0,
+    "address": null,
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/197192210010216220003037013203073128011218134150/medium/fallback"
+    ],
+    "images_remote": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/197192210010216220003037013203073128011218134150/medium/fallback"
+    ],
+    "images_local": [
+      "data/images/vastgoedcoorevits-7f8a98d21806/38d49b262686d075.jpg"
+    ],
+    "images_cached_at": "2026-07-18T07:02:53.460776+00:00",
+    "features": [],
+    "first_seen": "2026-07-18T07:02:44.180222+00:00",
+    "last_seen": "2026-07-18T07:02:44.180225+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Nazareth Spoorwegstraat 19 in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 240,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
+    "id": "vastgoedcoorevits-043f2d4d4759",
+    "source": "vastgoedcoorevits",
+    "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-woning-oudenaarde/7609623",
+    "title": "Oudenaarde Leupegemstraat 5",
+    "description": null,
+    "property_type": "house",
+    "price": 415000.0,
+    "address": null,
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/129067030215226238034117011078085118077127077181/medium/fallback"
+    ],
+    "images_remote": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/129067030215226238034117011078085118077127077181/medium/fallback"
+    ],
+    "images_local": [
+      "data/images/vastgoedcoorevits-043f2d4d4759/7de507fc5148953d.jpg"
+    ],
+    "images_cached_at": "2026-07-18T07:02:53.665720+00:00",
+    "features": [],
+    "first_seen": "2026-07-18T07:02:44.180333+00:00",
+    "last_seen": "2026-07-18T07:02:44.180334+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Oudenaarde Leupegemstraat 5 in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 415,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "realo-137884053",
     "source": "realo",
     "source_url": "https://www.realo.be/en/rue-saint-vincent-1-1457-nil-saint-vincent-saint-martin/6658265?l=137884053",
