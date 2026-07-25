@@ -1,5 +1,63 @@
 [
   {
+    "id": "dewaele_vlaamse_ardennen-fdb3c05dd7e7",
+    "source": "dewaele_vlaamse_ardennen",
+    "source_url": "https://www.dewaele.com/nl/te-koop/9700-oudenaarde/huis/halfopen-woning-in-rustige-straat-in-mater-oudenaarde-d9700-26060-256424",
+    "title": "Huis te koop Oudenaarde",
+    "description": null,
+    "property_type": "house",
+    "price": 320000.0,
+    "address": "Bekijk meer foto's",
+    "postal_code": null,
+    "municipality": null,
+    "land_area": 19150.0,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2F8d886e9b-1151-4d89-b28e-02845a38be75%2Fimage3282409.JPG?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_remote": [],
+    "images_local": [],
+    "images_cached_at": null,
+    "features": [],
+    "first_seen": "2026-07-25T07:12:49.346620+00:00",
+    "last_seen": "2026-07-25T07:12:49.346624+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 6.5,
+      "summary": "Huis te koop Oudenaarde in de Vlaamse Ardennen — overeenkoms­score 6.5/10. 2 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 320,000) past binnen budget",
+        "Groot perceel van 19,150 m²"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "vastgoedcoorevits-7f8a98d21806",
     "source": "vastgoedcoorevits",
     "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-woning-nazareth/7609854",
