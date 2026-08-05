@@ -1,5 +1,66 @@
 [
   {
+    "id": "vastgoedcoorevits-28a93ddb6972",
+    "source": "vastgoedcoorevits",
+    "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-woning-brakel/7619725",
+    "title": "Brakel Molenhoekstraat 42",
+    "description": null,
+    "property_type": "house",
+    "price": 299000.0,
+    "address": null,
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/092063186244158118249100245138075205128072103078/medium/fallback"
+    ],
+    "images_remote": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/092063186244158118249100245138075205128072103078/medium/fallback"
+    ],
+    "images_local": [
+      "data/images/vastgoedcoorevits-28a93ddb6972/eb611b07ddfcb597.jpg"
+    ],
+    "images_cached_at": "2026-08-05T07:38:48.272007+00:00",
+    "features": [],
+    "first_seen": "2026-08-05T07:38:39.338044+00:00",
+    "last_seen": "2026-08-05T07:38:39.338048+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Brakel Molenhoekstraat 42 in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 299,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "vastgoedcoorevits-78181fce769d",
     "source": "vastgoedcoorevits",
     "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-woning-maarkedal/7618232",
