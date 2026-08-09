@@ -1,5 +1,229 @@
 [
   {
+    "id": "vastgoedlammers-d81e57f799ba",
+    "source": "vastgoedlammers",
+    "source_url": "https://vastgoedlammers.be/label/nieuwbouw/",
+    "title": "Comfortabel nieuwbouwappartement op de markt!",
+    "description": null,
+    "property_type": "house",
+    "price": 299000.0,
+    "address": null,
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": 181.0,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://vastgoedlammers.be/wp-content/uploads/2026/08/20260219_1630131-scaled-e1785995586586-584x438.jpg"
+    ],
+    "images_remote": [
+      "https://vastgoedlammers.be/wp-content/uploads/2026/08/20260219_1630131-scaled-e1785995586586-584x438.jpg"
+    ],
+    "images_local": [
+      "data/images/vastgoedlammers-d81e57f799ba/3b5aa41456c8e604.jpg"
+    ],
+    "images_cached_at": "2026-08-09T05:44:37.389671+00:00",
+    "features": [],
+    "first_seen": "2026-08-09T05:44:15.509705+00:00",
+    "last_seen": "2026-08-09T05:44:15.509707+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Comfortabel nieuwbouwappartement op de markt! in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 299,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
+    "id": "realo-517253018",
+    "source": "realo",
+    "source_url": "https://www.realo.be/en/rue-margot-94-1457-walhain-saint-paul/5194365?l=517253018",
+    "title": "Rue margot 94, 1457 Walhain-Saint-Paul",
+    "description": null,
+    "property_type": "house",
+    "price": null,
+    "address": "Rue margot 94, 1457 Walhain-Saint-Paul",
+    "postal_code": "1457",
+    "municipality": null,
+    "land_area": 1170.0,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://realocdn.com/image/5/BE-master_listing_6e3853_6e3853ac7e3e0b54f3c4712be9890f7d.jpg/736x552/490x326/0/16ed",
+      "https://realocdn.com/image/5/BE-master_listing_97e7ce_97e7ce0ec4810301e266a7618f1abbde.jpg/736x552/490x326/0/0117",
+      "https://realocdn.com/image/5/BE-master_listing_e83db1_e83db1f83a2812cd8a1cdf39f3ae1753.jpg/736x552/490x326/0/6334",
+      "https://realocdn.com/image/5/BE-master_listing_ef295a_ef295a52e78ddc58375cb408f6d6328d.jpg/736x552/490x326/0/d919",
+      "https://realocdn.com/image/5/BE-master_listing_2bb150_2bb150ebfafb4d74a8978e5e6085d43f.jpg/736x552/490x326/0/5057",
+      "https://realocdn.com/image/5/BE-master_listing_99861c_99861c41768c3c9610a83cb2c189ae26.jpg/736x552/490x326/0/7893",
+      "https://realocdn.com/image/5/BE-master_listing_dea44a_dea44a2e1e95a77bc5ab8be0b94713eb.jpg/736x552/490x326/0/f6f9",
+      "https://realocdn.com/image/5/BE-master_listing_65d2ce_65d2ce75bdc4324ee08bce0606c1df0b.jpg/736x552/490x326/0/1044",
+      "https://realocdn.com/image/5/BE-master_listing_7283d0_7283d0daacca54373e21a858f5243a1d.jpg/736x552/490x326/0/22a0",
+      "https://realocdn.com/image/5/BE-master_listing_3b4ffc_3b4ffc97acffbbeee47f1cee5ad324c0.jpg/736x552/490x326/0/ed0f",
+      "https://realocdn.com/image/5/BE-master_listing_e114fb_e114fb2c34579fb830a48e4bd829912a.jpg/736x552/490x326/0/b823",
+      "https://realocdn.com/image/5/BE-master_listing_0fbb61_0fbb61df85066ced84155977d9b1f528.jpg/736x552/490x326/0/4548",
+      "https://realocdn.com/image/5/BE-master_listing_b79bf9_b79bf9442a9913f7e11c9d3a1c9f2dbd.jpg/736x552/490x326/0/cef1",
+      "https://realocdn.com/image/5/BE-master_listing_b6d47f_b6d47f8ebe0687e933eb5f30504ddd2f.jpg/736x552/490x326/0/6616",
+      "https://realocdn.com/image/5/BE-master_listing_b2513a_b2513ab4e757cc79e93bd8ce734c7486.jpg/736x552/490x326/0/139b",
+      "https://realocdn.com/image/5/BE-master_listing_d5f4d7_d5f4d7e28e8ff01560fb645e25bd23a6.jpg/736x552/490x326/0/3588",
+      "https://realocdn.com/image/5/BE-master_listing_11c3f7_11c3f71bbf387201abce14df14ff30cf.jpg/736x552/490x326/0/5d1c",
+      "https://realocdn.com/image/5/BE-master_listing_369017_36901765fbd3cfaf14fbd40b9e3a4425.jpg/736x552/490x326/0/b437",
+      "https://realocdn.com/image/5/BE-master_listing_52620e_52620e1f8d69386724df5ae54d1f99c7.jpg/552x736/490x326/0/cd61"
+    ],
+    "images_remote": [
+      "https://realocdn.com/image/5/BE-master_listing_6e3853_6e3853ac7e3e0b54f3c4712be9890f7d.jpg/736x552/490x326/0/16ed",
+      "https://realocdn.com/image/5/BE-master_listing_97e7ce_97e7ce0ec4810301e266a7618f1abbde.jpg/736x552/490x326/0/0117",
+      "https://realocdn.com/image/5/BE-master_listing_e83db1_e83db1f83a2812cd8a1cdf39f3ae1753.jpg/736x552/490x326/0/6334",
+      "https://realocdn.com/image/5/BE-master_listing_ef295a_ef295a52e78ddc58375cb408f6d6328d.jpg/736x552/490x326/0/d919",
+      "https://realocdn.com/image/5/BE-master_listing_2bb150_2bb150ebfafb4d74a8978e5e6085d43f.jpg/736x552/490x326/0/5057",
+      "https://realocdn.com/image/5/BE-master_listing_99861c_99861c41768c3c9610a83cb2c189ae26.jpg/736x552/490x326/0/7893",
+      "https://realocdn.com/image/5/BE-master_listing_dea44a_dea44a2e1e95a77bc5ab8be0b94713eb.jpg/736x552/490x326/0/f6f9",
+      "https://realocdn.com/image/5/BE-master_listing_65d2ce_65d2ce75bdc4324ee08bce0606c1df0b.jpg/736x552/490x326/0/1044",
+      "https://realocdn.com/image/5/BE-master_listing_7283d0_7283d0daacca54373e21a858f5243a1d.jpg/736x552/490x326/0/22a0",
+      "https://realocdn.com/image/5/BE-master_listing_3b4ffc_3b4ffc97acffbbeee47f1cee5ad324c0.jpg/736x552/490x326/0/ed0f",
+      "https://realocdn.com/image/5/BE-master_listing_e114fb_e114fb2c34579fb830a48e4bd829912a.jpg/736x552/490x326/0/b823",
+      "https://realocdn.com/image/5/BE-master_listing_0fbb61_0fbb61df85066ced84155977d9b1f528.jpg/736x552/490x326/0/4548",
+      "https://realocdn.com/image/5/BE-master_listing_b79bf9_b79bf9442a9913f7e11c9d3a1c9f2dbd.jpg/736x552/490x326/0/cef1",
+      "https://realocdn.com/image/5/BE-master_listing_b6d47f_b6d47f8ebe0687e933eb5f30504ddd2f.jpg/736x552/490x326/0/6616",
+      "https://realocdn.com/image/5/BE-master_listing_b2513a_b2513ab4e757cc79e93bd8ce734c7486.jpg/736x552/490x326/0/139b",
+      "https://realocdn.com/image/5/BE-master_listing_d5f4d7_d5f4d7e28e8ff01560fb645e25bd23a6.jpg/736x552/490x326/0/3588",
+      "https://realocdn.com/image/5/BE-master_listing_11c3f7_11c3f71bbf387201abce14df14ff30cf.jpg/736x552/490x326/0/5d1c",
+      "https://realocdn.com/image/5/BE-master_listing_369017_36901765fbd3cfaf14fbd40b9e3a4425.jpg/736x552/490x326/0/b437",
+      "https://realocdn.com/image/5/BE-master_listing_52620e_52620e1f8d69386724df5ae54d1f99c7.jpg/552x736/490x326/0/cd61"
+    ],
+    "images_local": [
+      "data/images/realo-517253018/40bca672f342eb34.jpg",
+      "data/images/realo-517253018/1945adaeb3ad23da.jpg",
+      "data/images/realo-517253018/81867b960f68e4da.jpg",
+      "data/images/realo-517253018/abc6adcd00ff065d.jpg",
+      "data/images/realo-517253018/9b8e523602cb056b.jpg"
+    ],
+    "images_cached_at": "2026-08-09T05:44:40.474499+00:00",
+    "features": [],
+    "first_seen": "2026-08-09T05:43:45.100202+00:00",
+    "last_seen": "2026-08-09T05:43:45.100206+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 4.0,
+      "summary": "Rue margot 94, 1457 Walhain-Saint-Paul in de Vlaamse Ardennen — overeenkoms­score 4.0/10. 0 voordelen, 1 aandachtspunten.",
+      "pros": [],
+      "cons": [
+        "Perceel (1,170 m²) kleiner dan minimum (5,000 m²)"
+      ],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
+    "id": "dewaele_vlaamse_ardennen-7a09632c0cf3",
+    "source": "dewaele_vlaamse_ardennen",
+    "source_url": "https://www.dewaele.com/nl/te-koop/9600-ronse/huis/huis-te-koop-in-ronse-savooistraat-88-d9700-26063-254338",
+    "title": "Huis te koop Ronse",
+    "description": null,
+    "property_type": "house",
+    "price": 349000.0,
+    "address": "Bekijk meer foto's",
+    "postal_code": null,
+    "municipality": null,
+    "land_area": 88164.0,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2F8117d380-2da6-432a-9d79-0930c6b1c4ba%2Fimage3292909.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_remote": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2F8117d380-2da6-432a-9d79-0930c6b1c4ba%2Fimage3292909.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_local": [
+      "data/images/dewaele_vlaamse_ardennen-7a09632c0cf3/c3a3d79e8e8535f5.jpg"
+    ],
+    "images_cached_at": "2026-08-09T05:44:41.050647+00:00",
+    "features": [],
+    "first_seen": "2026-08-09T05:44:00.405238+00:00",
+    "last_seen": "2026-08-09T05:44:00.405240+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 6.5,
+      "summary": "Huis te koop Ronse in de Vlaamse Ardennen — overeenkoms­score 6.5/10. 2 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 349,000) past binnen budget",
+        "Groot perceel van 88,164 m²"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "vastgoedcoorevits-703d495d9499",
     "source": "vastgoedcoorevits",
     "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-woning-kruisem/7622268",
