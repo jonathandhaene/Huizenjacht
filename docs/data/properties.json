@@ -1,5 +1,127 @@
 [
   {
+    "id": "vastgoedcoorevits-3340ad187dd8",
+    "source": "vastgoedcoorevits",
+    "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-woning-maarkedal/7632083",
+    "title": "Maarkedal Ommegangstraat 80",
+    "description": null,
+    "property_type": "house",
+    "price": 439000.0,
+    "address": null,
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/226079070069066233102175011246195107058244153103/medium/fallback"
+    ],
+    "images_remote": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/226079070069066233102175011246195107058244153103/medium/fallback"
+    ],
+    "images_local": [
+      "data/images/vastgoedcoorevits-3340ad187dd8/53cc9c22acd0e08c.jpg"
+    ],
+    "images_cached_at": "2026-08-22T05:24:00.691943+00:00",
+    "features": [],
+    "first_seen": "2026-08-22T05:23:20.058011+00:00",
+    "last_seen": "2026-08-22T05:23:20.058015+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Maarkedal Ommegangstraat 80 in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 439,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
+    "id": "dewaele_vlaamse_ardennen-cdb261c87395",
+    "source": "dewaele_vlaamse_ardennen",
+    "source_url": "https://www.dewaele.com/nl/te-koop/9470-denderleeuw/huis/exclusieve-woonst-te-koop-in-denderleeuw-d1700-26014-k-256214",
+    "title": "Huis te koop Denderleeuw",
+    "description": null,
+    "property_type": "house",
+    "price": null,
+    "address": "Bekijk meer foto's",
+    "postal_code": null,
+    "municipality": null,
+    "land_area": 162473.0,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2F73f3b5f4-c639-4f46-8e10-e2be73af429c%2F1b7b4f31-8c0f-4f1a-8bd1-0fd3fc6afbec.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_remote": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2F73f3b5f4-c639-4f46-8e10-e2be73af429c%2F1b7b4f31-8c0f-4f1a-8bd1-0fd3fc6afbec.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_local": [
+      "data/images/dewaele_vlaamse_ardennen-cdb261c87395/4b93ddae6f1989f2.jpg"
+    ],
+    "images_cached_at": "2026-08-22T05:24:01.633890+00:00",
+    "features": [],
+    "first_seen": "2026-08-22T05:23:15.564468+00:00",
+    "last_seen": "2026-08-22T05:23:15.564472+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 6.0,
+      "summary": "Huis te koop Denderleeuw in de Vlaamse Ardennen — overeenkoms­score 6.0/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Groot perceel van 162,473 m²"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "vastgoedcoorevits-edf710917eda",
     "source": "vastgoedcoorevits",
     "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-woning-oudenaarde/7630809",
