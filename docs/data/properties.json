@@ -1,5 +1,250 @@
 [
   {
+    "id": "vastgoedcoorevits-921b7fd59b30",
+    "source": "vastgoedcoorevits",
+    "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-woning-kruisem/7639847",
+    "title": "Kruisem Kruishoutemsesteenweg 158",
+    "description": null,
+    "property_type": "house",
+    "price": 545000.0,
+    "address": null,
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/124021252157238042094245024011213140109208053133/medium/fallback"
+    ],
+    "images_remote": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/124021252157238042094245024011213140109208053133/medium/fallback"
+    ],
+    "images_local": [
+      "data/images/vastgoedcoorevits-921b7fd59b30/efeec5b7350a3652.jpg"
+    ],
+    "images_cached_at": "2026-09-01T09:44:34.565815+00:00",
+    "features": [],
+    "first_seen": "2026-09-01T09:44:17.393950+00:00",
+    "last_seen": "2026-09-01T09:44:17.393951+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Kruisem Kruishoutemsesteenweg 158 in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 545,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
+    "id": "vastgoedcoorevits-8a3d652ecd2d",
+    "source": "vastgoedcoorevits",
+    "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-woning-kluisbergen/7639715",
+    "title": "Kluisbergen Pontstraat 68/a",
+    "description": null,
+    "property_type": "house",
+    "price": 450000.0,
+    "address": null,
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/188119056111166065183142156241225154071085115225/medium/fallback"
+    ],
+    "images_remote": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/188119056111166065183142156241225154071085115225/medium/fallback"
+    ],
+    "images_local": [
+      "data/images/vastgoedcoorevits-8a3d652ecd2d/af172db5123a35a0.jpg"
+    ],
+    "images_cached_at": "2026-09-01T09:44:34.820867+00:00",
+    "features": [],
+    "first_seen": "2026-09-01T09:44:17.394033+00:00",
+    "last_seen": "2026-09-01T09:44:17.394033+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Kluisbergen Pontstraat 68/a in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 450,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
+    "id": "vastgoedcoorevits-e86545199ae7",
+    "source": "vastgoedcoorevits",
+    "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-woning-kruisem/7639852",
+    "title": "Kruisem Hedekensdriesstraat 23",
+    "description": null,
+    "property_type": "house",
+    "price": 375000.0,
+    "address": null,
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/222177057008204098145191242180033186143240178037/medium/fallback"
+    ],
+    "images_remote": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/222177057008204098145191242180033186143240178037/medium/fallback"
+    ],
+    "images_local": [
+      "data/images/vastgoedcoorevits-e86545199ae7/6e0269c6a8510adb.jpg"
+    ],
+    "images_cached_at": "2026-09-01T09:44:35.046926+00:00",
+    "features": [],
+    "first_seen": "2026-09-01T09:44:17.393844+00:00",
+    "last_seen": "2026-09-01T09:44:17.393848+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Kruisem Hedekensdriesstraat 23 in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 375,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
+    "id": "dewaele_vlaamse_ardennen-c8c5c83eeba2",
+    "source": "dewaele_vlaamse_ardennen",
+    "source_url": "https://www.dewaele.com/nl/te-koop/9620-zottegem/huis/gerenoveerde-burgerwoning-te-koop-in-velzeke-zottegem-d9700-26065-258195",
+    "title": "Huis te koop Zottegem",
+    "description": null,
+    "property_type": "house",
+    "price": 399000.0,
+    "address": "Bekijk meer foto's",
+    "postal_code": null,
+    "municipality": null,
+    "land_area": 16262.0,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2Ff7860642-7fc3-4123-aa5d-34c4b4f139fd%2F28639381-ce64-47fb-b45a-f6bf9deb652b.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_remote": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2Ff7860642-7fc3-4123-aa5d-34c4b4f139fd%2F28639381-ce64-47fb-b45a-f6bf9deb652b.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_local": [
+      "data/images/dewaele_vlaamse_ardennen-c8c5c83eeba2/cb69f3c0005b6735.jpg"
+    ],
+    "images_cached_at": "2026-09-01T09:44:35.729032+00:00",
+    "features": [],
+    "first_seen": "2026-09-01T09:44:12.113986+00:00",
+    "last_seen": "2026-09-01T09:44:12.113991+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 6.5,
+      "summary": "Huis te koop Zottegem in de Vlaamse Ardennen — overeenkoms­score 6.5/10. 2 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 399,000) past binnen budget",
+        "Groot perceel van 16,262 m²"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "vastgoedcoorevits-2ae0924975cf",
     "source": "vastgoedcoorevits",
     "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-woning-oudenaarde/7638118",
