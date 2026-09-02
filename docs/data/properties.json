@@ -1,5 +1,229 @@
 [
   {
+    "id": "vastgoedcoorevits-c96adfe8ef2e",
+    "source": "vastgoedcoorevits",
+    "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-woning-gent/7640927",
+    "title": "Gent Hazelaarstraat 25",
+    "description": null,
+    "property_type": "house",
+    "price": 375000.0,
+    "address": null,
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/065238213143252192181120191180081166067251153179/medium/fallback"
+    ],
+    "images_remote": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/065238213143252192181120191180081166067251153179/medium/fallback"
+    ],
+    "images_local": [
+      "data/images/vastgoedcoorevits-c96adfe8ef2e/2d160b5f3d721e80.jpg"
+    ],
+    "images_cached_at": "2026-09-02T09:17:09.957054+00:00",
+    "features": [],
+    "first_seen": "2026-09-02T09:16:39.128300+00:00",
+    "last_seen": "2026-09-02T09:16:39.128306+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Gent Hazelaarstraat 25 in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 375,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
+    "id": "vastgoedcoorevits-6ab92a258914",
+    "source": "vastgoedcoorevits",
+    "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-appartement-huise/7640399",
+    "title": "Huise Lange Aststraat 1 1",
+    "description": null,
+    "property_type": "house",
+    "price": 375000.0,
+    "address": null,
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/049052198143012105062106206071229019044166091077/medium/fallback"
+    ],
+    "images_remote": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/049052198143012105062106206071229019044166091077/medium/fallback"
+    ],
+    "images_local": [
+      "data/images/vastgoedcoorevits-6ab92a258914/85e82cb76bd8f6b8.jpg"
+    ],
+    "images_cached_at": "2026-09-02T09:17:10.158388+00:00",
+    "features": [],
+    "first_seen": "2026-09-02T09:16:39.128405+00:00",
+    "last_seen": "2026-09-02T09:16:39.128405+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Huise Lange Aststraat 1 1 in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 375,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
+    "id": "realo-1046662588",
+    "source": "realo",
+    "source_url": "https://www.realo.be/en/rue-du-petit-baty-2-1435-mont-saint-guibert/5194304?l=1046662588",
+    "title": "Rue du petit baty 2, 1435 Mont-Saint-Guibert",
+    "description": null,
+    "property_type": "house",
+    "price": 450000.0,
+    "address": "Rue du petit baty 2, 1435 Mont-Saint-Guibert",
+    "postal_code": "1435",
+    "municipality": null,
+    "land_area": null,
+    "living_area": 175.0,
+    "bedrooms": 4,
+    "bathrooms": null,
+    "images": [
+      "https://realocdn.com/image/5/BE-master_listing_dea17f_dea17fb3efeb470c2685b283bd0975a6.jpg/736x427/490x326/0/f9c4",
+      "https://realocdn.com/image/5/BE-master_listing_d792bb_d792bbda4b5471c83372750f49ee1f7f.jpg/736x414/490x326/0/3e92",
+      "https://realocdn.com/image/5/BE-master_listing_6a5f99_6a5f9965c9cdd6623c2458210d2e1317.jpg/736x414/490x326/0/efca",
+      "https://realocdn.com/image/5/BE-master_listing_90158f_90158f3e49ef17cdb9af7db95bb6b8cd.jpg/736x414/490x326/0/31b7",
+      "https://realocdn.com/image/5/BE-master_listing_efdbbf_efdbbf05b8e0917868241fa84c2a31e1.jpg/736x414/490x326/0/3c49",
+      "https://realocdn.com/image/5/BE-master_listing_62be5e_62be5edaa3681c136626f881eb36662c.jpg/736x414/490x326/0/3d20",
+      "https://realocdn.com/image/5/BE-master_listing_cd23a9_cd23a955468236509c5c7ef7e2f0938f.jpg/736x414/490x326/0/b3c0",
+      "https://realocdn.com/image/5/BE-master_listing_2eee32_2eee32e44319db39c80984d3a5b87705.jpg/736x414/490x326/0/f05d",
+      "https://realocdn.com/image/5/BE-master_listing_546c05_546c0574357d8c96ee8058663c1a4de9.jpg/736x414/490x326/0/d840",
+      "https://realocdn.com/image/5/BE-master_listing_b9d973_b9d97301c604e939bec6cc4d22680b78.jpg/736x414/490x326/0/a831",
+      "https://realocdn.com/image/5/BE-master_listing_5dd30e_5dd30ec98dd2ab16a14e331422bf30a5.jpg/736x414/490x326/0/fec3",
+      "https://realocdn.com/image/5/BE-master_listing_f58577_f585770ce41908fef0692202787186d2.jpg/736x414/490x326/0/a5d2",
+      "https://realocdn.com/image/5/BE-master_listing_5c4409_5c440973df4511d61063182c7f9f8c63.jpg/736x414/490x326/0/8740",
+      "https://realocdn.com/image/5/BE-master_listing_46ee59_46ee597a0d559c48858bb1232dbf0017.jpg/736x414/490x326/0/4818",
+      "https://realocdn.com/image/5/BE-master_listing_85408a_85408aa9594e4b04f188d626c73df979.jpg/736x414/490x326/0/99d8",
+      "https://realocdn.com/image/5/BE-master_listing_1ccbc7_1ccbc7f416d523fb25482f4393146056.jpg/736x414/490x326/0/d748",
+      "https://realocdn.com/image/5/BE-master_listing_5e6a04_5e6a0429149498cd27f6daf62c8fee20.jpg/736x414/490x326/0/2c8b",
+      "https://realocdn.com/image/5/BE-master_listing_d323db_d323db35d459e91e2d6ed21479175389.jpg/736x414/490x326/0/7714",
+      "https://realocdn.com/image/5/BE-master_listing_978464_978464bc5c3a8888394a7967f4967324.jpg/736x414/490x326/0/263e"
+    ],
+    "images_remote": [
+      "https://realocdn.com/image/5/BE-master_listing_dea17f_dea17fb3efeb470c2685b283bd0975a6.jpg/736x427/490x326/0/f9c4",
+      "https://realocdn.com/image/5/BE-master_listing_d792bb_d792bbda4b5471c83372750f49ee1f7f.jpg/736x414/490x326/0/3e92",
+      "https://realocdn.com/image/5/BE-master_listing_6a5f99_6a5f9965c9cdd6623c2458210d2e1317.jpg/736x414/490x326/0/efca",
+      "https://realocdn.com/image/5/BE-master_listing_90158f_90158f3e49ef17cdb9af7db95bb6b8cd.jpg/736x414/490x326/0/31b7",
+      "https://realocdn.com/image/5/BE-master_listing_efdbbf_efdbbf05b8e0917868241fa84c2a31e1.jpg/736x414/490x326/0/3c49",
+      "https://realocdn.com/image/5/BE-master_listing_62be5e_62be5edaa3681c136626f881eb36662c.jpg/736x414/490x326/0/3d20",
+      "https://realocdn.com/image/5/BE-master_listing_cd23a9_cd23a955468236509c5c7ef7e2f0938f.jpg/736x414/490x326/0/b3c0",
+      "https://realocdn.com/image/5/BE-master_listing_2eee32_2eee32e44319db39c80984d3a5b87705.jpg/736x414/490x326/0/f05d",
+      "https://realocdn.com/image/5/BE-master_listing_546c05_546c0574357d8c96ee8058663c1a4de9.jpg/736x414/490x326/0/d840",
+      "https://realocdn.com/image/5/BE-master_listing_b9d973_b9d97301c604e939bec6cc4d22680b78.jpg/736x414/490x326/0/a831",
+      "https://realocdn.com/image/5/BE-master_listing_5dd30e_5dd30ec98dd2ab16a14e331422bf30a5.jpg/736x414/490x326/0/fec3",
+      "https://realocdn.com/image/5/BE-master_listing_f58577_f585770ce41908fef0692202787186d2.jpg/736x414/490x326/0/a5d2",
+      "https://realocdn.com/image/5/BE-master_listing_5c4409_5c440973df4511d61063182c7f9f8c63.jpg/736x414/490x326/0/8740",
+      "https://realocdn.com/image/5/BE-master_listing_46ee59_46ee597a0d559c48858bb1232dbf0017.jpg/736x414/490x326/0/4818",
+      "https://realocdn.com/image/5/BE-master_listing_85408a_85408aa9594e4b04f188d626c73df979.jpg/736x414/490x326/0/99d8",
+      "https://realocdn.com/image/5/BE-master_listing_1ccbc7_1ccbc7f416d523fb25482f4393146056.jpg/736x414/490x326/0/d748",
+      "https://realocdn.com/image/5/BE-master_listing_5e6a04_5e6a0429149498cd27f6daf62c8fee20.jpg/736x414/490x326/0/2c8b",
+      "https://realocdn.com/image/5/BE-master_listing_d323db_d323db35d459e91e2d6ed21479175389.jpg/736x414/490x326/0/7714",
+      "https://realocdn.com/image/5/BE-master_listing_978464_978464bc5c3a8888394a7967f4967324.jpg/736x414/490x326/0/263e"
+    ],
+    "images_local": [
+      "data/images/realo-1046662588/0ecc73a3553e7c2e.jpg",
+      "data/images/realo-1046662588/e56004f3df1458b6.jpg",
+      "data/images/realo-1046662588/665cd73a7cb53eef.jpg",
+      "data/images/realo-1046662588/e55fe9483bf6a7d8.jpg",
+      "data/images/realo-1046662588/3f422eec2c3580b5.jpg"
+    ],
+    "images_cached_at": "2026-09-02T09:17:12.497361+00:00",
+    "features": [],
+    "first_seen": "2026-09-02T09:16:22.168024+00:00",
+    "last_seen": "2026-09-02T09:16:22.168028+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 6.0,
+      "summary": "Rue du petit baty 2, 1435 Mont-Saint-Guibert in de Vlaamse Ardennen — overeenkoms­score 6.0/10. 2 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 450,000) past binnen budget",
+        "4 slaapkamers — voldoende voor gezin"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "vastgoedcoorevits-921b7fd59b30",
     "source": "vastgoedcoorevits",
     "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-woning-kruisem/7639847",
