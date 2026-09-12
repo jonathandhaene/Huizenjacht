@@ -1,5 +1,92 @@
 [
   {
+    "id": "realo-1327639321",
+    "source": "realo",
+    "source_url": "https://www.realo.be/en/grand-route-65-1435-corbais/5194305?l=1327639321",
+    "title": "Grand route 65 301, 1435 Corbais",
+    "description": null,
+    "property_type": "house",
+    "price": 230000.0,
+    "address": "Grand route 65 301, 1435 Corbais",
+    "postal_code": "1435",
+    "municipality": null,
+    "land_area": null,
+    "living_area": 72.0,
+    "bedrooms": 1,
+    "bathrooms": null,
+    "images": [
+      "https://realocdn.com/image/5/BE-master_listing_0a4eff_0a4eff6d1e268f41111f79f78d23b694.jpg/736x460/490x326/0/a813",
+      "https://realocdn.com/image/5/BE-master_listing_6b966d_6b966d179516f4b3b856ba67f0d60985.jpg/736x463/490x326/0/20dd",
+      "https://realocdn.com/image/5/BE-master_listing_9e6437_9e643775ba4e5275baa6e73a2f3948a2.jpg/736x457/490x326/0/c2d8",
+      "https://realocdn.com/image/5/BE-master_listing_044837_044837cdcbd66001b5b926fcacc3a791.jpg/736x414/490x326/0/a241",
+      "https://realocdn.com/image/5/BE-master_listing_29a448_29a448051b8659f0734632fd39ebaf22.jpg/736x414/490x326/0/9675",
+      "https://realocdn.com/image/5/BE-master_listing_83ad47_83ad4794eeb13eba7ac6e25d3b2fae59.jpg/736x414/490x326/0/4a8a",
+      "https://realocdn.com/image/5/BE-master_listing_229f21_229f21489205160f0f8f764ee89e01af.jpg/736x414/490x326/0/5620",
+      "https://realocdn.com/image/5/BE-master_listing_4b0afb_4b0afb775ab748aa87418434779a0968.jpg/736x414/490x326/0/2308",
+      "https://realocdn.com/image/5/BE-master_listing_fdc48b_fdc48b7ee8124a10b8e0ed51892941fe.jpg/736x414/490x326/0/8d90",
+      "https://realocdn.com/image/5/BE-master_listing_9d4b10_9d4b1018743f2a6399f8fa8cdfc26345.jpg/736x414/490x326/0/a512",
+      "https://realocdn.com/image/5/BE-master_listing_c52f27_c52f2725733508d10b6a39ac071ee0ee.jpg/736x539/490x326/0/f530"
+    ],
+    "images_remote": [
+      "https://realocdn.com/image/5/BE-master_listing_0a4eff_0a4eff6d1e268f41111f79f78d23b694.jpg/736x460/490x326/0/a813",
+      "https://realocdn.com/image/5/BE-master_listing_6b966d_6b966d179516f4b3b856ba67f0d60985.jpg/736x463/490x326/0/20dd",
+      "https://realocdn.com/image/5/BE-master_listing_9e6437_9e643775ba4e5275baa6e73a2f3948a2.jpg/736x457/490x326/0/c2d8",
+      "https://realocdn.com/image/5/BE-master_listing_044837_044837cdcbd66001b5b926fcacc3a791.jpg/736x414/490x326/0/a241",
+      "https://realocdn.com/image/5/BE-master_listing_29a448_29a448051b8659f0734632fd39ebaf22.jpg/736x414/490x326/0/9675",
+      "https://realocdn.com/image/5/BE-master_listing_83ad47_83ad4794eeb13eba7ac6e25d3b2fae59.jpg/736x414/490x326/0/4a8a",
+      "https://realocdn.com/image/5/BE-master_listing_229f21_229f21489205160f0f8f764ee89e01af.jpg/736x414/490x326/0/5620",
+      "https://realocdn.com/image/5/BE-master_listing_4b0afb_4b0afb775ab748aa87418434779a0968.jpg/736x414/490x326/0/2308",
+      "https://realocdn.com/image/5/BE-master_listing_fdc48b_fdc48b7ee8124a10b8e0ed51892941fe.jpg/736x414/490x326/0/8d90",
+      "https://realocdn.com/image/5/BE-master_listing_9d4b10_9d4b1018743f2a6399f8fa8cdfc26345.jpg/736x414/490x326/0/a512",
+      "https://realocdn.com/image/5/BE-master_listing_c52f27_c52f2725733508d10b6a39ac071ee0ee.jpg/736x539/490x326/0/f530"
+    ],
+    "images_local": [
+      "data/images/realo-1327639321/8f957afbebd874ad.jpg",
+      "data/images/realo-1327639321/7232ebad2394cd03.jpg",
+      "data/images/realo-1327639321/a2948b82dd9b154b.jpg",
+      "data/images/realo-1327639321/9411af2fddaa7aa0.jpg",
+      "data/images/realo-1327639321/ad16dacd99fb226e.jpg"
+    ],
+    "images_cached_at": "2026-09-12T09:00:37.274509+00:00",
+    "features": [],
+    "first_seen": "2026-09-12T08:59:46.476511+00:00",
+    "last_seen": "2026-09-12T08:59:46.476516+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 4.5,
+      "summary": "Grand route 65 301, 1435 Corbais in de Vlaamse Ardennen — overeenkoms­score 4.5/10. 1 voordelen, 1 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 230,000) past binnen budget"
+      ],
+      "cons": [
+        "Slechts 1 slaapkamers (min. 3 vereist)"
+      ],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "vastgoedcoorevits-73d87665e467",
     "source": "vastgoedcoorevits",
     "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-appartement-wortegem-petegem/7650358",
