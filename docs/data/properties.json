@@ -1,5 +1,159 @@
 [
   {
+    "id": "vastgoedcoorevits-218696e06a5b",
+    "source": "vastgoedcoorevits",
+    "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-woning-oudenaarde/7657060",
+    "title": "Oudenaarde Gentstraat 9 7",
+    "description": null,
+    "property_type": "house",
+    "price": 190000.0,
+    "address": null,
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/140151086188046123128040181152179155118044066250/medium/fallback"
+    ],
+    "images_remote": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/140151086188046123128040181152179155118044066250/medium/fallback"
+    ],
+    "images_local": [
+      "data/images/vastgoedcoorevits-218696e06a5b/80909acc7829e316.jpg"
+    ],
+    "images_cached_at": "2026-09-18T09:22:25.914033+00:00",
+    "features": [],
+    "first_seen": "2026-09-18T09:22:05.252216+00:00",
+    "last_seen": "2026-09-18T09:22:05.252220+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Oudenaarde Gentstraat 9 7 in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 190,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
+    "id": "realo-1761105706",
+    "source": "realo",
+    "source_url": "https://www.realo.be/en/rue-de-l'eglise-34-1435-mont-saint-guibert/5194304?l=1761105706",
+    "title": "Rue de l'eglise 34, 1435 Mont-Saint-Guibert",
+    "description": null,
+    "property_type": "land",
+    "price": 250000.0,
+    "address": "Rue de l'eglise 34, 1435 Mont-Saint-Guibert",
+    "postal_code": "1435",
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://realocdn.com/image/5/BE-master_listing_21feac_21feacd9077a23d30743c8714d98cde2.jpg/736x340/490x326/0/878c",
+      "https://realocdn.com/image/5/BE-master_listing_951727_951727dab75689ebb8193506c5e838bb.jpg/736x552/490x326/0/0dc7",
+      "https://realocdn.com/image/5/BE-master_listing_5c2a98_5c2a988c37e374f352cb1de67e4d0a8e.jpg/736x340/490x326/0/2f20",
+      "https://realocdn.com/image/5/BE-master_listing_f6ede4_f6ede492cb4291e91a3891bfd2741571.jpg/736x386/490x326/0/baaf",
+      "https://realocdn.com/image/5/BE-master_listing_bd6fe6_bd6fe6e1d354c7eaa9829d06068067cf.jpg/736x386/490x326/0/e0ca",
+      "https://realocdn.com/image/5/BE-master_listing_47fcbc_47fcbc69b0459c725eaf89e3897950ff.jpg/736x386/490x326/0/79c4",
+      "https://realocdn.com/image/5/BE-master_listing_b14624_b146241667badb2a0a805392a483bc6b.jpg/736x552/490x326/0/7d21",
+      "https://realocdn.com/image/5/BE-master_listing_6f1045_6f1045bd07bc075ba8265b063e5130fc.jpg/736x552/490x326/0/58c0",
+      "https://realocdn.com/image/5/BE-master_listing_5f4755_5f4755fbc367cdbe7fafd1c29716496f.jpg/736x552/490x326/0/6769",
+      "https://realocdn.com/image/5/BE-master_listing_120ebc_120ebce6a167f7da2aa434fb60ac46ec.jpg/736x552/490x326/0/f6a7",
+      "https://realocdn.com/image/5/BE-master_listing_758201_758201d437cf8bf01ca37ce2b22ba049.jpg/736x552/490x326/0/6eac",
+      "https://realocdn.com/image/5/BE-master_listing_b80414_b80414350ed7b575be858a89b4eeabdc.jpg/736x552/490x326/0/e967",
+      "https://realocdn.com/image/5/BE-master_listing_d37120_d37120750d89ec389d791bb4214d440d.jpg/736x552/490x326/0/46fa",
+      "https://realocdn.com/image/5/BE-master_listing_5e8e22_5e8e2272b23a52415fb93cde21a7285a.jpg/736x480/490x326/0/52f7",
+      "https://realocdn.com/image/5/BE-master_listing_d5dc4f_d5dc4f21b0e79d46f6db973da92a8081.jpg/736x393/490x326/0/0822"
+    ],
+    "images_remote": [
+      "https://realocdn.com/image/5/BE-master_listing_21feac_21feacd9077a23d30743c8714d98cde2.jpg/736x340/490x326/0/878c",
+      "https://realocdn.com/image/5/BE-master_listing_951727_951727dab75689ebb8193506c5e838bb.jpg/736x552/490x326/0/0dc7",
+      "https://realocdn.com/image/5/BE-master_listing_5c2a98_5c2a988c37e374f352cb1de67e4d0a8e.jpg/736x340/490x326/0/2f20",
+      "https://realocdn.com/image/5/BE-master_listing_f6ede4_f6ede492cb4291e91a3891bfd2741571.jpg/736x386/490x326/0/baaf",
+      "https://realocdn.com/image/5/BE-master_listing_bd6fe6_bd6fe6e1d354c7eaa9829d06068067cf.jpg/736x386/490x326/0/e0ca",
+      "https://realocdn.com/image/5/BE-master_listing_47fcbc_47fcbc69b0459c725eaf89e3897950ff.jpg/736x386/490x326/0/79c4",
+      "https://realocdn.com/image/5/BE-master_listing_b14624_b146241667badb2a0a805392a483bc6b.jpg/736x552/490x326/0/7d21",
+      "https://realocdn.com/image/5/BE-master_listing_6f1045_6f1045bd07bc075ba8265b063e5130fc.jpg/736x552/490x326/0/58c0",
+      "https://realocdn.com/image/5/BE-master_listing_5f4755_5f4755fbc367cdbe7fafd1c29716496f.jpg/736x552/490x326/0/6769",
+      "https://realocdn.com/image/5/BE-master_listing_120ebc_120ebce6a167f7da2aa434fb60ac46ec.jpg/736x552/490x326/0/f6a7",
+      "https://realocdn.com/image/5/BE-master_listing_758201_758201d437cf8bf01ca37ce2b22ba049.jpg/736x552/490x326/0/6eac",
+      "https://realocdn.com/image/5/BE-master_listing_b80414_b80414350ed7b575be858a89b4eeabdc.jpg/736x552/490x326/0/e967",
+      "https://realocdn.com/image/5/BE-master_listing_d37120_d37120750d89ec389d791bb4214d440d.jpg/736x552/490x326/0/46fa",
+      "https://realocdn.com/image/5/BE-master_listing_5e8e22_5e8e2272b23a52415fb93cde21a7285a.jpg/736x480/490x326/0/52f7",
+      "https://realocdn.com/image/5/BE-master_listing_d5dc4f_d5dc4f21b0e79d46f6db973da92a8081.jpg/736x393/490x326/0/0822"
+    ],
+    "images_local": [
+      "data/images/realo-1761105706/6ef393194f3eb6f1.jpg",
+      "data/images/realo-1761105706/88983dafbf317817.jpg",
+      "data/images/realo-1761105706/7c2306e22dee3a8e.jpg",
+      "data/images/realo-1761105706/a4d649fb74fa7c3d.jpg",
+      "data/images/realo-1761105706/a3ba3e7c0a554092.jpg"
+    ],
+    "images_cached_at": "2026-09-18T09:22:28.328878+00:00",
+    "features": [],
+    "first_seen": "2026-09-18T09:21:35.573849+00:00",
+    "last_seen": "2026-09-18T09:21:35.573853+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Rue de l'eglise 34, 1435 Mont-Saint-Guibert in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 250,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "vastgoedcoorevits-d0264a0a8d7a",
     "source": "vastgoedcoorevits",
     "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-woning-oudenaarde/7654512",
