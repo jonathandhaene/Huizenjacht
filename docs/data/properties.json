@@ -1,5 +1,273 @@
 [
   {
+    "id": "vastgoedcoorevits-62611c77c36e",
+    "source": "vastgoedcoorevits",
+    "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-appartement-oudenaarde/7657351",
+    "title": "Oudenaarde Nederstraat 21 303",
+    "description": null,
+    "property_type": "house",
+    "price": 410000.0,
+    "address": null,
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/238170034074203169203037240083108132117148103092/medium/fallback"
+    ],
+    "images_remote": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/238170034074203169203037240083108132117148103092/medium/fallback"
+    ],
+    "images_local": [
+      "data/images/vastgoedcoorevits-62611c77c36e/a0d7e2cde392198a.jpg"
+    ],
+    "images_cached_at": "2026-09-19T09:09:52.736997+00:00",
+    "features": [],
+    "first_seen": "2026-09-19T09:09:23.165797+00:00",
+    "last_seen": "2026-09-19T09:09:23.165798+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Oudenaarde Nederstraat 21 303 in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 410,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
+    "id": "vastgoedcoorevits-9d15c2d14ba8",
+    "source": "vastgoedcoorevits",
+    "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-woning-ronse/7657733",
+    "title": "Ronse Viermaartlaan 121",
+    "description": null,
+    "property_type": "house",
+    "price": 299000.0,
+    "address": null,
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/148060028007196198136226039110113215137242181250/medium/fallback"
+    ],
+    "images_remote": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/148060028007196198136226039110113215137242181250/medium/fallback"
+    ],
+    "images_local": [
+      "data/images/vastgoedcoorevits-9d15c2d14ba8/af4c3edbf0ce683a.jpg"
+    ],
+    "images_cached_at": "2026-09-19T09:09:52.969176+00:00",
+    "features": [],
+    "first_seen": "2026-09-19T09:09:23.165687+00:00",
+    "last_seen": "2026-09-19T09:09:23.165688+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Ronse Viermaartlaan 121 in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 299,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
+    "id": "vastgoedcoorevits-831397584b48",
+    "source": "vastgoedcoorevits",
+    "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-woning-dentergem/7658086",
+    "title": "Dentergem Deinzestraat 53",
+    "description": null,
+    "property_type": "house",
+    "price": 480000.0,
+    "address": null,
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/022064033018131059160023216085087254081228218155/medium/fallback"
+    ],
+    "images_remote": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/022064033018131059160023216085087254081228218155/medium/fallback"
+    ],
+    "images_local": [
+      "data/images/vastgoedcoorevits-831397584b48/5629009b585bfd63.jpg"
+    ],
+    "images_cached_at": "2026-09-19T09:09:53.139996+00:00",
+    "features": [],
+    "first_seen": "2026-09-19T09:09:23.165574+00:00",
+    "last_seen": "2026-09-19T09:09:23.165577+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Dentergem Deinzestraat 53 in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 480,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
+    "id": "realo-1536923026",
+    "source": "realo",
+    "source_url": "https://www.realo.be/en/rue-de-corbais-148-1435-corbais/261661?l=188797457&cl=1536923026%2C121638809%2C1611563428%2C330233781%2C1476518847%2C446146283%2C1180440822%2C204936440%2C182092916%2C422013952%2C798644234",
+    "title": "Rue de corbais 148, 1435 Corbais",
+    "description": null,
+    "property_type": "house",
+    "price": 457000.0,
+    "address": "Rue de corbais 148, 1435 Corbais",
+    "postal_code": "1435",
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://realocdn.com/image/5/BE-master_listing_9c2910_9c291000fe2eccabc73ebf31c5dd8aa2.jpg/736x517/490x326/0/257a",
+      "https://realocdn.com/image/5/BE-master_listing_b6af34_b6af34ad749c515a06d5d31bb847f12c.jpg/736x517/490x326/0/fdd3",
+      "https://realocdn.com/image/5/BE-master_listing_d3d30a_d3d30ae6fcf29352bc394e1b1dd2511e.jpg/736x517/490x326/0/872a",
+      "https://realocdn.com/image/5/BE-master_listing_107de3_107de3afbef96c086e686e00e14f0a53.jpg/736x517/490x326/0/6f8e",
+      "https://realocdn.com/image/5/BE-master_listing_8a10ce_8a10ce35db55538fd374ec9008d278d4.jpg/736x517/490x326/0/b6ba",
+      "https://realocdn.com/image/5/BE-master_listing_11751c_11751c3810be74ebc37ebe7fdf582327.jpg/736x517/490x326/0/d9c8",
+      "https://realocdn.com/image/5/BE-master_listing_a8c736_a8c7362874146d2132019dd182914b9a.jpg/736x517/490x326/0/c7bd",
+      "https://realocdn.com/image/5/BE-master_listing_a67ea8_a67ea8a9320e45ccf250a8e4f7adb78b.jpg/736x517/490x326/0/3ef7",
+      "https://realocdn.com/image/5/BE-master_listing_fca718_fca718f750a49b0f5c1d9902d909a5aa.jpg/736x414/490x326/0/c980",
+      "https://realocdn.com/image/5/BE-master_listing_b95e2c_b95e2cc8e70938b9a86f59a5f19e2bee.jpg/736x414/490x326/0/d6c7",
+      "https://realocdn.com/image/5/BE-master_listing_41cd44_41cd447eb7264eac7d6119132737b809.jpg/736x414/490x326/0/cd44"
+    ],
+    "images_remote": [
+      "https://realocdn.com/image/5/BE-master_listing_9c2910_9c291000fe2eccabc73ebf31c5dd8aa2.jpg/736x517/490x326/0/257a",
+      "https://realocdn.com/image/5/BE-master_listing_b6af34_b6af34ad749c515a06d5d31bb847f12c.jpg/736x517/490x326/0/fdd3",
+      "https://realocdn.com/image/5/BE-master_listing_d3d30a_d3d30ae6fcf29352bc394e1b1dd2511e.jpg/736x517/490x326/0/872a",
+      "https://realocdn.com/image/5/BE-master_listing_107de3_107de3afbef96c086e686e00e14f0a53.jpg/736x517/490x326/0/6f8e",
+      "https://realocdn.com/image/5/BE-master_listing_8a10ce_8a10ce35db55538fd374ec9008d278d4.jpg/736x517/490x326/0/b6ba",
+      "https://realocdn.com/image/5/BE-master_listing_11751c_11751c3810be74ebc37ebe7fdf582327.jpg/736x517/490x326/0/d9c8",
+      "https://realocdn.com/image/5/BE-master_listing_a8c736_a8c7362874146d2132019dd182914b9a.jpg/736x517/490x326/0/c7bd",
+      "https://realocdn.com/image/5/BE-master_listing_a67ea8_a67ea8a9320e45ccf250a8e4f7adb78b.jpg/736x517/490x326/0/3ef7",
+      "https://realocdn.com/image/5/BE-master_listing_fca718_fca718f750a49b0f5c1d9902d909a5aa.jpg/736x414/490x326/0/c980",
+      "https://realocdn.com/image/5/BE-master_listing_b95e2c_b95e2cc8e70938b9a86f59a5f19e2bee.jpg/736x414/490x326/0/d6c7",
+      "https://realocdn.com/image/5/BE-master_listing_41cd44_41cd447eb7264eac7d6119132737b809.jpg/736x414/490x326/0/cd44"
+    ],
+    "images_local": [
+      "data/images/realo-1536923026/50ac11510ea463a9.jpg",
+      "data/images/realo-1536923026/3a525123f6c2e516.jpg",
+      "data/images/realo-1536923026/ca9abe921e71a001.jpg",
+      "data/images/realo-1536923026/001f7a63164c6130.jpg",
+      "data/images/realo-1536923026/e95a884513aacd6e.jpg"
+    ],
+    "images_cached_at": "2026-09-19T09:09:54.939810+00:00",
+    "features": [],
+    "first_seen": "2026-09-19T09:09:05.848392+00:00",
+    "last_seen": "2026-09-19T09:09:05.848395+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Rue de corbais 148, 1435 Corbais in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 457,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "vastgoedcoorevits-218696e06a5b",
     "source": "vastgoedcoorevits",
     "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-woning-oudenaarde/7657060",
