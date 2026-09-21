@@ -1,5 +1,66 @@
 [
   {
+    "id": "vastgoedcoorevits-c10529694c79",
+    "source": "vastgoedcoorevits",
+    "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-appartement-oudenaarde/7659112",
+    "title": "Oudenaarde Gentstraat 9 7",
+    "description": null,
+    "property_type": "house",
+    "price": 190000.0,
+    "address": null,
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/150123198117136048020020102127031041043009250130/medium/fallback"
+    ],
+    "images_remote": [
+      "https://skarabeewebp.cdn.360.zabun.be/filestore/150123198117136048020020102127031041043009250130/medium/fallback"
+    ],
+    "images_local": [
+      "data/images/vastgoedcoorevits-c10529694c79/e436eab44c219f99.jpg"
+    ],
+    "images_cached_at": "2026-09-21T10:23:31.732079+00:00",
+    "features": [],
+    "first_seen": "2026-09-21T10:23:16.167128+00:00",
+    "last_seen": "2026-09-21T10:23:16.167131+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Oudenaarde Gentstraat 9 7 in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 190,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "vastgoedcoorevits-62611c77c36e",
     "source": "vastgoedcoorevits",
     "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-appartement-oudenaarde/7657351",
