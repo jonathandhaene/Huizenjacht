@@ -1,5 +1,209 @@
 [
   {
+    "id": "dewaele_vlaamse_ardennen-89a28c0195d9",
+    "source": "dewaele_vlaamse_ardennen",
+    "source_url": "https://www.dewaele.com/nl/te-koop/9700-oudenaarde/huis/ruime-woning-7-slaapkamers-op-een-perceel-van-1608-m2-d9700-26077-72775",
+    "title": "Huis te koop Oudenaarde",
+    "description": null,
+    "property_type": "house",
+    "price": 259000.0,
+    "address": "Bekijk meer foto's",
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": 409.0,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2F1448de0b-ac1b-42d1-8fb7-4355585342ed%2Fimage3353334.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_remote": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2F1448de0b-ac1b-42d1-8fb7-4355585342ed%2Fimage3353334.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_local": [
+      "data/images/dewaele_vlaamse_ardennen-89a28c0195d9/0be11699ba104396.jpg"
+    ],
+    "images_cached_at": "2026-09-29T11:03:03.471810+00:00",
+    "features": [],
+    "first_seen": "2026-09-29T11:02:40.084722+00:00",
+    "last_seen": "2026-09-29T11:02:40.084723+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Huis te koop Oudenaarde in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 259,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
+    "id": "dewaele_vlaamse_ardennen-90548d2a0b99",
+    "source": "dewaele_vlaamse_ardennen",
+    "source_url": "https://www.dewaele.com/nl/te-koop/9690-kluisbergen/huis/gezellige-woning-4-slpk-epc-c-met-zo-georienteerde-groene-tuin-d9700-26078-257048",
+    "title": "Huis te koop Kluisbergen",
+    "description": null,
+    "property_type": "house",
+    "price": 229000.0,
+    "address": "Bekijk meer foto's",
+    "postal_code": null,
+    "municipality": null,
+    "land_area": 132242.0,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2Fe16d2c93-1d5f-4a7f-a1f9-80c1a664c0d4%2Fimage3358658.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_remote": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2Fe16d2c93-1d5f-4a7f-a1f9-80c1a664c0d4%2Fimage3358658.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_local": [
+      "data/images/dewaele_vlaamse_ardennen-90548d2a0b99/4b3ffd68650b97b9.jpg"
+    ],
+    "images_cached_at": "2026-09-29T11:03:03.670427+00:00",
+    "features": [],
+    "first_seen": "2026-09-29T11:02:40.083051+00:00",
+    "last_seen": "2026-09-29T11:02:40.083056+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 6.5,
+      "summary": "Huis te koop Kluisbergen in de Vlaamse Ardennen — overeenkoms­score 6.5/10. 2 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 229,000) past binnen budget",
+        "Groot perceel van 132,242 m²"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
+    "id": "realo-1130191422",
+    "source": "realo",
+    "source_url": "https://www.realo.be/en/1435-corbais/5201501?l=1130191422",
+    "title": "1435 Corbais",
+    "description": null,
+    "property_type": "house",
+    "price": 270000.0,
+    "address": "1435 Corbais",
+    "postal_code": "1435",
+    "municipality": null,
+    "land_area": null,
+    "living_area": 61.0,
+    "bedrooms": 1,
+    "bathrooms": null,
+    "images": [
+      "https://realocdn.com/image/5/BE-master_listing_d6f07b_d6f07b5d0dd507d61b67928da7ae023a.jpg/1440x1080/490x326/0/9347",
+      "https://realocdn.com/image/5/BE-master_listing_76f6cb_76f6cb847a54a650b0e72fa06a108a40.jpg/1440x1080/490x326/0/3596",
+      "https://realocdn.com/image/5/BE-master_listing_3a01f7_3a01f7ed82c7a57c2058143c332d821d.jpg/1440x1080/490x326/0/2dd5",
+      "https://realocdn.com/image/5/BE-master_listing_ad54dd_ad54dda9881fb4a022de6bcaf4144d38.jpg/1440x1080/490x326/0/5d83",
+      "https://realocdn.com/image/5/BE-master_listing_c0e251_c0e251e42c97838bf295070ab35525da.jpg/1440x1080/490x326/0/a62e",
+      "https://realocdn.com/image/5/BE-master_listing_d33694_d3369465938980955aaf161dd2f0e932.jpg/1440x1080/490x326/0/a63b",
+      "https://realocdn.com/image/5/BE-master_listing_7edc42_7edc428d6806bad8a1f9cc95cf1062d9.jpg/1440x1080/490x326/0/5960",
+      "https://realocdn.com/image/5/BE-master_listing_ac149f_ac149f825b6eac29bcb648d074ec2467.jpg/1440x1080/490x326/0/b2bd"
+    ],
+    "images_remote": [
+      "https://realocdn.com/image/5/BE-master_listing_d6f07b_d6f07b5d0dd507d61b67928da7ae023a.jpg/1440x1080/490x326/0/9347",
+      "https://realocdn.com/image/5/BE-master_listing_76f6cb_76f6cb847a54a650b0e72fa06a108a40.jpg/1440x1080/490x326/0/3596",
+      "https://realocdn.com/image/5/BE-master_listing_3a01f7_3a01f7ed82c7a57c2058143c332d821d.jpg/1440x1080/490x326/0/2dd5",
+      "https://realocdn.com/image/5/BE-master_listing_ad54dd_ad54dda9881fb4a022de6bcaf4144d38.jpg/1440x1080/490x326/0/5d83",
+      "https://realocdn.com/image/5/BE-master_listing_c0e251_c0e251e42c97838bf295070ab35525da.jpg/1440x1080/490x326/0/a62e",
+      "https://realocdn.com/image/5/BE-master_listing_d33694_d3369465938980955aaf161dd2f0e932.jpg/1440x1080/490x326/0/a63b",
+      "https://realocdn.com/image/5/BE-master_listing_7edc42_7edc428d6806bad8a1f9cc95cf1062d9.jpg/1440x1080/490x326/0/5960",
+      "https://realocdn.com/image/5/BE-master_listing_ac149f_ac149f825b6eac29bcb648d074ec2467.jpg/1440x1080/490x326/0/b2bd"
+    ],
+    "images_local": [
+      "data/images/realo-1130191422/9bf4af34c1aa9ecc.jpg",
+      "data/images/realo-1130191422/a7e3c030b47e14dc.jpg",
+      "data/images/realo-1130191422/9f2f7f3544163451.jpg",
+      "data/images/realo-1130191422/0ec8c781ded10e11.jpg",
+      "data/images/realo-1130191422/2640ddba3f02db68.jpg"
+    ],
+    "images_cached_at": "2026-09-29T11:03:05.111821+00:00",
+    "features": [],
+    "first_seen": "2026-09-29T11:02:15.824790+00:00",
+    "last_seen": "2026-09-29T11:02:15.824792+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 4.5,
+      "summary": "1435 Corbais in de Vlaamse Ardennen — overeenkoms­score 4.5/10. 1 voordelen, 1 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 270,000) past binnen budget"
+      ],
+      "cons": [
+        "Slechts 1 slaapkamers (min. 3 vereist)"
+      ],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "vastgoedcoorevits-c10529694c79",
     "source": "vastgoedcoorevits",
     "source_url": "http://www.vastgoedcoorevits.be/detail/te-koop-appartement-oudenaarde/7659112",
