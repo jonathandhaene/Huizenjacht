@@ -1,5 +1,162 @@
 [
   {
+    "id": "vastgoedlammers-9151d20c14ad",
+    "source": "vastgoedlammers",
+    "source_url": "https://vastgoedlammers.be/label/gronden/",
+    "title": "Te renoveren hoeve op prachtig perceel met aansluitend +3 ha weiland!",
+    "description": null,
+    "property_type": "farm",
+    "price": 549000.0,
+    "address": null,
+    "postal_code": null,
+    "municipality": null,
+    "land_area": 30000.0,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://vastgoedlammers.be/wp-content/uploads/2026/09/20260924_151249-584x438.jpg"
+    ],
+    "images_remote": [
+      "https://vastgoedlammers.be/wp-content/uploads/2026/09/20260924_151249-584x438.jpg"
+    ],
+    "images_local": [
+      "data/images/vastgoedlammers-9151d20c14ad/786d1b8d197968b5.jpg"
+    ],
+    "images_cached_at": "2026-10-08T11:46:18.236593+00:00",
+    "features": [],
+    "first_seen": "2026-10-08T11:46:00.781328+00:00",
+    "last_seen": "2026-10-08T11:46:00.781329+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 7.5,
+      "summary": "Te renoveren hoeve op prachtig perceel met aansluitend +3 ha weiland! in de Vlaamse Ardennen — overeenkoms­score 7.5/10. 4 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 549,000) past binnen budget",
+        "Groot perceel van 30,000 m²",
+        "Vermeldt \"hoeve\" — mogelijks geschikt voor landelijke levensstijl",
+        "Vermeldt \"weiland\" — mogelijks geschikt voor landelijke levensstijl"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
+    "id": "realo-1297203466",
+    "source": "realo",
+    "source_url": "https://www.realo.be/en/rue-de-l'eglise-34-1435-mont-saint-guibert/5194304?l=1297203466",
+    "title": "Rue de l'eglise 34, 1435 Mont-Saint-Guibert",
+    "description": null,
+    "property_type": "land",
+    "price": 199000.0,
+    "address": "Rue de l'eglise 34, 1435 Mont-Saint-Guibert",
+    "postal_code": "1435",
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://realocdn.com/image/5/BE-master_listing_a077c4_a077c4723773d39f2bae2c9b01e34d5a.jpg/1440x1080/490x326/0/93df",
+      "https://realocdn.com/image/5/BE-master_listing_104953_104953f3d8a27194bf0a3f173bd7c691.jpg/1920x1007/490x326/0/5187",
+      "https://realocdn.com/image/5/BE-master_listing_db020b_db020b5ae978c1e434e0b7202574df0e.jpg/1920x886/490x326/0/dd93",
+      "https://realocdn.com/image/5/BE-master_listing_9b38a4_9b38a43fb9342b41fbdce82349f27c16.jpg/1920x886/490x326/0/5355",
+      "https://realocdn.com/image/5/BE-master_listing_30550e_30550eaecf51a2542cb37da9c451d830.jpg/1920x1007/490x326/0/3be1",
+      "https://realocdn.com/image/5/BE-master_listing_6a51de_6a51dedd0944c8f1bbff77354f5c9361.jpg/1920x1007/490x326/0/aaa7",
+      "https://realocdn.com/image/5/BE-master_listing_8b9d51_8b9d51a8551732b097119e1499f73df2.jpg/1440x1080/490x326/0/a7d7",
+      "https://realocdn.com/image/5/BE-master_listing_18f7ce_18f7ce44c47c448506c06fb903d06a7e.jpg/1440x1080/490x326/0/3c7f",
+      "https://realocdn.com/image/5/BE-master_listing_af2a6c_af2a6c1cfb5cf7ce809dfd53bdb479cf.jpg/1440x1080/490x326/0/34be",
+      "https://realocdn.com/image/5/BE-master_listing_231ab3_231ab3cad6b52e372a512b1634f97c92.jpg/1440x1080/490x326/0/9443",
+      "https://realocdn.com/image/5/BE-master_listing_586641_586641d9a129d9484e7dbaf3fc4aa1b9.jpg/1440x1080/490x326/0/c48e",
+      "https://realocdn.com/image/5/BE-master_listing_f3bd53_f3bd532597587d17c37db571eab8fc35.jpg/1440x1080/490x326/0/8e38",
+      "https://realocdn.com/image/5/BE-master_listing_faa3df_faa3df0d43cde6384f1bb6587b37d55c.jpg/1440x1080/490x326/0/b325",
+      "https://realocdn.com/image/5/BE-master_listing_9d8104_9d81049aa6061af60fb97b605d5073de.jpg/1658x1080/490x326/0/b713",
+      "https://realocdn.com/image/5/BE-master_listing_90fcfb_90fcfb2ae560150530fc59fa28a4a9b6.jpg/1920x1026/490x326/0/b2da"
+    ],
+    "images_remote": [
+      "https://realocdn.com/image/5/BE-master_listing_a077c4_a077c4723773d39f2bae2c9b01e34d5a.jpg/1440x1080/490x326/0/93df",
+      "https://realocdn.com/image/5/BE-master_listing_104953_104953f3d8a27194bf0a3f173bd7c691.jpg/1920x1007/490x326/0/5187",
+      "https://realocdn.com/image/5/BE-master_listing_db020b_db020b5ae978c1e434e0b7202574df0e.jpg/1920x886/490x326/0/dd93",
+      "https://realocdn.com/image/5/BE-master_listing_9b38a4_9b38a43fb9342b41fbdce82349f27c16.jpg/1920x886/490x326/0/5355",
+      "https://realocdn.com/image/5/BE-master_listing_30550e_30550eaecf51a2542cb37da9c451d830.jpg/1920x1007/490x326/0/3be1",
+      "https://realocdn.com/image/5/BE-master_listing_6a51de_6a51dedd0944c8f1bbff77354f5c9361.jpg/1920x1007/490x326/0/aaa7",
+      "https://realocdn.com/image/5/BE-master_listing_8b9d51_8b9d51a8551732b097119e1499f73df2.jpg/1440x1080/490x326/0/a7d7",
+      "https://realocdn.com/image/5/BE-master_listing_18f7ce_18f7ce44c47c448506c06fb903d06a7e.jpg/1440x1080/490x326/0/3c7f",
+      "https://realocdn.com/image/5/BE-master_listing_af2a6c_af2a6c1cfb5cf7ce809dfd53bdb479cf.jpg/1440x1080/490x326/0/34be",
+      "https://realocdn.com/image/5/BE-master_listing_231ab3_231ab3cad6b52e372a512b1634f97c92.jpg/1440x1080/490x326/0/9443",
+      "https://realocdn.com/image/5/BE-master_listing_586641_586641d9a129d9484e7dbaf3fc4aa1b9.jpg/1440x1080/490x326/0/c48e",
+      "https://realocdn.com/image/5/BE-master_listing_f3bd53_f3bd532597587d17c37db571eab8fc35.jpg/1440x1080/490x326/0/8e38",
+      "https://realocdn.com/image/5/BE-master_listing_faa3df_faa3df0d43cde6384f1bb6587b37d55c.jpg/1440x1080/490x326/0/b325",
+      "https://realocdn.com/image/5/BE-master_listing_9d8104_9d81049aa6061af60fb97b605d5073de.jpg/1658x1080/490x326/0/b713",
+      "https://realocdn.com/image/5/BE-master_listing_90fcfb_90fcfb2ae560150530fc59fa28a4a9b6.jpg/1920x1026/490x326/0/b2da"
+    ],
+    "images_local": [
+      "data/images/realo-1297203466/fbc870b07b2d5b6e.jpg",
+      "data/images/realo-1297203466/c6124a89c12dfce3.jpg",
+      "data/images/realo-1297203466/9be7dc6708dd214e.jpg",
+      "data/images/realo-1297203466/c348d069fc312eb7.jpg",
+      "data/images/realo-1297203466/91bb1d4198e9f1ac.jpg"
+    ],
+    "images_cached_at": "2026-10-08T11:46:20.153893+00:00",
+    "features": [],
+    "first_seen": "2026-10-08T11:45:27.873988+00:00",
+    "last_seen": "2026-10-08T11:45:27.873993+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Rue de l'eglise 34, 1435 Mont-Saint-Guibert in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 199,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "realo-167998265",
     "source": "realo",
     "source_url": "https://www.realo.be/en/rue-saint-vincent-36-1457-walhain-saint-paul/5194365?l=167998265",
