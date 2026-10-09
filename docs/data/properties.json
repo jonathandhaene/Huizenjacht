@@ -1,5 +1,67 @@
 [
   {
+    "id": "dewaele_vlaamse_ardennen-e89a0654bc2c",
+    "source": "dewaele_vlaamse_ardennen",
+    "source_url": "https://www.dewaele.com/nl/te-koop/9700-oudenaarde/huis/instapklaar-huis-met-3-kamers-te-koop-in-oudenaarde-d9700-26083-266396",
+    "title": "Huis te koop Oudenaarde",
+    "description": null,
+    "property_type": "house",
+    "price": 395000.0,
+    "address": "Bekijk meer foto's",
+    "postal_code": null,
+    "municipality": null,
+    "land_area": 14189.0,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2F471f4f1b-579e-4898-a631-97a606606c88%2Fimage3386495.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_remote": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2F471f4f1b-579e-4898-a631-97a606606c88%2Fimage3386495.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_local": [
+      "data/images/dewaele_vlaamse_ardennen-e89a0654bc2c/f2528f9d36426977.jpg"
+    ],
+    "images_cached_at": "2026-10-09T11:38:59.661677+00:00",
+    "features": [],
+    "first_seen": "2026-10-09T11:38:34.421556+00:00",
+    "last_seen": "2026-10-09T11:38:34.421563+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 6.5,
+      "summary": "Huis te koop Oudenaarde in de Vlaamse Ardennen — overeenkoms­score 6.5/10. 2 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 395,000) past binnen budget",
+        "Groot perceel van 14,189 m²"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "vastgoedlammers-9151d20c14ad",
     "source": "vastgoedlammers",
     "source_url": "https://vastgoedlammers.be/label/gronden/",
