@@ -1,5 +1,66 @@
 [
   {
+    "id": "dewaele_vlaamse_ardennen-eaa19cbcf1d0",
+    "source": "dewaele_vlaamse_ardennen",
+    "source_url": "https://www.dewaele.com/nl/te-koop/9420-erondegem/huis/luxueuze-passiefwoning-met-zuidgerichte-tuin-d1700-26016-k-d-266786",
+    "title": "Huis te koop Erondegem",
+    "description": null,
+    "property_type": "house",
+    "price": 549000.0,
+    "address": "Bekijk meer foto's",
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": 236.0,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2F1aa7759f-8b8c-4be6-9513-28aa6ec5b06f.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_remote": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2F1aa7759f-8b8c-4be6-9513-28aa6ec5b06f.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_local": [
+      "data/images/dewaele_vlaamse_ardennen-eaa19cbcf1d0/099b8bd17b375b9b.jpg"
+    ],
+    "images_cached_at": "2026-10-13T12:27:02.945695+00:00",
+    "features": [],
+    "first_seen": "2026-10-13T12:26:34.107987+00:00",
+    "last_seen": "2026-10-13T12:26:34.107992+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Huis te koop Erondegem in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 549,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "dewaele_vlaamse_ardennen-e89a0654bc2c",
     "source": "dewaele_vlaamse_ardennen",
     "source_url": "https://www.dewaele.com/nl/te-koop/9700-oudenaarde/huis/instapklaar-huis-met-3-kamers-te-koop-in-oudenaarde-d9700-26083-266396",
