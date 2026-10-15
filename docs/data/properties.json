@@ -1,5 +1,66 @@
 [
   {
+    "id": "dewaele_vlaamse_ardennen-5632343bae28",
+    "source": "dewaele_vlaamse_ardennen",
+    "source_url": "https://www.dewaele.com/nl/te-koop/9700-oudenaarde/huis/statige-ruime-villa-6-slpk-prachtige-parktuin-3300-m2-d9700-26085-264419",
+    "title": "Huis te koop Oudenaarde",
+    "description": null,
+    "property_type": "house",
+    "price": null,
+    "address": "Bekijk meer foto's",
+    "postal_code": null,
+    "municipality": null,
+    "land_area": 20773.0,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2F85db0a06-70b1-4048-8acd-eea18f192766%2F52d34362-6295-43e7-b26e-4a841ccfe2ae.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_remote": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2F85db0a06-70b1-4048-8acd-eea18f192766%2F52d34362-6295-43e7-b26e-4a841ccfe2ae.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_local": [
+      "data/images/dewaele_vlaamse_ardennen-5632343bae28/1e91b85027d6e2de.jpg"
+    ],
+    "images_cached_at": "2026-10-15T09:36:01.243800+00:00",
+    "features": [],
+    "first_seen": "2026-10-15T09:35:37.722205+00:00",
+    "last_seen": "2026-10-15T09:35:37.722211+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 6.0,
+      "summary": "Huis te koop Oudenaarde in de Vlaamse Ardennen — overeenkoms­score 6.0/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Groot perceel van 20,773 m²"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "realo-214109449",
     "source": "realo",
     "source_url": "https://www.realo.be/en/rue-du-trichon-1457-nil-saint-vincent-saint-martin/352226?l=214109449",
