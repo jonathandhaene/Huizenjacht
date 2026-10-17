@@ -1,5 +1,92 @@
 [
   {
+    "id": "realo-1476518847",
+    "source": "realo",
+    "source_url": "https://www.realo.be/en/rue-de-corbais-148-1435-corbais/261661?l=188797457&cl=1476518847%2C1536923026%2C121638809%2C1611563428%2C330233781%2C710339653%2C446146283%2C1180440822%2C204936440%2C182092916%2C422013952%2C798644234",
+    "title": "Rue de corbais 148, 1435 Corbais",
+    "description": null,
+    "property_type": "house",
+    "price": 457000.0,
+    "address": "Rue de corbais 148, 1435 Corbais",
+    "postal_code": "1435",
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://realocdn.com/image/5/BE-master_listing_45c9a5_45c9a52bd16b4957c76543a17ba7cf62.jpg/1538x1080/490x326/0/5ba0",
+      "https://realocdn.com/image/5/BE-master_listing_9d5ea3_9d5ea362bad133746b1789a4389b9b53.jpg/1538x1080/490x326/0/51c3",
+      "https://realocdn.com/image/5/BE-master_listing_a8222a_a8222adbb2e1a2c28d610824ac3b6db5.jpg/1538x1080/490x326/0/b22f",
+      "https://realocdn.com/image/5/BE-master_listing_db08e8_db08e8420869abc3195d05dbf04e6073.jpg/1538x1080/490x326/0/65c4",
+      "https://realocdn.com/image/5/BE-master_listing_107de3_107de3afbef96c086e686e00e14f0a53.jpg/736x517/490x326/0/6f8e",
+      "https://realocdn.com/image/5/BE-master_listing_a08796_a0879683cdd2cdc1e239d55b0c5a26c6.jpg/1538x1080/490x326/0/f69c",
+      "https://realocdn.com/image/5/BE-master_listing_11751c_11751c3810be74ebc37ebe7fdf582327.jpg/736x517/490x326/0/d9c8",
+      "https://realocdn.com/image/5/BE-master_listing_a8c736_a8c7362874146d2132019dd182914b9a.jpg/736x517/490x326/0/c7bd",
+      "https://realocdn.com/image/5/BE-master_listing_a67ea8_a67ea8a9320e45ccf250a8e4f7adb78b.jpg/736x517/490x326/0/3ef7",
+      "https://realocdn.com/image/5/BE-master_listing_fca718_fca718f750a49b0f5c1d9902d909a5aa.jpg/736x414/490x326/0/c980",
+      "https://realocdn.com/image/5/BE-master_listing_b95e2c_b95e2cc8e70938b9a86f59a5f19e2bee.jpg/736x414/490x326/0/d6c7",
+      "https://realocdn.com/image/5/BE-master_listing_41cd44_41cd447eb7264eac7d6119132737b809.jpg/736x414/490x326/0/cd44"
+    ],
+    "images_remote": [
+      "https://realocdn.com/image/5/BE-master_listing_45c9a5_45c9a52bd16b4957c76543a17ba7cf62.jpg/1538x1080/490x326/0/5ba0",
+      "https://realocdn.com/image/5/BE-master_listing_9d5ea3_9d5ea362bad133746b1789a4389b9b53.jpg/1538x1080/490x326/0/51c3",
+      "https://realocdn.com/image/5/BE-master_listing_a8222a_a8222adbb2e1a2c28d610824ac3b6db5.jpg/1538x1080/490x326/0/b22f",
+      "https://realocdn.com/image/5/BE-master_listing_db08e8_db08e8420869abc3195d05dbf04e6073.jpg/1538x1080/490x326/0/65c4",
+      "https://realocdn.com/image/5/BE-master_listing_107de3_107de3afbef96c086e686e00e14f0a53.jpg/736x517/490x326/0/6f8e",
+      "https://realocdn.com/image/5/BE-master_listing_a08796_a0879683cdd2cdc1e239d55b0c5a26c6.jpg/1538x1080/490x326/0/f69c",
+      "https://realocdn.com/image/5/BE-master_listing_11751c_11751c3810be74ebc37ebe7fdf582327.jpg/736x517/490x326/0/d9c8",
+      "https://realocdn.com/image/5/BE-master_listing_a8c736_a8c7362874146d2132019dd182914b9a.jpg/736x517/490x326/0/c7bd",
+      "https://realocdn.com/image/5/BE-master_listing_a67ea8_a67ea8a9320e45ccf250a8e4f7adb78b.jpg/736x517/490x326/0/3ef7",
+      "https://realocdn.com/image/5/BE-master_listing_fca718_fca718f750a49b0f5c1d9902d909a5aa.jpg/736x414/490x326/0/c980",
+      "https://realocdn.com/image/5/BE-master_listing_b95e2c_b95e2cc8e70938b9a86f59a5f19e2bee.jpg/736x414/490x326/0/d6c7",
+      "https://realocdn.com/image/5/BE-master_listing_41cd44_41cd447eb7264eac7d6119132737b809.jpg/736x414/490x326/0/cd44"
+    ],
+    "images_local": [
+      "data/images/realo-1476518847/c6dc34a0919f7875.jpg",
+      "data/images/realo-1476518847/0d427cfeba72c29c.jpg",
+      "data/images/realo-1476518847/e59c94950cb28703.jpg",
+      "data/images/realo-1476518847/a431d35f80bcea83.jpg",
+      "data/images/realo-1476518847/001f7a63164c6130.jpg"
+    ],
+    "images_cached_at": "2026-10-17T09:00:07.110328+00:00",
+    "features": [],
+    "first_seen": "2026-10-17T08:59:18.099741+00:00",
+    "last_seen": "2026-10-17T08:59:18.099741+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Rue de corbais 148, 1435 Corbais in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 457,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "dewaele_vlaamse_ardennen-5632343bae28",
     "source": "dewaele_vlaamse_ardennen",
     "source_url": "https://www.dewaele.com/nl/te-koop/9700-oudenaarde/huis/statige-ruime-villa-6-slpk-prachtige-parktuin-3300-m2-d9700-26085-264419",
