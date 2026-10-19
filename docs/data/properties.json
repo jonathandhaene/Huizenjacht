@@ -1,5 +1,67 @@
 [
   {
+    "id": "dewaele_vlaamse_ardennen-7797074af829",
+    "source": "dewaele_vlaamse_ardennen",
+    "source_url": "https://www.dewaele.com/nl/te-koop/9680-maarkedal/huis/instapklare-woning-4-slpk-magazijn-op-2497-m2-d9700-26084-256655",
+    "title": "Huis te koop Maarkedal",
+    "description": null,
+    "property_type": "house",
+    "price": 339000.0,
+    "address": "Bekijk meer foto's",
+    "postal_code": null,
+    "municipality": null,
+    "land_area": 36230.0,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2Fb732a603-bbd4-4619-a905-28b15d235dd2%2Fimage3396585.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_remote": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2Fb732a603-bbd4-4619-a905-28b15d235dd2%2Fimage3396585.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_local": [
+      "data/images/dewaele_vlaamse_ardennen-7797074af829/622117346807b226.jpg"
+    ],
+    "images_cached_at": "2026-10-19T10:29:18.227601+00:00",
+    "features": [],
+    "first_seen": "2026-10-19T10:28:56.469013+00:00",
+    "last_seen": "2026-10-19T10:28:56.469017+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 6.5,
+      "summary": "Huis te koop Maarkedal in de Vlaamse Ardennen — overeenkoms­score 6.5/10. 2 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 339,000) past binnen budget",
+        "Groot perceel van 36,230 m²"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "realo-1476518847",
     "source": "realo",
     "source_url": "https://www.realo.be/en/rue-de-corbais-148-1435-corbais/261661?l=188797457&cl=1476518847%2C1536923026%2C121638809%2C1611563428%2C330233781%2C710339653%2C446146283%2C1180440822%2C204936440%2C182092916%2C422013952%2C798644234",
