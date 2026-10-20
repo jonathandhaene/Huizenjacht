@@ -1,5 +1,249 @@
 [
   {
+    "id": "dewaele_vlaamse_ardennen-a8dd6380c744",
+    "source": "dewaele_vlaamse_ardennen",
+    "source_url": "https://www.dewaele.com/nl/te-koop/9420-erondegem/huis/residentie-t-hemelsveld-4-energiezuinige-woningen-met-tuin-d1700-26016-k-252099",
+    "title": "Huis te koop Erondegem",
+    "description": null,
+    "property_type": "house",
+    "price": null,
+    "address": "Bekijk meer foto's",
+    "postal_code": null,
+    "municipality": null,
+    "land_area": 405895.0,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2F4958b473-5fe7-4ace-933e-05afff416989%2F132339cc-a0a3-4c94-bad6-7d6e77502506.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_remote": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2F4958b473-5fe7-4ace-933e-05afff416989%2F132339cc-a0a3-4c94-bad6-7d6e77502506.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_local": [
+      "data/images/dewaele_vlaamse_ardennen-a8dd6380c744/59547034dd2651c2.jpg"
+    ],
+    "images_cached_at": "2026-10-20T09:48:16.473227+00:00",
+    "features": [],
+    "first_seen": "2026-10-20T09:47:54.452648+00:00",
+    "last_seen": "2026-10-20T09:47:54.452653+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 6.0,
+      "summary": "Huis te koop Erondegem in de Vlaamse Ardennen — overeenkoms­score 6.0/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Groot perceel van 405,895 m²"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
+    "id": "dewaele_vlaamse_ardennen-13c222990976",
+    "source": "dewaele_vlaamse_ardennen",
+    "source_url": "https://www.dewaele.com/nl/te-koop/9420-erondegem/huis/luxueuze-passiefwoning-met-zuidgerichte-tuin-d1700-26016-k-a-266787",
+    "title": "Huis te koop Erondegem",
+    "description": null,
+    "property_type": "house",
+    "price": 569000.0,
+    "address": "Bekijk meer foto's",
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": 236.0,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2Ffe41c608-2ad7-4eaf-aec1-1e1fe2ae8391%2Fimage3398305.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_remote": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2Ffe41c608-2ad7-4eaf-aec1-1e1fe2ae8391%2Fimage3398305.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_local": [
+      "data/images/dewaele_vlaamse_ardennen-13c222990976/13d0a60382700c4d.jpg"
+    ],
+    "images_cached_at": "2026-10-20T09:48:16.778022+00:00",
+    "features": [],
+    "first_seen": "2026-10-20T09:47:54.457304+00:00",
+    "last_seen": "2026-10-20T09:47:54.457306+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Huis te koop Erondegem in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 569,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
+    "id": "dewaele_vlaamse_ardennen-d8911493b050",
+    "source": "dewaele_vlaamse_ardennen",
+    "source_url": "https://www.dewaele.com/nl/te-koop/9890-gavere/huis/ruime-nieuwbouwwoning-met-4-slaapkamers-in-gavere-d9700-26088-268836",
+    "title": "Huis te koop Gavere",
+    "description": null,
+    "property_type": "house",
+    "price": 515730.0,
+    "address": "Bekijk meer foto's",
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2Fdcbde5a9-68dc-4038-af88-d49b228c162b%2Fimage3400978.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_remote": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2Fdcbde5a9-68dc-4038-af88-d49b228c162b%2Fimage3400978.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_local": [
+      "data/images/dewaele_vlaamse_ardennen-d8911493b050/55049d0b3d786103.jpg"
+    ],
+    "images_cached_at": "2026-10-20T09:48:17.214777+00:00",
+    "features": [],
+    "first_seen": "2026-10-20T09:47:54.454262+00:00",
+    "last_seen": "2026-10-20T09:47:54.454264+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Huis te koop Gavere in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 515,730) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
+    "id": "dewaele_vlaamse_ardennen-e75dc9c65344",
+    "source": "dewaele_vlaamse_ardennen",
+    "source_url": "https://www.dewaele.com/nl/te-koop/9890-gavere/huis/ruime-nieuwbouwwoning-met-4-slaapkamers-in-gavere-d9700-26087-267987",
+    "title": "Huis te koop Gavere",
+    "description": null,
+    "property_type": "house",
+    "price": 483552.0,
+    "address": "Bekijk meer foto's",
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2Fca015403-af14-41bf-a4cc-8e197ccfb3e4%2Fimage3400640.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_remote": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2Fca015403-af14-41bf-a4cc-8e197ccfb3e4%2Fimage3400640.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_local": [
+      "data/images/dewaele_vlaamse_ardennen-e75dc9c65344/25bb6ffb2141e58d.jpg"
+    ],
+    "images_cached_at": "2026-10-20T09:48:17.665153+00:00",
+    "features": [],
+    "first_seen": "2026-10-20T09:47:54.455582+00:00",
+    "last_seen": "2026-10-20T09:47:54.455584+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Huis te koop Gavere in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 483,552) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "dewaele_vlaamse_ardennen-7797074af829",
     "source": "dewaele_vlaamse_ardennen",
     "source_url": "https://www.dewaele.com/nl/te-koop/9680-maarkedal/huis/instapklare-woning-4-slpk-magazijn-op-2497-m2-d9700-26084-256655",
