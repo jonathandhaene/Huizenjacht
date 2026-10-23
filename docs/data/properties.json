@@ -1,5 +1,66 @@
 [
   {
+    "id": "vastgoedlammers-b05c864844af",
+    "source": "vastgoedlammers",
+    "source_url": "https://vastgoedlammers.be/property/mooi-appartement-met-topligging-op-de-markt-2/",
+    "title": "Mooi appartement met topligging op de markt!",
+    "description": null,
+    "property_type": "house",
+    "price": 275000.0,
+    "address": null,
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://vastgoedlammers.be/wp-content/uploads/2026/08/20240418_104243-584x438.jpg"
+    ],
+    "images_remote": [
+      "https://vastgoedlammers.be/wp-content/uploads/2026/08/20240418_104243-584x438.jpg"
+    ],
+    "images_local": [
+      "data/images/vastgoedlammers-b05c864844af/1ed54dc53d7034bd.jpg"
+    ],
+    "images_cached_at": "2026-10-23T09:44:14.040329+00:00",
+    "features": [],
+    "first_seen": "2026-10-23T09:44:04.525041+00:00",
+    "last_seen": "2026-10-23T09:44:04.525042+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Mooi appartement met topligging op de markt! in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 275,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "dewaele_vlaamse_ardennen-a8dd6380c744",
     "source": "dewaele_vlaamse_ardennen",
     "source_url": "https://www.dewaele.com/nl/te-koop/9420-erondegem/huis/residentie-t-hemelsveld-4-energiezuinige-woningen-met-tuin-d1700-26016-k-252099",
