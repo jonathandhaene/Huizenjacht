@@ -1,5 +1,67 @@
 [
   {
+    "id": "dewaele_vlaamse_ardennen-2429cf611ac0",
+    "source": "dewaele_vlaamse_ardennen",
+    "source_url": "https://www.dewaele.com/nl/te-koop/9890-dikkelvenne/huis/ruime-alleenstaande-woning-in-het-pittoreske-dikkelvenne-diy-26330-267405",
+    "title": "Huis te koop Dikkelvenne",
+    "description": null,
+    "property_type": "house",
+    "price": 595000.0,
+    "address": "Bekijk meer foto's",
+    "postal_code": null,
+    "municipality": null,
+    "land_area": 33282.0,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2F218b1a4a-f795-44d0-addb-59ad877d26b6%2Fimage3403150.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_remote": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2F218b1a4a-f795-44d0-addb-59ad877d26b6%2Fimage3403150.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_local": [
+      "data/images/dewaele_vlaamse_ardennen-2429cf611ac0/11c4d1d09fcbdd0d.jpg"
+    ],
+    "images_cached_at": "2026-10-26T10:44:48.268373+00:00",
+    "features": [],
+    "first_seen": "2026-10-26T10:44:12.533916+00:00",
+    "last_seen": "2026-10-26T10:44:12.533921+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 6.5,
+      "summary": "Huis te koop Dikkelvenne in de Vlaamse Ardennen — overeenkoms­score 6.5/10. 2 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 595,000) past binnen budget",
+        "Groot perceel van 33,282 m²"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "vastgoedlammers-b05c864844af",
     "source": "vastgoedlammers",
     "source_url": "https://vastgoedlammers.be/property/mooi-appartement-met-topligging-op-de-markt-2/",
