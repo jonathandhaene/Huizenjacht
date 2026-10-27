@@ -1,5 +1,66 @@
 [
   {
+    "id": "vastgoedlammers-103b173d2045",
+    "source": "vastgoedlammers",
+    "source_url": "https://vastgoedlammers.be/property/leuk-gelijkvloers-appartement-met-zuidgericht-tuintje-aan-de-gavers/",
+    "title": "Leuk gelijkvloers appartement met zuidgericht tuintje aan de Gavers!",
+    "description": null,
+    "property_type": "house",
+    "price": 230000.0,
+    "address": null,
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": 198.0,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://vastgoedlammers.be/wp-content/uploads/2026/10/image00049-1-584x438.jpeg"
+    ],
+    "images_remote": [
+      "https://vastgoedlammers.be/wp-content/uploads/2026/10/image00049-1-584x438.jpeg"
+    ],
+    "images_local": [
+      "data/images/vastgoedlammers-103b173d2045/1187083a92bb5b92.jpg"
+    ],
+    "images_cached_at": "2026-10-27T10:11:42.346486+00:00",
+    "features": [],
+    "first_seen": "2026-10-27T10:11:22.966441+00:00",
+    "last_seen": "2026-10-27T10:11:22.966442+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.5,
+      "summary": "Leuk gelijkvloers appartement met zuidgericht tuintje aan de Gavers! in de Vlaamse Ardennen — overeenkoms­score 5.5/10. 1 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 230,000) past binnen budget"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "dewaele_vlaamse_ardennen-2429cf611ac0",
     "source": "dewaele_vlaamse_ardennen",
     "source_url": "https://www.dewaele.com/nl/te-koop/9890-dikkelvenne/huis/ruime-alleenstaande-woning-in-het-pittoreske-dikkelvenne-diy-26330-267405",
