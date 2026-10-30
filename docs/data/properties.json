@@ -1,5 +1,67 @@
 [
   {
+    "id": "dewaele_vlaamse_ardennen-26b2a5d1b58f",
+    "source": "dewaele_vlaamse_ardennen",
+    "source_url": "https://www.dewaele.com/nl/te-koop/9630-sint-maria-latem/huis/vrijstaande-woning-met-bijgebouw-te-koop-in-zwalm-d9700-26091-268974",
+    "title": "Huis te koop Sint-Maria-Latem",
+    "description": null,
+    "property_type": "house",
+    "price": 449000.0,
+    "address": "Bekijk meer foto's",
+    "postal_code": null,
+    "municipality": null,
+    "land_area": 26161.0,
+    "living_area": null,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2F58ddbd66-d872-45fc-9ebf-0db88a57a206%2Fimage3418160.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_remote": [
+      "https://dewaele-cdn.glue.be/https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Fiam-property-pictures-02%2F58ddbd66-d872-45fc-9ebf-0db88a57a206%2Fimage3418160.jpg?auto=compress%2Cformat&w=440&h=291&fit=crop"
+    ],
+    "images_local": [
+      "data/images/dewaele_vlaamse_ardennen-26b2a5d1b58f/e735d2ca11f60df9.jpg"
+    ],
+    "images_cached_at": "2026-10-30T11:10:14.920309+00:00",
+    "features": [],
+    "first_seen": "2026-10-30T11:09:33.701237+00:00",
+    "last_seen": "2026-10-30T11:09:33.701245+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 6.5,
+      "summary": "Huis te koop Sint-Maria-Latem in de Vlaamse Ardennen — overeenkoms­score 6.5/10. 2 voordelen, 0 aandachtspunten.",
+      "pros": [
+        "Prijs (€ 449,000) past binnen budget",
+        "Groot perceel van 26,161 m²"
+      ],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "vastgoedlammers-103b173d2045",
     "source": "vastgoedlammers",
     "source_url": "https://vastgoedlammers.be/property/leuk-gelijkvloers-appartement-met-zuidgericht-tuintje-aan-de-gavers/",
