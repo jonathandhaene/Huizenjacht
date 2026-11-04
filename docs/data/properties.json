@@ -1,5 +1,64 @@
 [
   {
+    "id": "vastgoedlammers-ba7f2689390e",
+    "source": "vastgoedlammers",
+    "source_url": "https://vastgoedlammers.be/property/uniek-renovatieproject-op-idyllische-locatie-omringd-door-rust-en-natuur/",
+    "title": "Uniek renovatieproject op idyllische locatie omringd door rust en natuur!",
+    "description": null,
+    "property_type": "house",
+    "price": null,
+    "address": null,
+    "postal_code": null,
+    "municipality": null,
+    "land_area": null,
+    "living_area": 266.000139,
+    "bedrooms": null,
+    "bathrooms": null,
+    "images": [
+      "https://vastgoedlammers.be/wp-content/uploads/2026/11/DJI_20261022172944_0019_D-584x438.jpg"
+    ],
+    "images_remote": [
+      "https://vastgoedlammers.be/wp-content/uploads/2026/11/DJI_20261022172944_0019_D-584x438.jpg"
+    ],
+    "images_local": [
+      "data/images/vastgoedlammers-ba7f2689390e/c3fb90f86b1762e3.jpg"
+    ],
+    "images_cached_at": "2026-11-04T12:45:54.967821+00:00",
+    "features": [],
+    "first_seen": "2026-11-04T12:45:31.187637+00:00",
+    "last_seen": "2026-11-04T12:45:31.187653+00:00",
+    "government_data": {
+      "zoning": null,
+      "agricultural_zone": null,
+      "nature_zone": null,
+      "building_permit_possible": null,
+      "animal_keeping_allowed": null,
+      "bnb_possible": null,
+      "flood_risk": null,
+      "heritage_protected": null,
+      "soil_contamination": null,
+      "erosion_risk": null,
+      "natura_2000": null,
+      "ven_zone": null,
+      "signa_watersensitive": null,
+      "risks": [],
+      "source_url": null,
+      "raw_notes": null
+    },
+    "ai_analysis": {
+      "score": 5.0,
+      "summary": "Uniek renovatieproject op idyllische locatie omringd door rust en natuur! in de Vlaamse Ardennen — overeenkoms­score 5.0/10. 0 voordelen, 0 aandachtspunten.",
+      "pros": [],
+      "cons": [],
+      "recommendations": [
+        "Vraag het RUP-attest op bij de gemeente",
+        "Controleer stedenbouwkundige bestemming via www.omgevingsloket.be",
+        "Informeer bij de gemeente naar vergunning voor B&B / logies",
+        "Laat de bodem- en waterhuishouding onderzoeken als u vee wil houden"
+      ]
+    }
+  },
+  {
     "id": "dewaele_vlaamse_ardennen-26b2a5d1b58f",
     "source": "dewaele_vlaamse_ardennen",
     "source_url": "https://www.dewaele.com/nl/te-koop/9630-sint-maria-latem/huis/vrijstaande-woning-met-bijgebouw-te-koop-in-zwalm-d9700-26091-268974",
